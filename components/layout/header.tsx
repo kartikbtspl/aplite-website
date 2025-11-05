@@ -71,10 +71,10 @@ export function Header() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <Button variant="ghost" asChild>
+            <Button variant="default" size="sm" asChild>
               <Link href="/login">Login</Link>
             </Button>
-            <Button asChild>
+            <Button variant="secondary" size="sm" asChild>
               <Link href="/get-started">Contact Us</Link>
             </Button>
           </div>
@@ -265,7 +265,7 @@ export function Header() {
               {/* Bottom Buttons */}
               <div className="border-t p-4">
                 <div className="flex flex-col gap-3">
-                  <Button variant="ghost" asChild className="w-full justify-start">
+                  <Button variant="default" asChild className="w-full justify-start">
                     <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                       Login
                     </Link>
