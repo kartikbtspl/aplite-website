@@ -12,7 +12,7 @@ export default function CardContainer({ children, className }: CardProps) {
   return (
     <div
       className={cn(
-        "rounded-2xl p-6 shadow-sm border border-slate-100",
+        "rounded-2xl p-6 shadow-sm border border-[#CCE2FB]",
         "bg-gradient-to-b from-[#FFFFFF] to-[#FAFCFE]",
         className
       )}

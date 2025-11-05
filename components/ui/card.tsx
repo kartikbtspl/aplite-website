@@ -32,8 +32,8 @@ export default function MultiSectionCard({
     <div
       className={cn(
         // outer container: responsive grid + outer padding so the layout breathes on mobile
-        "rounded-2xl bg-white text-slate-900 overflow-hidden",
-        "p-4 sm:p-6 lg:p-8",
+        "rounded-2xl bg-white text-slate-900 border border-[#CCE2FB] overflow-hidden",
+        
         // responsive columns: 1 on mobile, 2 on small, 3 on large
         "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
         // keep small gaps so separators appear similar to previous look
