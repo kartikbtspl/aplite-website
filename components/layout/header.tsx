@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NAVIGATION } from "@/lib/constants";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,7 +37,7 @@ export function Header() {
             <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
               <span className="text-lg font-bold text-primary-foreground">A</span>
             </div>
-            <span className="text-xl font-bold">aplite</span>
+            <p className="text-xl font-bold">aplite</p>
           </Link>
 
           {/* Desktop Navigation */}
@@ -104,21 +103,21 @@ export function Header() {
                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                 onClick={() => setSolutionsOpen(false)}
               >
-                AP Teams
+                Account Payable Teams
               </Link>
               <Link
                 href="/solutions/ar-teams"
                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                 onClick={() => setSolutionsOpen(false)}
               >
-                AR Teams
+                Account Receivable Teams
               </Link>
               <Link
                 href="/solutions/banks-fintech"
                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                 onClick={() => setSolutionsOpen(false)}
               >
-                Banks & Fintech
+                Bank & Fintech
               </Link>
               <Link
                 href="/solutions/erp"
