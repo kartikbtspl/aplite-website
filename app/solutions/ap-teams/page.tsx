@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, CheckCircle2, Bell, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { PageHero } from "@/components/sections/page-hero";
 
 export default function APTeamsPage() {
   const features = [
@@ -48,23 +49,22 @@ export default function APTeamsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Accounts Receivable Teams
-            </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Stop sending banking details through email. Give customers a verified way they can trust.
-            </p>
-            <Button size="lg" asChild>
-              <Link href="/get-started">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
+      <section className="container py-8 md:py-12">
+        <PageHero
+          title="Built for Accounts Payable Teams"
+          subtitle="Search, Verify & Pay in seconds"
+          primaryButton={{
+            text: "Get Started",
+            href: "/get-started",
+            showIcon: true,
+          }}
+          secondaryButton={{
+            text: "Schedule Demo",
+            href: "/get-started",
+            showIcon: false,
+          }}
+          backgroundImage="/img/AP.png"
+        />
       </section>
 
       {/* Features Section */}

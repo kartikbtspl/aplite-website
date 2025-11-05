@@ -4,22 +4,22 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-base transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center whitespace-nowrap rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        outline: "border-2 border-primary bg-background text-primary hover:bg-primary/5",
-        secondary: "bg-secondary text-primary hover:bg-secondary/80",
+        outline: "border-1 border-primary bg-background text-primary hover:bg-primary/5",
+        secondary: "border border-primary/20 bg-secondary text-primary hover:bg-secondary/80",
       },
       size: {
-        default: "h-14 px-8 py-4",
-        sm: "h-10 px-6 py-3",
-        lg: "h-16 px-10 py-5",
+        default: "h-12 px-6 py-3",
+        sm: "h-10 px-5 py-2.5",
+        lg: "h-14 px-8 py-4",
       },
       withIcon: {
-        true: "gap-3",
-        false: "gap-0",
+        true: "justify-between",
+        false: "justify-center",
       },
     },
     defaultVariants: {
@@ -40,18 +40,29 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, showIcon = false, children, ...props }, ref) => {
     const Comp = asChild ? "span" : "button";
+    
+    if (showIcon) {
+      return (
+        <Comp
+          className={cn(buttonVariants({ variant, size, withIcon: true, className }), "relative pr-12")}
+          ref={ref as any}
+          {...props}
+        >
+          <span className="w-full text-center">{children}</span>
+          <span className="absolute right-2.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border-2 border-current">
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </span>
+        </Comp>
+      );
+    }
+    
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, withIcon: showIcon, className }))}
+        className={cn(buttonVariants({ variant, size, withIcon: false, className }))}
         ref={ref as any}
         {...props}
       >
         {children}
-        {showIcon && (
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-current">
-            <ArrowUpRight className="h-4 w-4" />
-          </span>
-        )}
       </Comp>
     );
   }
