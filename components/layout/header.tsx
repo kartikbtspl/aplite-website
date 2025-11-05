@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NAVIGATION } from "@/lib/constants";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,12 +32,12 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <nav className="container flex h-16 items-center justify-between">
+        <nav className="px-10 flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
               <span className="text-lg font-bold text-primary-foreground">A</span>
             </div>
-            <span className="text-xl font-bold">aplite</span>
+            <p className="text-xl font-bold">aplite</p>
           </Link>
 
           {/* Desktop Navigation */}
@@ -71,10 +70,10 @@ export function Header() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <Button variant="ghost" asChild>
+            <Button variant="default" size="sm" asChild>
               <Link href="/login">Login</Link>
             </Button>
-            <Button asChild>
+            <Button variant="secondary" size="sm" asChild>
               <Link href="/get-started">Contact Us</Link>
             </Button>
           </div>
@@ -104,21 +103,21 @@ export function Header() {
                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                 onClick={() => setSolutionsOpen(false)}
               >
-                AP Teams
+                Account Payable Teams
               </Link>
               <Link
                 href="/solutions/ar-teams"
                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                 onClick={() => setSolutionsOpen(false)}
               >
-                AR Teams
+                Account Receivable Teams
               </Link>
               <Link
                 href="/solutions/banks-fintech"
                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                 onClick={() => setSolutionsOpen(false)}
               >
-                Banks & Fintech
+                Bank & Fintech
               </Link>
               <Link
                 href="/solutions/erp"
@@ -265,7 +264,7 @@ export function Header() {
               {/* Bottom Buttons */}
               <div className="border-t p-4">
                 <div className="flex flex-col gap-3">
-                  <Button variant="ghost" asChild className="w-full justify-start">
+                  <Button variant="default" asChild className="w-full justify-start">
                     <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                       Login
                     </Link>

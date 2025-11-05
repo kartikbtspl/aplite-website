@@ -20,7 +20,7 @@ export function CTA() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="ghost" className="text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="default" className="text-white hover:bg-white/10" asChild>
               <Link href="/get-started">Contact Us</Link>
             </Button>
           </div>
