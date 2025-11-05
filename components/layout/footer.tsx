@@ -4,7 +4,7 @@ import { Mail, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container py-12 md:py-16">
+      <div className="px-10 py-12 md:py-16">
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
           {/* Brand Section */}
           <div>

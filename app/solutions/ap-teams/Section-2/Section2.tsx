@@ -37,7 +37,7 @@ export default function Section2() {
   ];
 
   return (
-    <div className="rounded space-y-6 mb-8 mx-auto">
+    <div className="rounded space-y-8 mb-8 mx-auto">
       <MultiSectionCard
         sections={sections}
         columns={3}

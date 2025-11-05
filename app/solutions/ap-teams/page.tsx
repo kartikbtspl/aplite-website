@@ -6,7 +6,7 @@ export default function APTeamsPage() {
     <>
       {/* Page Hero */}
 
-      <div className="mx-auto space-y-6">
+      <div className="mx-auto space-y-10">
         <section>
           <PageHero
             title="AP Teams"
