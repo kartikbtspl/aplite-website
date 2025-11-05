@@ -12,7 +12,7 @@ export default function CompanyPage() {
               About Aplite
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              We're on a mission to eliminate payment fraud and errors by providing instant access to verified business banking information.
+              We are on a mission to eliminate payment fraud and errors by providing instant access to verified business banking information.
             </p>
           </div>
         </div>

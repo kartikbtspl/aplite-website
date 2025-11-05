@@ -37,3 +37,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+span {
+  @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
+}
