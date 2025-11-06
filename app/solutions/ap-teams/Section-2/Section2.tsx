@@ -46,24 +46,24 @@ export default function Section2() {
       />
 
       <div className="space-y-6">
-        <h1 className="flex flex-wrap items-center justify-center text-4xl font-extrabold text-slate-900 gap-2 md:gap-3 leading-tight text-center">
+        <h1 className="flex flex-wrap items-center justify-center text-3xl md:text-4xl font-extrabold text-slate-900 gap-2 md:gap-3 leading-tight text-center px-4">
           Why
-          <span>
-            Accounts Payable
-          </span>
+          <span className="text-nowrap">Accounts Payable</span>
           teams choose Aplite
         </h1>
       </div>
 
       <CardContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 pl-24 gap-y-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 lg:gap-x-12 gap-y-4 p-4 md:pl-12 lg:pl-24">
           {features.map((text, index) => (
             <div key={index} className="flex items-start gap-3">
               <CheckCircle
                 size={20}
                 className="text-[#02A54D] flex-shrink-0 mt-1"
               />
-              <p className="text-slate-700 leading-relaxed">{text}</p>
+              <p className="text-base md:text-lg text-slate-700 leading-relaxed">
+                {text}
+              </p>
             </div>
           ))}
         </div>

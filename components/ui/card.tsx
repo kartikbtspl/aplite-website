@@ -4,7 +4,7 @@ import React, { ReactElement } from "react";
 import { cn } from "@/lib/utils";
 
 type Section = {
-  number: string; // background number like "01"
+  number: string;
   icon: ReactElement<any>;
   title: string;
   description: string;
@@ -12,7 +12,7 @@ type Section = {
 
 type Props = {
   sections: Section[];
-  columns?: number; // kept for backward compatibility (informational)
+  columns?: number;
   className?: string;
   iconSize?: number;
   iconOffsetY?: number;
@@ -24,20 +24,21 @@ export default function MultiSectionCard({
   columns = 3,
   className,
   iconSize = 28,
-  iconOffsetY = 10,
+  iconOffsetY = 0,
   showOuterPadding = true,
 }: Props): ReactElement {
-  // columns prop left for API compatibility, but responsive layout is CSS-driven
   return (
-    <div
+     <div
       className={cn(
-        // outer container: responsive grid + outer padding so the layout breathes on mobile
-        "rounded-2xl bg-white text-slate-900 border border-[#CCE2FB] overflow-hidden",
-        
-        // responsive columns: 1 on mobile, 2 on small, 3 on large
-        "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
-        // keep small gaps so separators appear similar to previous look
-        "gap-0 sm:gap-0 lg:gap-0",
+        // Outer container with single border around entire component
+        "rounded-2xl p-4 bg-gradient-to-b from-[#FFFFFF] to-[#FAFCFE] border  border-[#CCE2FB] text-slate-900 overflow-hidden",
+        // Responsive grid - automatically adjusts based on columns prop
+        "grid grid-cols-1",
+        columns >= 2 && "sm:grid-cols-2",
+        columns >= 3 && "lg:grid-cols-3", 
+        columns >= 4 && "xl:grid-cols-4",
+        // Remove gaps since we use borders for separation
+        "gap-0",
         className
       )}
     >
@@ -45,16 +46,18 @@ export default function MultiSectionCard({
         <div
           key={idx}
           className={cn(
-            // internal padding preserved (keeps the UI identical)
+            // Internal padding for content breathing room
             showOuterPadding ? "p-6 sm:p-8" : "p-0",
-            // gradient background and rounded inner cards to match original look
+            // Gradient background
             "relative bg-gradient-to-b from-[#FFFFFF] to-[#FAFCFE]",
-            
-            // using a tiny shadow that looks like a divider
-            "shadow-[inset_0_-1px_0_rgba(100,116,139,0.06),inset_1px_0_0_rgba(100,116,139,0.04)]"
+            // Only vertical borders with blur effect inside the grid
+            "relative",
+            // Add vertical border on the right for all except last column
+            (idx + 1) % columns !== 0 && 
+              "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-3/4 after:w-px after:bg-gradient-to-b after:from-transparent after:via-[#CCE2FB] after:to-transparent after:blur-[0.5px]"
           )}
         >
-          {/* faint background number */}
+          {/* Background number - positioned properly */}
           <p
             aria-hidden
             className={cn(
@@ -65,15 +68,14 @@ export default function MultiSectionCard({
             {section.number}
           </p>
 
-          {/* content */}
-          <div className="relative flex flex-col items-start">
-            {/* icon */}
+          {/* Content container */}
+          <div className="relative flex flex-col items-start h-full">
+            {/* Icon with proper spacing */}
             <div
-              className="flex items-center mt-6 justify-start mb-3"
+              className="flex items-center justify-start mt-6 mb-4"
               style={{
                 width: iconSize,
                 height: iconSize,
-                transform: `translateY(${iconOffsetY}px)`,
               }}
             >
               {React.isValidElement(section.icon)
@@ -90,11 +92,13 @@ export default function MultiSectionCard({
                 : section.icon}
             </div>
 
-            {/* title + description */}
-            <h3 className="text-base text-[#0A1544] font-semibold mb-3">
+            {/* Title with consistent spacing */}
+            <h3 className="text-xl text-[#0A1544] font-semibold mb-3 leading-tight">
               {section.title}
             </h3>
-            <p className="text-sm text-[#64748B] leading-relaxed">
+            
+            {/* Description with proper line height */}
+            <p className="text-lg text-[#64748B] leading-relaxed flex-grow">
               {section.description}
             </p>
           </div>

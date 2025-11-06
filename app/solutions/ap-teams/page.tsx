@@ -9,8 +9,8 @@ export default function APTeamsPage() {
       <div className="mx-auto space-y-10">
         <section>
           <PageHero
-            title="AP Teams"
-            subtitle="Streamline your accounts payable processes with powerful automation and collaboration tools designed for modern finance teams."
+            title="Built for Accounts Payable Teams"
+            subtitle="Search, Verify & Pay in seconds"
             primaryButton={{
               text: "Get Started",
               href: "/contact",
@@ -20,7 +20,7 @@ export default function APTeamsPage() {
               text: "Schedule Demo",
               href: "/demo",
             }}
-            backgroundImage="/img/ap.png"
+            backgroundImage="/img/AP.png"
             backgroundOverlay={true}
           />
         </section>

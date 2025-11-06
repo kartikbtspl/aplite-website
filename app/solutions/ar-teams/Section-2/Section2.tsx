@@ -1,9 +1,4 @@
-import {
-
-  CheckCircle,
-  Bell,
-  Search,
-} from "lucide-react";
+import { CheckCircle, Bell, Search } from "lucide-react";
 import MultiSectionCard from "@/components/ui/card";
 import CardContainer from "../../../../components/ui/CardContainer";
 export default function Section2() {
@@ -42,7 +37,7 @@ export default function Section2() {
   ];
 
   return (
-    <div className="max-w-[1400px] rounded space-y-6  mb-8 mx-auto">
+    <div className="rounded space-y-8 mb-8 mx-auto">
       <MultiSectionCard
         sections={sections}
         columns={3}
@@ -59,7 +54,8 @@ export default function Section2() {
       </CardContainer>
 
       <div className="space-y-6">
-        <h1 className="flex flex-wrap items-center justify-center text-4xl font-extrabold text-slate-900 gap-2 md:gap-3 leading-tight text-center">
+        <h1 className="flex flex-wrap items-center justify-center text-3xl md:text-4xl font-extrabold text-slate-900 gap-2 md:gap-3 leading-tight text-center px-4">
+        
           Why
           <span>Accounts Receivable</span>
           teams choose Aplite
@@ -67,7 +63,8 @@ export default function Section2() {
       </div>
 
       <CardContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 pl-24 gap-y-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 lg:gap-x-12 gap-y-4 p-4 md:pl-12 lg:pl-24">
+        
           {features.map((text, index) => (
             <div key={index} className="flex items-start gap-3">
               <CheckCircle
