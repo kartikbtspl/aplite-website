@@ -1,5 +1,8 @@
+"use client";
+
 import { PageHero } from "@/components/sections/page-hero";
 import Section2 from "./Section-2/Section2";
+import HeroSec from "@/components/sections/HeroSec";
 
 export default function APTeamsPage() {
   return (
@@ -8,6 +11,15 @@ export default function APTeamsPage() {
 
       <div className="mx-auto space-y-10">
         <section>
+          <HeroSec
+            subtitle="aplite"
+            title="Built for Accounts Payable Teams"
+            description="Search, Verify & Pay in seconds"
+            buttonLabel="Get Started"
+            onButtonClick={() => alert("Get Started...")}
+          />
+        </section>
+        {/* <section>
           <PageHero
             title="Built for Accounts Payable Teams"
             subtitle="Search, Verify & Pay in seconds"
@@ -25,10 +37,9 @@ export default function APTeamsPage() {
           />
         </section>
 
-        {/* Section 2 */}
         <section >
           <Section2 />
-        </section>
+        </section> */}
       </div>
     </>
   );
