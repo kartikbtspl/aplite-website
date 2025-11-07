@@ -42,6 +42,7 @@
       );
     background-size: 120% 120%;
     animation: subtle-move 10s ease-in-out infinite;
+    padding: 20px;
   }
 
   body::before {
@@ -66,4 +67,6 @@
     }
   }
 }
-/* Removed global span styling that was affecting buttons */
+span {
+  @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
+}
