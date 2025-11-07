@@ -14,13 +14,13 @@ export function CTA() {
             Join thousands of businesses using Aplite to verify banking details.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90" asChild>
+            <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90" asChild>
               <Link href="/get-started">
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="default" className="text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="secondary" className="text-white hover:bg-white/10" asChild>
               <Link href="/get-started">Contact Us</Link>
             </Button>
           </div>

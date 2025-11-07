@@ -35,7 +35,7 @@ export default function RootLayout({
         {/* Your actual content */}
         <Header />
         <main className="py-12 md:py-16 relative z-10">{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

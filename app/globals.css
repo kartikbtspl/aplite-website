@@ -29,7 +29,7 @@
 
 @layer base {
   body {
-    @apply relative overflow-hidden text-[hsl(var(--foreground))];
+    @apply relative text-[hsl(var(--foreground))];
     
     background: 
       radial-gradient(
@@ -42,7 +42,6 @@
       );
     background-size: 120% 120%;
     animation: subtle-move 10s ease-in-out infinite;
-    padding: 20px;
   }
 
   body::before {
@@ -67,6 +66,4 @@
     }
   }
 }
-span {
-  @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
-}
+/* Removed global span styling that was affecting buttons */
