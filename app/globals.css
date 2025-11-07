@@ -42,7 +42,6 @@
       );
     background-size: 120% 120%;
     animation: subtle-move 10s ease-in-out infinite;
-    padding: 20px;
   }
 
   body::before {

@@ -3,7 +3,7 @@ import { FileLock } from "lucide-react";// example Lucide icons
 
 export function FinancialTeamFeatures() {
   return (
-    <section className="bg-white py-10 flex flex-col gap-4 items-center px-4 sm:px-8 md:px-12 lg:px-20">
+    <section className="bg-white mx-12 rounded-2xl py-10 flex flex-col gap-4 items-center px-4 bg-transparent sm:px-8 md:px-12 lg:px-20">
       <div className="flex flex-col gap-4">
         <h2 className="text-3xl md:text-3xl font-semibold text-[#0A1544]">
           Built For The whole{" "}

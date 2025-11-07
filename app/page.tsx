@@ -9,13 +9,13 @@ import { FinancialTeamFeatures } from "@/components/sections/financial-team-feat
 export default function Home() {
   return (
     <>
-      {/* <Hero />
-      <HowItWorks />
+      <Hero />
+      {/* <HowItWorks /> */}
       <Benefits />
-      <BeforeAfterAplite/>
-      <FinancialTeamFeatures />
-      <Stats />
-      <CTA /> */}
+      {/* <BeforeAfterAplite/> */}
+      {/* <FinancialTeamFeatures /> */}
+      {/* <Stats /> */}
+      {/* <CTA /> */}
     </>
   );
 }
