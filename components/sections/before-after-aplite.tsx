@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Mail, AlertTriangle, DollarSign, ShieldAlert, Clock, Database, IdCard, Lock, BellRing, MailCheck, FileCheck, Handshake } from 'lucide-react';
+import ReusableReactIcon from "../ui/ReusableReactIcon";
 
 
 export function BeforeAfterAplite() {
@@ -23,7 +24,13 @@ export function BeforeAfterAplite() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-8">
                 <div className="">
-                  <Mail className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <Mail className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={Mail}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Scattered Communication Channels</span>
@@ -32,7 +39,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <AlertTriangle className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <AlertTriangle className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={AlertTriangle}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">No Way to Verify Details</span>
@@ -41,7 +54,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <ShieldAlert className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <ShieldAlert className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={ShieldAlert}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Email Is the #1 Fraud Vector</span>
@@ -50,7 +69,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <Clock className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <Clock className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={Clock}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Wasted Verification Effort</span>
@@ -59,7 +84,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <Database className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <Database className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={Database}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">No Central Repository</span>
@@ -78,7 +109,13 @@ export function BeforeAfterAplite() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-8">
                 <div className="">
-                  <IdCard className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <IdCard className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={IdCard}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Verified Digital Payment Profile</span>
@@ -87,7 +124,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <Lock className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <Lock className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={Lock}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">All Banking Details Authenticated</span>
@@ -96,7 +139,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <BellRing className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <BellRing className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={BellRing}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Real-Time Verified Alerts</span>
@@ -105,7 +154,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <MailCheck className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <MailCheck className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={MailCheck}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">No More Email Risks</span>
@@ -114,7 +169,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <FileCheck className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <FileCheck className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={FileCheck}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Centralized, Tamper-Proof Repository</span>
@@ -123,7 +184,13 @@ export function BeforeAfterAplite() {
               </div>
               <div className="flex items-start gap-8">
                 <div className="">
-                  <Handshake className="mt-1 text-[#4914FF]" size={40} />
+                  {/* <Handshake className="mt-1 text-[#4914FF]" size={40} /> */}
+                  <ReusableReactIcon
+                    sizeprop="sm"
+                    squareBgColor="#003cff"
+                    icon={Handshake}
+                    iconBgColor="#93c5fd"
+                  />
                 </div>
                 <div>
                   <span className="font-semibold text-lg text-gray-800">Trusted, Secure Relationships</span>
