@@ -21,26 +21,26 @@ export function Hero() {
   }, [index]);
 
   return (
-    <section className=" h-[70vh] flex items-center justify-center bg-transparent ml-12 mt-20">
-        <div className="flex flex-col lg:flex-row  gap-8 lg:gap-12 w-full items-center justify-center">
-          {/* Content Section - Left Side */}
-          <div className="flex-1 flex flex-col text-center lg:text-center items-center">
-            <div className="flex flex-col gap-6 items-center mx-auto">
-              <h1 className="text-5xl md:text-8xl font-light leading-tight tracking-tight mb-6 text-white">
+    <section className="min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center bg-transparent mx-4 sm:mx-8 lg:mx-12 mt-8 sm:mt-16 lg:mt-6 px-4 sm:px-6 mb-20">
+        <div className="flex flex-col w-full items-center justify-center max-w-6xl">
+          {/* Content Section */}
+          <div className="flex flex-col text-center items-center">
+            <div className="flex flex-col gap-4 sm:gap-6 items-center mx-auto">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-light leading-tight tracking-tight mb-4 sm:mb-6 text-white">
                 Pay the right business, every time.
               </h1>
-              <p className="text-lg md:text-2xl text-white max-w-3xl mb-10">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mb-6 sm:mb-8 lg:mb-10">
                 Instant access to verified business banking information — protect against fraud and errors.
               </p>
-              <div className="relative w-full max-w-xl">
-                <Search className="absolute w-full left-4 top-1/2 h-4 sm:h-5 sm:w-5 -translate-y-1/2 text-muted-foreground" />
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl">
+                <Search className="absolute left-3 sm:left-4 top-1/2 h-4 w-4 sm:h-5 sm:w-5 -translate-y-1/2 text-muted-foreground" />
                 <input
                   type="text"
                   placeholder={placeholder}
-                  className="h-12 sm:h-13 md:h-14 w-full rounded-xl border bg-background pl-10 sm:pl-11 md:pl-12 pr-4 text-sm sm:text-base shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="h-10 sm:h-12 md:h-14 w-full rounded-xl border bg-background pl-9 sm:pl-10 md:pl-12 pr-4 text-sm sm:text-base shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
-              <Button variant="primary" size="lg" label="Get Started" className="w-1/5">
+              <Button variant="primary" size="lg" label="Get Started" className="w-auto px-6 sm:px-8">
               </Button>
             </div>
           </div>
@@ -75,6 +75,7 @@ export function Hero() {
           },
         }
       */}
+
     </section>
   );
 }
