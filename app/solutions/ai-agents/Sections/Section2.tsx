@@ -1,60 +1,93 @@
-import {  Server, CloudLightning, Cpu } from "lucide-react";
-import MultiSectionCard from "@/components/ui/card";
-import CardContainer from "../../../../components/ui/CardContainer";
+import BlankCard from "@/components/ui/BlankCard";
+import CardComponent from "@/components/ui/CardComponent";
+import CardsGrid from "@/components/ui/GridCard";
+import { Button } from "@/components/ui/button";
+
 export default function Section2() {
-  const sections = [
+  // Card data array
+  const cardData = [
     {
-      number: "01",
-      icon: <Server />,
+      imageSrc: "/img/AR.png",
       title: "Machine-readable data structure",
-      description:
+      subtitle:
         "No PDFs, no invoices, no parsing required. Aplite returns structured JSON that agents can process instantly.",
     },
     {
-      number: "02",
-      icon: <CloudLightning />,
+      imageSrc: "/img/AR.png",
       title: "All payment types supported",
-      description:
+      subtitle:
         "ACH, Wire, and SWIFT details formatted for instant agent processing. One API call returns everything needed for the payment type.",
     },
     {
-      number: "03",
-      icon: <Cpu />,
+      imageSrc: "/img/AR.png",
       title: "Built for autonomy",
-      description:
+      subtitle:
         "Verified data means agents can execute payments without human oversight—trust is built into the infrastructure.",
     },
   ];
 
-  return (
-    <div className="rounded space-y-8 mb-8 mx-auto">
-      <MultiSectionCard
-        sections={sections}
-        columns={3}
-        iconSize={45}
-        iconOffsetY={6}
-      />
+  // Features data array for the grid
+  const featuresData = [
+    "Structured payment data",
+    "No parsing required",
+    "Instant verification",
+    "Multi-payment type support",
+    "Autonomous execution ready",
+    "Human-verified infrastructure",
+    "Real-time API access",
+    "Built for AI agents",
+  ];
 
-      <div className="space-y-6">
-        <h1 className="flex flex-wrap items-center justify-center text-4xl font-extrabold text-slate-900 gap-2 md:gap-3 leading-tight text-center">
-          AI agents lack payment
-          <span>Infrastructure</span>
+  return (
+    <BlankCard>
+      <div className="p-10">
+        <h1 className="text-4xl md:text-7xl font-light tracking-tight text-[#072484] flex flex-col">
+          <div className="flex justify-start mb-4">
+            <strong className="mx-4">AI Agents</strong> Need Payment
+          </div>
+
+          <div className="flex justify-end">
+            Infrastructure <strong className="mx-4">Built for Autonomy</strong>
+          </div>
         </h1>
-        <p className="text-center  justify-center text-lg text-[#111A4A]">
-          As the world transitions into an agentic future where AI agents handle
-          a majority of global transaction volume, they need a new way to
-          interact with payment systems. Right now, agents lack the fundamental
-          infrastructure to financially engage with the real world.
-        </p>
       </div>
 
-      <CardContainer>
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <h1 className="text-md text-[#111A4A] leading-tight text-center">
+      <div className="px-10">
+        <CardsGrid>
+          {cardData.map((card, index) => (
+            <CardComponent
+              key={index}
+              imageSrc={card.imageSrc}
+              title={card.title}
+              subtitle={card.subtitle}
+            />
+          ))}
+        </CardsGrid>
+      </div>
+
+      <div className="p-10 space-y-8">
+        <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-[#072484] text-center">
+          AI agents lack payment <strong>infrastructure</strong>
+        </h1>
+        
+        <p className="text-center text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          As the world transitions into an agentic future where AI agents handle a majority of global transaction volume, they need a new way to interact with payment systems. Right now, agents lack the fundamental infrastructure to financially engage with the real world.
+        </p>
+
+        <div className="space-y-4 text-center">
+          <p className="text-lg text-[#072484] font-medium">
             Ready to build autonomous payment systems?
-          </h1>
+          </p>
+          <Button
+            variant="primary"
+            size="md"
+            showIcon={true}
+            onClick={() => alert("Contact Us...")}
+          >
+            Contact Us
+          </Button>
         </div>
-      </CardContainer>
-    </div>
+      </div>
+    </BlankCard>
   );
 }
