@@ -1,27 +1,22 @@
-import { PageHero } from "@/components/sections/page-hero";
-import Section2 from "./Section-2/Section2";
-import Section3 from "./Section-3/Section3";
+"use client";
+
+import Section2 from "./Sections/Section2";
+import Section3 from "./Sections/Section3";
+import HeroSec from "@/components/sections/HeroSec";
 export default function ARTeamsPage() {
   return (
     <>
       <div className="mx-auto space-y-10">
-        <section>
-          <PageHero
-            title="Accounts Receivable Teams "
-            subtitle="Share your banking information securely through an immutable payment profile that customers can trust"
-            primaryButton={{
-              text: "Get Started",
-              href: "/contact",
-              showIcon: true,
-            }}
-            // secondaryButton={{
-            //   text: "Schedule Demo",
-            //   href: "/demo",
-            // }}
-            backgroundImage="/img/AR.png"
-            backgroundOverlay={true}
-          />
-        </section>
+      
+       <section>
+        <HeroSec
+          subtitle="aplite"
+          title="Accounts Receivable Teams "
+          description="Share your banking information securely through an immutable payment profile that customers can trust"
+          buttonLabel="Get Started"
+          onButtonClick={() => alert("Get Started...")}
+        />
+      </section>
 
         <section>
           <Section2 />

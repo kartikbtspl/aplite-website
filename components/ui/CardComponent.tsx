@@ -17,7 +17,15 @@ export default function CardComponent({
 
   return (
     <div className="w-full h-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:scale-105 hover:shadow-2xl relative group">
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.4) 100%)', backgroundSize: '200% 200%', animation: 'shine 2s infinite' }} />
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.4) 100%)",
+          backgroundSize: "200% 200%",
+          animation: "shine 2s infinite",
+        }}
+      />
       {/* Top Section */}
       <div className="relative w-full px-6 flex-1 rounded-3xl overflow-hidden">
         {/* Conditional Image or Gradient */}
@@ -45,7 +53,7 @@ export default function CardComponent({
       </div>
 
       {/* Bottom Section */}
-      <div className="p-6 text-[#452d60]">
+      <div className="p-6 text-[#1b2f6e]">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="mt-2 text-sm">{subtitle}</p>
       </div>
