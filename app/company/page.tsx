@@ -11,14 +11,14 @@ export default function CompanyPage() {
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               About Aplite
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+            {/* <p className="mb-8 text-lg text-muted-foreground md:text-xl">
               We are on a mission to eliminate payment fraud and errors by providing instant access to verified business banking information.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
 
-      <section className="bg-muted/50 py-20 md:py-32">
+      {/* <section className="bg-muted/50 py-20 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-3xl font-bold tracking-tight md:text-4xl">Our Mission</h2>
@@ -30,9 +30,9 @@ export default function CompanyPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="py-20 md:py-32">
+      {/* <section className="py-20 md:py-32">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-8 text-3xl font-bold tracking-tight md:text-4xl">Join Us</h2>
@@ -47,7 +47,7 @@ export default function CompanyPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -28,16 +28,44 @@
 }
 
 @layer base {
-  * {
-    border-color: hsl(var(--border));
-  }
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply relative text-[hsl(var(--foreground))];
+    
+    background: 
+      radial-gradient(
+        circle at 30% 30%,
+        #120d61 0%,
+        #4914FF 40%,
+        #0e3c9f 65%,
+        #332e92 85%,
+        #130e5f 100%
+      );
+    background-size: 120% 120%;
+    animation: subtle-move 10s ease-in-out infinite;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/img/image (1).png') center/80% no-repeat;
+    opacity: 0.2; /* Adjust opacity here (0.3 = 30%) */
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @keyframes subtle-move {
+    0%, 100% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
   }
 }
-
-span {
+/* span {
   @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
-}
+} */

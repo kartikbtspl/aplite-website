@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,8 +11,18 @@ export function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [dropdownPosition, setDropdownPosition] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const solutionsButtonRef = React.useRef<HTMLDivElement>(null);
   const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMouseEnter = () => {
     if (closeTimeoutRef.current) {
@@ -31,21 +42,32 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <nav className="px-10 flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">A</span>
-            </div>
-            <p className="text-xl font-bold">aplite</p>
+      <header className="sticky top-0 z-50 w-full px-2 md:px-4">
+        <nav className={`flex h-24 items-center justify-between px-6 transition-all duration-300 md:px-10 ${
+          isScrolled ? "rounded-b-3xl bg-white shadow-lg" : "bg-transparent"
+        }`}>
+          <Link href="/" className="flex items-center">
+            <Image 
+              src={isScrolled ? "/Aplite-Logo-dark.svg" : "/Aplite-logo.svg"}
+              alt="Aplite Logo" 
+              width={120} 
+              height={32}
+              className="h-8 w-auto"
+              priority
+              unoptimized
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center gap-6 md:flex">
-            <Link href="/" className="text-sm font-medium hover:text-primary">
+          <div className="hidden items-center gap-8 md:flex">
+            <Link href="/" className={`text-base font-semibold transition-colors hover:text-primary ${
+              isScrolled ? "text-gray-900" : "text-white"
+            }`}>
               Home
             </Link>
-            <Link href="/product" className="text-sm font-medium hover:text-primary">
+            <Link href="/product" className={`text-base font-semibold transition-colors hover:text-primary ${
+              isScrolled ? "text-gray-900" : "text-white"
+            }`}>
               Product
             </Link>
             <div 
@@ -55,32 +77,52 @@ export function Header() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className="flex items-center gap-1 text-sm font-medium hover:text-primary"
+                className={`flex items-center gap-1 text-base font-semibold transition-colors hover:text-primary ${
+                  isScrolled ? "text-gray-900" : "text-white"
+                }`}
               >
                 Solutions
                 <ChevronDown className="h-4 w-4" />
               </button>
             </div>
-            <Link href="/pricing" className="text-sm font-medium hover:text-primary">
+            <Link href="/pricing" className={`text-base font-semibold transition-colors hover:text-primary ${
+              isScrolled ? "text-gray-900" : "text-white"
+            }`}>
               Pricing
             </Link>
-            <Link href="/company" className="text-sm font-medium hover:text-primary">
+            <Link href="/company" className={`text-base font-semibold transition-colors hover:text-primary ${
+              isScrolled ? "text-gray-900" : "text-white"
+            }`}>
               About Us
             </Link>
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <Button variant="default" size="sm" asChild>
+            <Button 
+              variant="secondary" 
+              size="sm" 
+              asChild
+              className={isScrolled ? "!border-gray-900 !text-gray-900 hover:!bg-gray-100" : ""}
+            >
               <Link href="/login">Login</Link>
             </Button>
-            <Button variant="secondary" size="sm" asChild>
+            <Button 
+              variant="primary" 
+              size="sm" 
+              asChild
+              className={`!bg-white !text-black ${
+                isScrolled ? "!border !border-gray-900" : "!border !border-white"
+              }`}
+            >
               <Link href="/get-started">Contact Us</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className={`md:hidden transition-colors ${
+              isScrolled ? "text-gray-900" : "text-white"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -89,58 +131,153 @@ export function Header() {
         </nav>
       </header>
 
+      {/* Backdrop Blur Overlay */}
+      {solutionsOpen && (
+        <div className="fixed inset-0 top-24 z-30 hidden backdrop-blur-sm md:block" />
+      )}
+
       {/* Desktop Solutions Dropdown - Outside header */}
       {solutionsOpen && (
         <div
-          className="fixed top-16 z-40 hidden md:block"
+          className="fixed top-24 z-40 hidden md:block pt-3"
           style={{ left: `${dropdownPosition}px` }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="w-56 rounded-lg border bg-background p-2 shadow-lg">
-              <Link
-                href="/solutions/ap-teams"
-                className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-                onClick={() => setSolutionsOpen(false)}
-              >
-                Account Payable Teams
-              </Link>
-              <Link
-                href="/solutions/ar-teams"
-                className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-                onClick={() => setSolutionsOpen(false)}
-              >
-                Account Receivable Teams
-              </Link>
-              <Link
-                href="/solutions/banks-fintech"
-                className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-                onClick={() => setSolutionsOpen(false)}
-              >
-                Bank & Fintech
-              </Link>
-              <Link
-                href="/solutions/erp"
-                className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-                onClick={() => setSolutionsOpen(false)}
-              >
-                ERP Systems
-              </Link>
-              <Link
-                href="/solutions/invoicing"
-                className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-                onClick={() => setSolutionsOpen(false)}
-              >
-                Invoicing Software
-              </Link>
-              <Link
-                href="/solutions/ai-agents"
-                className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-                onClick={() => setSolutionsOpen(false)}
-              >
-                AI Agents
-              </Link>
+          {/* Arrow/Notch */}
+          <div className="relative ml-8 h-3">
+            <div className="absolute top-0 left-0 h-6 w-6 rotate-45 bg-white border-l border-t border-gray-200 z-10"></div>
+          </div>
+          
+          <div className="relative w-[600px] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl -mt-[1px]">
+            <div className="grid grid-cols-2 gap-3">
+              {/* Left Column */}
+              <div className="space-y-2">
+                <Link
+                  href="/solutions/ap-teams"
+                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
+                  onClick={() => setSolutionsOpen(false)}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/payable.png" 
+                      alt="AP Teams" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Account Payable Teams</h3>
+                    <p className="text-xs text-gray-500">Streamline AP workflows</p>
+                  </div>
+                </Link>
+                
+                <Link
+                  href="/solutions/ar-teams"
+                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
+                  onClick={() => setSolutionsOpen(false)}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/receiveable.png" 
+                      alt="AR Teams" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Account Receivable Teams</h3>
+                    <p className="text-xs text-gray-500">Accelerate collections</p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/solutions/banks-fintech"
+                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
+                  onClick={() => setSolutionsOpen(false)}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/Bank-fintech.png" 
+                      alt="Banks & Fintech" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Banks & Fintech</h3>
+                    <p className="text-xs text-gray-500">Payment verification</p>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-2">
+                <Link
+                  href="/solutions/erp"
+                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
+                  onClick={() => setSolutionsOpen(false)}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/ERP.png" 
+                      alt="ERP Systems" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-0.5 text-sm font-semibold text-gray-900">ERP Systems</h3>
+                    <p className="text-xs text-gray-500">Integrate seamlessly</p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/solutions/invoicing"
+                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
+                  onClick={() => setSolutionsOpen(false)}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/Invoice-2.png" 
+                      alt="Invoicing Software" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Invoicing Software</h3>
+                    <p className="text-xs text-gray-500">Verify before sending</p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/solutions/ai-agents"
+                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
+                  onClick={() => setSolutionsOpen(false)}
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/AI.png" 
+                      alt="AI Agents" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-0.5 text-sm font-semibold text-gray-900">AI Agents</h3>
+                    <p className="text-xs text-gray-500">Automate with AI</p>
+                  </div>
+                </Link>
+              </div>
             </div>
+          </div>
         </div>
       )}
 
@@ -159,11 +296,14 @@ export function Header() {
             <div className="flex h-full flex-col overflow-y-auto">
               {/* Menu Header */}
               <div className="flex items-center justify-between border-b p-4">
-                <Link href="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
-                  <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-                    <span className="text-lg font-bold text-primary-foreground">A</span>
-                  </div>
-                  <span className="text-xl font-bold">aplite</span>
+                <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                  <Image 
+                    src="/Aplite-logo.svg" 
+                    alt="Aplite Logo" 
+                    width={120} 
+                    height={32}
+                    className="h-8 w-auto"
+                  />
                 </Link>
                 <button onClick={() => setMobileMenuOpen(false)}>
                   <X className="h-6 w-6" />
@@ -264,7 +404,7 @@ export function Header() {
               {/* Bottom Buttons */}
               <div className="border-t p-4">
                 <div className="flex flex-col gap-3">
-                  <Button variant="default" asChild className="w-full justify-start">
+                  <Button variant="secondary" asChild className="w-full justify-start">
                     <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                       Login
                     </Link>
