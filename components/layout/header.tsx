@@ -48,11 +48,13 @@ export function Header() {
         }`}>
           <Link href="/" className="flex items-center">
             <Image 
-              src={isScrolled ? "/Aplite-logo-dark.svg" : "/Aplite-logo.svg"}
+              src={isScrolled ? "/Aplite-Logo-dark.svg" : "/Aplite-logo.svg"}
               alt="Aplite Logo" 
               width={120} 
               height={32}
               className="h-8 w-auto"
+              priority
+              unoptimized
             />
           </Link>
 
@@ -137,17 +139,17 @@ export function Header() {
       {/* Desktop Solutions Dropdown - Outside header */}
       {solutionsOpen && (
         <div
-          className="fixed top-24 z-40 hidden md:block"
+          className="fixed top-24 z-40 hidden md:block pt-3"
           style={{ left: `${dropdownPosition}px` }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
           {/* Arrow/Notch */}
-          <div className="relative ml-8">
-            <div className="absolute -top-3 left-0 h-6 w-6 rotate-45 bg-white border-l border-t border-gray-200"></div>
+          <div className="relative ml-8 h-3">
+            <div className="absolute top-0 left-0 h-6 w-6 rotate-45 bg-white border-l border-t border-gray-200 z-10"></div>
           </div>
           
-          <div className="relative w-[600px] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl">
+          <div className="relative w-[600px] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl -mt-[1px]">
             <div className="grid grid-cols-2 gap-3">
               {/* Left Column */}
               <div className="space-y-2">
@@ -156,10 +158,14 @@ export function Header() {
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
                   onClick={() => setSolutionsOpen(false)}
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#4914FF] to-[#0e3c9f]">
-                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/payable.png" 
+                      alt="AP Teams" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Account Payable Teams</h3>
@@ -172,10 +178,14 @@ export function Header() {
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
                   onClick={() => setSolutionsOpen(false)}
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#283EB0] to-[#120d61]">
-                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/receiveable.png" 
+                      alt="AR Teams" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Account Receivable Teams</h3>
@@ -188,10 +198,14 @@ export function Header() {
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
                   onClick={() => setSolutionsOpen(false)}
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#332e92] to-[#4914FF]">
-                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/Bank-fintech.png" 
+                      alt="Banks & Fintech" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Banks & Fintech</h3>
@@ -207,10 +221,14 @@ export function Header() {
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
                   onClick={() => setSolutionsOpen(false)}
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#0e3c9f] to-[#130e5f]">
-                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                    </svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/ERP.png" 
+                      alt="ERP Systems" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="mb-0.5 text-sm font-semibold text-gray-900">ERP Systems</h3>
@@ -223,10 +241,14 @@ export function Header() {
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
                   onClick={() => setSolutionsOpen(false)}
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#120d61] to-[#332e92]">
-                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/Invoice-2.png" 
+                      alt="Invoicing Software" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="mb-0.5 text-sm font-semibold text-gray-900">Invoicing Software</h3>
@@ -239,10 +261,14 @@ export function Header() {
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50"
                   onClick={() => setSolutionsOpen(false)}
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#4914FF] to-[#283EB0]">
-                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <Image 
+                      src="/img/header/AI.png" 
+                      alt="AI Agents" 
+                      width={40} 
+                      height={40}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="mb-0.5 text-sm font-semibold text-gray-900">AI Agents</h3>

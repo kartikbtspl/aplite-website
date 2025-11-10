@@ -66,6 +66,6 @@
     }
   }
 }
-span {
+/* span {
   @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
-}
+} */
