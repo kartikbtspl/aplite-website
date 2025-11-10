@@ -1,8 +1,8 @@
 "use client";
 
 import HeroSec from "@/components/sections/HeroSec";
-import Section2 from "./Section-2/Section2";
-import Section3 from "./Section-3/Section3";
+import Section2 from "./Sections/Section2";
+import Section3 from "./Sections/Section3";
 
 export default function APTeamsPage() {
   return (
