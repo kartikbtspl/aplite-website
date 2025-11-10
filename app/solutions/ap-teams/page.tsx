@@ -2,6 +2,7 @@
 
 import HeroSec from "@/components/sections/HeroSec";
 import Section2 from "./Section-2/Section2";
+import Section3 from "./Section-3/Section3";
 
 export default function APTeamsPage() {
   return (
@@ -18,6 +19,10 @@ export default function APTeamsPage() {
 
       <section>
        <Section2 />
+      </section>
+
+      <section>
+        <Section3 />
       </section>
 
     </div>

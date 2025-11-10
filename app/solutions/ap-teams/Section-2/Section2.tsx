@@ -43,13 +43,13 @@ export default function Section2() {
   return (
     <BlankCard>
       <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] flex flex-col">
+        <h1 className="text-4xl md:text-7xl font-light tracking-tight text-[#072484]  flex flex-col">
           <div className="flex justify-start mb-4">
-            Turning <strong className="mx-4">Payments </strong> into
+            <strong className="mx-4"> Secure </strong> Digital Payments
           </div>
 
           <div className="flex justify-end">
-            Trusted <strong className="mx-4">Relationships </strong>
+            Built on <strong className="mx-4">Trust </strong>
           </div>
         </h1>
       </div>
@@ -68,7 +68,7 @@ export default function Section2() {
       </div>
 
       <div className="p-10">
-        <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight text-[#24004c] ">
+        <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight text-[#072484] ">
           <div className="flex justify-start">
             Why <strong className="mx-1">Accounts Payable </strong> Teams choose
             <strong className="mx-4">Aplite</strong>
@@ -77,7 +77,7 @@ export default function Section2() {
       </div>
 
       {/* 2-column grid for features */}
-<div className="grid grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto py-6">
+      <div className="grid grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto py-6">
         {featuresData.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
             <div className="flex-shrink-0">
@@ -88,7 +88,7 @@ export default function Section2() {
                 iconBgColor="#93c5fd"
               />
             </div>
-            <p className="text-lg font-medium text-gray-800 leading-tight">
+            <p className="text-lg font-medium text-[#1b2f6e] leading-tight">
               {feature}
             </p>
           </div>
