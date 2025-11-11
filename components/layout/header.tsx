@@ -65,11 +65,11 @@ export function Header() {
             }`}>
               Home
             </Link>
-            <Link href="/product" className={`text-base font-semibold transition-transform hover:scale-110 ${
+            {/* <Link href="/product" className={`text-base font-semibold transition-transform hover:scale-110 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}>
               Product
-            </Link>
+            </Link> */}
             <div 
               className="relative" 
               ref={solutionsButtonRef}
