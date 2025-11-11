@@ -8,7 +8,7 @@ export function BeforeAfterAplite() {
     <section className="bg-white mt-40 ">
       <div className="max-w-full mx-auto px-2 sm:px-4">
         <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center ">
-          Before Aplite:<br />How Businesses Handle Banking Information
+          How Businesses Handle <br /> Banking Information - And How Aplite Redefines It
         </h2>
         {/* <p className="text-center text-gray-600 mb-5 sm:mb-7 text-sm sm:text-base px-4 sm:px-0">
           The traditional approach exposes businesses to fraud and errors.<br />

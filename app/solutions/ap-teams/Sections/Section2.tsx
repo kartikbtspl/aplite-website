@@ -41,16 +41,30 @@ export default function Section2() {
 
   return (
     <BlankCard>
-      <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-light tracking-tight  flex flex-col">
-          <div className="flex justify-start mb-4">
-            <strong className="mx-4"> Secure </strong> Digital Payments
+      <div className="p-10 md:p-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
+          {/* Left side - Heading with cascading indentation */}
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
+              <div className="mb-1">
+                <strong className="font-semibold">Secure</strong> Digital
+              </div>
+              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
+                Payments Built on
+              </div>
+              <div className="text-right">
+                <strong className="font-semibold">Trust</strong>
+              </div>
+            </h1>
           </div>
-
+          
+          {/* Right side - Description aligned to the bottom right */}
           <div className="flex justify-end">
-            Built on <strong className="mx-4">Trust </strong>
+            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-md">
+              Eliminate the risk of email-based and invoice-based payment information exchanges. Your banking details live in a secure, verified profile that builds trust with every transaction.
+            </p>
           </div>
-        </h1>
+        </div>
       </div>
 
       <div className="px-10">
