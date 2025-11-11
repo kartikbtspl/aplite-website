@@ -23,7 +23,7 @@ export function WhoWeServe() {
             subtitle: "Share your banking information securely through an immutable payment profile that customers can trust."
           },
           {
-            imageSrc: "/bank & fintch.png",
+            imageSrc: "/img/banks-fintech.png",
             title: "Banks & Fintechs",
             subtitle: "Integrate verified, structured payment data that reduces errors, speeds processing, and eliminates fraud risk."
           },

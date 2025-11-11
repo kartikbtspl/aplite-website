@@ -22,7 +22,7 @@ export default function Section3() {
           subtitle="Share your banking information securely through an immutable payment profile that customers can trust."
         />
         <CardComponent
-          imageSrc="/bank & fintch.png"
+          imageSrc="/img/banks-fintech.png"
           title="Banks and fintech's"
           subtitle="Integrate verified, structured payment data that reduces errors, speeds processing, and eliminates fraud risk."
         />
