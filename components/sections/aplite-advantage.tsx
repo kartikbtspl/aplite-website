@@ -64,7 +64,7 @@ export function ApliteAdvantage() {
 
   return (
     <section className="bg-white py-20">
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             Aplite Advantage
@@ -118,7 +118,7 @@ export function ApliteAdvantage() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="pt-10 pl-10 bg-[#4914FF] rounded-2xl">
+            <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
               <div className="rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center">
                 <div className="text-center">
                   {showContent ? (

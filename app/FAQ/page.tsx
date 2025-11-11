@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
+import HeroSec from "@/components/sections/HeroSec";
 
 const faqs = [
   {
@@ -70,39 +71,42 @@ export default function FAQPage() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
     <>
+      <div>
+        <HeroSec
+          subtitle="aplite"
+          title="Frequntly Asked Questions"
+          description="The real risks of unverified payments and how Aplite eliminates them."
+          buttonLabel=""
+        />
+      </div>
       <div className="bg-white m-2 sm:m-4 md:m-6 lg:m-8 xl:m-12 rounded-xl sm:rounded-2xl p-12 sm:p-6 lg:p-12 overflow-hidden">
-        <div className="flex flex-col gap-8">
-          <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
-            Frequntly Asked Questions
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#475569] max-w-3xl mb-6 sm:mb-8 lg:mb-10 mx-auto">
-            The real risks of unverified payments and how Aplite eliminates them.
-          </p>
-        </div>
         <div className="w-full mx-auto py-8">
-          {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="border-b border-gray-200 bg-white rounded-lg shadow-md mb-4 transition-shadow"
-            >
-              <button
-                type="button"
-                className="w-full font-medium text-left flex items-center justify-between py-3 px-4 outline-none"
-                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              >
-                <span>{faq.question}</span>
-                <ChevronDown
-                  className={`ml-2 transition-transform ${openIdx === idx ? "rotate-180" : ""}`}
-                  size={20}
-                />
-              </button>
-              {openIdx === idx && (
-                <div className="px-4 pb-3 text-gray-600 text-sm">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
+          <ul className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <div key={idx}>
+                <hr className={`transition-all duration-300 ${idx === openIdx ? 'border-2 border-gray-900' : 'border-gray-300'}`} />
+                <li className="flex items-center justify-between transition-all duration-300 cursor-pointer p-2 rounded-lg"
+                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}>
+                  <span className={`transition-all duration-300 ${idx === openIdx
+                      ? 'text-lg sm:text-xl text-gray-900'
+                      : 'text-gray-600 text-lg sm:text-xl'
+                    }`}>
+                    {faq.question}
+                  </span>
+                  {openIdx === idx ? (
+                    <Minus size={20} />
+                  ) : (
+                    <Plus size={20} />
+                  )}
+                </li>
+                {openIdx === idx && (
+                  <div className="px-4 pb-3 text-gray-600 text-md">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </ul>
         </div>
       </div>
     </>
