@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ReactNode } from "react";
@@ -7,8 +8,8 @@ export default function CardsGrid({ children }: { children: ReactNode }) {
     <div className="w-full px-6 py-6 pb-16">
       <div
         className="
-          grid 
-          grid-cols-1 sm:grid-cols-2 
+          grid
+          grid-cols-1 sm:grid-cols-2
           gap-x-16 gap-y-12
           max-w-6xl
           mx-auto
