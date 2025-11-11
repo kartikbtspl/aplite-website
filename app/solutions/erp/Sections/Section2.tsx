@@ -1,8 +1,15 @@
+import AnimatedSplitSteps from "@/components/ui/AnimatedSplitSection";
 import BlankCard from "@/components/ui/BlankCard";
 import CardComponent from "@/components/ui/CardComponent";
 import CardsGrid from "@/components/ui/GridCard";
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
-import { CheckCircle } from "lucide-react";
+import {
+  CheckCircle,
+  ClipboardList,
+  Key,
+  Server,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function Section2() {
   // Card data array
@@ -33,6 +40,48 @@ export default function Section2() {
     "Automatic vendor updates",
   ];
 
+  const steps = [
+    {
+      id: 1,
+      icon: Key,
+      title: "User enters Aplite PIN",
+      description:
+        "The paying user or system inputs the unique Aplite PIN found on the invoice.",
+      images: ["/img/e1.png"],
+    },
+    {
+      id: 2,
+      icon: Server,
+      title: "API call to Aplite",
+      description:
+        "Your system initiates a secure API request to the Aplite service, sending the PIN for verification.",
+      images: ["/img/e2.png"],
+    },
+    {
+      id: 3,
+      icon: ShieldCheck,
+      title: "Verified data returns",
+      description:
+        "Aplite verifies the PIN against the business's profile and returns the confirmed banking details securely.",
+      images: ["/img/e3.png"],
+    },
+    {
+      id: 4,
+      icon: ClipboardList,
+      title: "ERP autofill's payment form",
+      description:
+        "The returned, verified banking information automatically populates the payment fields within your ERP or accounting software.",
+      images: ["/img/e4.png"],
+    },
+    {
+      id: 5,
+      icon: CheckCircle,
+      title: "User confirms & pays",
+      description:
+        "With instant confidence in the payee's details, the user quickly confirms the payment and completes the transaction.",
+      images: ["/img/e5.png"],
+    },
+  ];
   return (
     <BlankCard>
       <div className="p-10">
@@ -84,6 +133,13 @@ export default function Section2() {
           </div>
         ))}
       </div>
+
+      <div className="py-6">
+        <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-center">
+          How It works
+        </h1>
+      </div>
+      <AnimatedSplitSteps steps={steps} />
     </BlankCard>
   );
 }
