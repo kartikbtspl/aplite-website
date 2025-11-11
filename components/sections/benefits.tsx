@@ -69,11 +69,11 @@ export function Benefits() {
   ];
 
   const riskImages = [
-    "/img/risk1.png",
-    "/img/risk2.png", 
-    "/img/risk3.png",
-    "/img/risk4.png",
-    "/img/risk5.png",
+    "/risk.png",
+    "/risk.png", 
+    "/risk.png",
+    "/risk.png",
+    "/risk.png",
   ];
 
   const solutions = [
@@ -86,12 +86,12 @@ export function Benefits() {
   ];
 
   const solutionImages = [
-    "/img/solution1.png",
-    "/img/solution2.png",
-    "/img/solution3.png",
-    "/img/solution4.png",
-    "/img/solution5.png",
-    "/img/solution6.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
   ];
 
   return (
@@ -111,20 +111,19 @@ export function Benefits() {
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
           <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh]">
             {/* Left sub-section - Animated based on active risk */}
-            <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
-              <div className="rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center">
+            <div className="p-2 bg-gray-100 rounded-2xl">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={riskImages[activeRiskIndex] || "/img/AR.png"}
                     alt={`Risk ${activeRiskIndex + 1}`}
-                    width={400}
-                    height={300}
-                    className={`w-full h-auto max-w-[300px] rounded-lg object-contain transition-all duration-500 ${
-                      activeRiskIndex === 0 ? 'animate-pulse scale-110' :
-                      activeRiskIndex === 1 ? 'animate-bounce scale-105' :
-                      activeRiskIndex === 2 ? 'animate-pulse scale-110' :
-                      activeRiskIndex === 3 ? 'animate-bounce scale-105' :
-                      'animate-pulse scale-110'
+                    fill
+                    className={`rounded-2xl object-cover transition-all duration-500 ${
+                      activeRiskIndex === 0 ? '' :
+                      activeRiskIndex === 1 ? '' :
+                      activeRiskIndex === 2 ? '' :
+                      activeRiskIndex === 3 ? '' :
+                      ''
                     }`}
                   />
                 </div>
@@ -215,21 +214,20 @@ export function Benefits() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
-              <div className="rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center">
+            <div className="p-2 bg-gray-100 rounded-2xl">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={solutionImages[activeSolutionIndex] || "/img/AR.png"}
                     alt={`Solution ${activeSolutionIndex + 1}`}
-                    width={400}
-                    height={300}
-                    className={`w-full h-auto max-w-[300px] rounded-lg object-contain transition-all duration-500 ${
-                      activeSolutionIndex === 0 ? 'animate-pulse scale-110' :
-                      activeSolutionIndex === 1 ? 'animate-bounce scale-105' :
-                      activeSolutionIndex === 2 ? 'animate-pulse scale-110' :
-                      activeSolutionIndex === 3 ? 'animate-bounce scale-105' :
-                      activeSolutionIndex === 4 ? 'animate-pulse scale-110' :
-                      'animate-bounce scale-105'
+                    fill
+                    className={`rounded-lg object-cover transition-all duration-500 ${
+                      activeSolutionIndex === 0 ? '' :
+                      activeSolutionIndex === 1 ? '' :
+                      activeSolutionIndex === 2 ? '' :
+                      activeSolutionIndex === 3 ? '' :
+                      activeSolutionIndex === 4 ? '' :
+                      ''
                     }`}
                   />
                 </div>

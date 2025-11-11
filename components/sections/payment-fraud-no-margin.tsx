@@ -17,17 +17,17 @@ export function PaymentFraudNoMargin() {
       <div className="">
         <CardsGrid>
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/search.gif"
             title="Search"
             subtitle="Look up any business instantly using our verified database - simple, fast, and reliable."
           />
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/review.gif"
             title="Review"
             subtitle="Check verified banking details with complete transparency and peace of mind."
           />
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/pay.gif"
             title="Pay"
             subtitle="Send money confidently, knowing every transaction reaches the right business."
           />
