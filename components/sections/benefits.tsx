@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { PaymentFraudNoMargin } from "./payment-fraud-no-margin";
 import { BeforeAfterAplite } from "./before-after-aplite";
 import { FinancialTeamFeatures } from "./financial-team-features";
+import Image from "next/image";
 
 export function Benefits() {
   const [activeRiskIndex, setActiveRiskIndex] = useState(0);
@@ -67,6 +68,14 @@ export function Benefits() {
     "Vendor data - unverified or wrong",
   ];
 
+  const riskImages = [
+    "/risk.png",
+    "/risk.png", 
+    "/risk.png",
+    "/risk.png",
+    "/risk.png",
+  ];
+
   const solutions = [
     "Instant verification eliminates the risk of sending money to the wrong account",
     "Up-to-date data removes delays and failed payments",
@@ -76,10 +85,19 @@ export function Benefits() {
     "Aplite integrates seamlessly with your existing workflow and sending process",
   ];
 
+  const solutionImages = [
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+    "/solutions.png",
+  ];
+
   return (
     <section className="bg-white mt-20">
       {/* <PaymentFraudNoMargin /> */}
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className=" sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             How It Works
@@ -93,16 +111,21 @@ export function Benefits() {
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
           <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh]">
             {/* Left sub-section - Animated based on active risk */}
-            <div className="pt-10 pl-10 bg-[#4914FF] rounded-2xl">
-              <div className={`rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center ${activeRiskIndex === 0 ? 'bg-blue-500 animate-bounce' :
-                  activeRiskIndex === 1 ? 'bg-blue-500 ' :
-                    activeRiskIndex === 2 ? 'bg-blue-500 ' :
-                      activeRiskIndex === 3 ? 'bg-blue-500 ' :
-                        'bg-blue-500 '
-                }`}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-2">{activeRiskIndex + 1}</div>
-                  <div className="text-sm text-gray-600">Risk Animation</div>
+            <div className="p-2 bg-gray-100 rounded-2xl">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={riskImages[activeRiskIndex] || "/img/AR.png"}
+                    alt={`Risk ${activeRiskIndex + 1}`}
+                    fill
+                    className={`rounded-2xl object-cover transition-all duration-500 ${
+                      activeRiskIndex === 0 ? '' :
+                      activeRiskIndex === 1 ? '' :
+                      activeRiskIndex === 2 ? '' :
+                      activeRiskIndex === 3 ? '' :
+                      ''
+                    }`}
+                  />
                 </div>
               </div>
             </div>
@@ -191,18 +214,22 @@ export function Benefits() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="pt-10 pl-10 bg-[#4914FF] rounded-2xl">
-              <div className={`rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center ${
-                activeSolutionIndex === 0 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 1 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 2 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 3 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 4 ? 'bg-blue-500 ' :
-                'bg-blue-500 '
-              }`}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-2">{activeSolutionIndex + 1}</div>
-                  <div className="text-sm text-gray-600">Solution Animation</div>
+            <div className="p-2 bg-gray-100 rounded-2xl">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={solutionImages[activeSolutionIndex] || "/img/AR.png"}
+                    alt={`Solution ${activeSolutionIndex + 1}`}
+                    fill
+                    className={`rounded-lg object-cover transition-all duration-500 ${
+                      activeSolutionIndex === 0 ? '' :
+                      activeSolutionIndex === 1 ? '' :
+                      activeSolutionIndex === 2 ? '' :
+                      activeSolutionIndex === 3 ? '' :
+                      activeSolutionIndex === 4 ? '' :
+                      ''
+                    }`}
+                  />
                 </div>
               </div>
             </div>

@@ -60,12 +60,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
-            <Link href="/" className={`text-base font-semibold transition-colors hover:text-primary ${
+            <Link href="/" className={`text-base font-semibold transition-transform hover:scale-110 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}>
               Home
             </Link>
-            <Link href="/product" className={`text-base font-semibold transition-colors hover:text-primary ${
+            <Link href="/product" className={`text-base font-semibold transition-transform hover:scale-110 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}>
               Product
@@ -77,7 +77,7 @@ export function Header() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center gap-1 text-base font-semibold transition-colors hover:text-primary ${
+                className={`flex items-center gap-1 text-base font-semibold transition-transform hover:scale-110 ${
                   isScrolled ? "text-gray-900" : "text-white"
                 }`}
               >
@@ -85,12 +85,12 @@ export function Header() {
                 <ChevronDown className="h-4 w-4" />
               </button>
             </div>
-            <Link href="/pricing" className={`text-base font-semibold transition-colors hover:text-primary ${
+            <Link href="/pricing" className={`text-base font-semibold transition-transform hover:scale-110 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}>
               Pricing
             </Link>
-            <Link href="/company" className={`text-base font-semibold transition-colors hover:text-primary ${
+            <Link href="/company" className={`text-base font-semibold transition-transform hover:scale-110 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}>
               About Us

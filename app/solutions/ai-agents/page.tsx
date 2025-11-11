@@ -5,7 +5,7 @@ import Section2 from "./Sections/Section2";
 
 export default function AIAgentsPage() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-4">
       <section>
         <HeroSec
           subtitle="aplite"

@@ -1,32 +1,26 @@
-import { PageHero } from "@/components/sections/page-hero";
-import Section2 from "./Section-2/Section2";
+"use client";
+
+import Section2 from "./Sections/Section2";
+import HeroSec from "@/components/sections/HeroSec";
 
 export default function BanksFintechPage() {
   return (
-    <>
-      <div className="mx-auto space-y-10">
-        <section>
-          <PageHero
-            title="Built for Banks & Fintech "
-            subtitle="Integrate verified, structured payment data that reduces errors, speeds processing, and eliminates fraud risk."
-            primaryButton={{
-              text: "Talk To Our Team",
-              href: "/contact",
-              showIcon: true,
-            }}
-            //  secondaryButton={{
-            //    text: "Schedule Demo",
-            //    href: "/demo",
-            //  }}
-            backgroundImage="/img/Banks & Fintech.png"
-            backgroundOverlay={true}
-          />
-        </section>
+    <main className="space-y-10">
+      {/* Hero Section */}
+      <section>
+        <HeroSec
+          subtitle="aplite"
+          title="Built for Banks & Fintech"
+          description="Integrate verified, structured payment data that reduces errors, speeds processing, and eliminates fraud risk."
+          buttonLabel="Talk To Our Team"
+          onButtonClick={() => console.log("Talk To Our Team")}
+        />
+      </section>
 
-        <section>
-          <Section2 />
-        </section>
-      </div>
-    </>
+      {/* Section 2 */}
+      <section>
+        <Section2 />
+      </section>
+    </main>
   );
 }

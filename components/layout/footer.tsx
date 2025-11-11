@@ -4,9 +4,9 @@ import Image from "next/image";
 export function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#150A33] via-[#1a0b2e] to-[#2A0E66] text-white m-8 rounded-3xl">
-      <div className="mx-auto max-w-7xl px-6 py-6">
+      <div className="mx-auto max-w-7xl px-4 py-12">
         {/* Top Section - Logo and Tagline */}
-        <div className="mb-6 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="mb-5 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <Link href="/" className="inline-flex items-center">
             <Image 
               src="/Aplite-logo.svg" 
@@ -22,8 +22,8 @@ export function Footer() {
         </div>
 
         {/* Solutions Section */}
-        <div className="mb-6">
-          <h3 className="mb-3 text-lg font-semibold text-white">Solutions</h3>
+        <div className="mb-5">
+          <h3 className="mb-2.5 text-lg font-semibold text-white">Solutions</h3>
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             {/* AP Teams */}
             <Link href="/solutions/ap-teams" className="group flex items-start gap-4">
@@ -154,15 +154,15 @@ export function Footer() {
         </div>
 
         {/* Bottom Section - Links Grid with Subscribe */}
-        <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-6 md:flex-row">
+        <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-5 md:flex-row">
           {/* Left Group - Company, Product, Help */}
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-12 md:gap-24">
             {/* Company Section */}
             <div>
-              <h3 className="mb-4 text-sm font-normal text-white">Company</h3>
+              <h3 className="mb-2.5 text-base font-normal text-white">Company</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/about" className="text-sm text-white/60 transition-colors hover:text-white">
+                  <Link href="/company" className="text-sm text-white/60 transition-colors hover:text-white">
                     About Us
                   </Link>
                 </li>
@@ -171,7 +171,7 @@ export function Footer() {
 
             {/* Product Section */}
             <div>
-              <h3 className="mb-4 text-sm font-normal text-white">Product</h3>
+              <h3 className="mb-2.5 text-base font-normal text-white">Product</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="/" className="text-sm text-white/60 transition-colors hover:text-white">
@@ -183,7 +183,7 @@ export function Footer() {
 
             {/* Help Section */}
             <div>
-              <h3 className="mb-4 text-sm font-normal text-white">Help</h3>
+              <h3 className="mb-2.5 text-base font-normal text-white">Help</h3>
               <ul className="space-y-3">
                 <li>
                   <Link href="/help" className="text-sm text-white/60 transition-colors hover:text-white">
@@ -201,7 +201,7 @@ export function Footer() {
 
           {/* Subscribe Section */}
           <div className="w-full md:w-[280px]">
-            <h3 className="mb-4 text-sm font-normal text-white">Subscribe</h3>
+            <h3 className="mb-2.5 text-base font-normal text-white">Subscribe</h3>
             <div className="flex flex-col gap-2 sm:flex-row">
               <input
                 type="email"
@@ -219,7 +219,7 @@ export function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-6 border-t border-white/10 pt-4">
+        <div className="mt-5 border-t border-white/10 pt-3.5">
           <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
             {/* Copyright */}
             <div className="text-xs text-white/50">
