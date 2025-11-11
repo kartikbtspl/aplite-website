@@ -19,7 +19,7 @@ const HeroSec: React.FC<HeroSecProps> = ({
   onButtonClick,
 }) => {
   return (
-    <section className="relative  px-12 h-[90vh] flex flex-col justify-center text-white bg-transparent">
+    <section className="relative  px-12 h-[80vh] flex flex-col justify-center text-white bg-transparent">
       {/* Text Container */}
       <div className="max-w-5xl">
         {/* Logo / Tagline */}
