@@ -9,19 +9,19 @@ import AnimatedSplitSteps from "@/components/ui/AnimatedSplitSection";
 export default function Section2() {
   const cardData = [
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/search.png",
       title: "Search and retrieve verified business",
       subtitle:
         "Find any vendor's verified payment details in seconds—no more chasing contacts, validating screenshots, or waiting on call-backs.",
     },
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/process-payment.png",
       title: "Process payments with confidence",
       subtitle:
         "Pay using verified banking information that's audit-ready and fraud-proof. Every profile is timestamped and immutable.",
     },
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/stay-protective.png",
       title: "Stay proactive with real-time alerts",
       subtitle:
         "Get notified instantly when vendor payment information changes.",

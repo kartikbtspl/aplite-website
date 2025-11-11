@@ -27,11 +27,11 @@ export default function CardComponent({
         }}
       />
       {/* Top Section */}
-      <div className="relative w-full px-4 pt-6 pb-4 flex-1 rounded-3xl overflow-hidden">
+      <div className="relative w-full px-4 pt-4 pb-3 rounded-3xl overflow-hidden">
         {/* Conditional Image or Gradient */}
         {!imageSrc || imageError ? (
           <div
-            className="w-full h-full flex items-center rounded-xl justify-center"
+            className="w-full h-48 flex items-center rounded-xl justify-center"
             style={{
               background: "linear-gradient(135deg, #120d61 0%, #4914FF 100%)",
             }}
@@ -39,13 +39,12 @@ export default function CardComponent({
             {/* <p className="text-white/80 text-sm italic">Image unavailable</p> */}
           </div>
         ) : (
-          <div className="relative w-full h-full flex justify-center items-center z-10">
+          <div className="relative w-full h-48 rounded-xl overflow-hidden z-10">
             <Image
               src={imageSrc}
               alt={title}
-              width={700}
-              height={400}
-              className="w-full h-auto rounded-xl object-contain"
+              fill
+              className="rounded-xl object-cover"
               onError={() => setImageError(true)} // Fallback if the image fails to load
             />
           </div>

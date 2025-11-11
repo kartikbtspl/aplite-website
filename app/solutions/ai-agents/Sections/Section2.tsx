@@ -7,19 +7,19 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/The Agentic Future.png",
+      imageSrc: "/img/machine-readable-data-structure.png",
       title: "Machine-readable data structure",
       subtitle:
         "No PDFs, no invoices, no parsing required. Aplite returns structured JSON that agents can process instantly.",
     },
     {
-      imageSrc: "/img/The Agentic Future.png",
+      imageSrc: "/img/all-payment-types-supported.png",
       title: "All payment types supported",
       subtitle:
         "ACH, Wire, and SWIFT details formatted for instant agent processing. One API call returns everything needed for the payment type.",
     },
     {
-      imageSrc: "/img/The Agentic Future.png",
+      imageSrc: "/img/built-for-autonomy.png",
       title: "Built for autonomy",
       subtitle:
         "Verified data means agents can execute payments without human oversight—trust is built into the infrastructure.",

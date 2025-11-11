@@ -15,13 +15,13 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/ERP System.png",
+      imageSrc: "/img/integrate-aplites.png",
       title: "Integrate Aplite's API to autofill payment information",
       subtitle:
         "Users enter an Aplite PIN—verified banking details populate instantly. Cut manual entry by 99%, eliminate transcription errors, and reduce payment failures.",
     },
     {
-      imageSrc: "/img/ERP System.png",
+      imageSrc: "/img/keep-vendor-data.png",
       title: "Keep vendor data current automatically",
       subtitle:
         "Real-time updates from Aplite mean no outdated banking information in your ERP. Every payment uses verified, current details with audit-ready documentation.",

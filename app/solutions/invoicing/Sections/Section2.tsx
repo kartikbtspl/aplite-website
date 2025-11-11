@@ -9,13 +9,13 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/embed-aplite.png",
       title: "Embed Aplite PINs on invoices",
       subtitle:
         "Vendors add their Aplite PIN instead of account numbers. Customers pay using tamper-proof information pulled directly from Aplite—no altered PDFs, no fraudulent wire instructions.",
     },
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/Faster-payments-zero-fraud-risk.png",
       title: "Faster payments, zero fraud risk",
       subtitle:
         "Customers pay immediately when they trust the banking details. No verification delays, no compromised attachments, just verified information and instant confidence.",
