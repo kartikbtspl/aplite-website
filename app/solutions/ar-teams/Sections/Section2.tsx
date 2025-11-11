@@ -5,8 +5,22 @@ import CardsGrid from "@/components/ui/GridCard";
 import CardComponent from "@/components/ui/CardComponent";
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
 import AnimatedSplitSteps from "@/components/ui/AnimatedSplitSection";
+import { useEffect, useState } from "react";
 
 export default function Section2() {
+  const [iconSize, setIconSize] = useState<"sm" | "md" | "lg">("md");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setIconSize("sm");
+      else if (window.innerWidth < 1024) setIconSize("md");
+      else setIconSize("lg");
+    };
+
+    handleResize(); // set initial size
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const cardData = [
     {
       imageSrc: "/img/AR.png",
@@ -78,16 +92,22 @@ export default function Section2() {
     <>
       <BlankCard>
         <div className="p-10">
-          <h1 className="text-4xl md:text-7xl font-light tracking-tight  flex flex-col">
-            <div className="flex justify-start mb-4">
-              Simplify
-              <strong className="mx-4"> Vendor Payments</strong>
-            </div>
-
-            <div className="flex justify-end">
-              with <strong className="mx-4"> Verified Data </strong>
-            </div>
-          </h1>
+          <div className="px-4 sm:px-6 md:px-10">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-light tracking-tight flex flex-col gap-3 sm:gap-4 leading-tight">
+              <div className="flex flex-col sm:flex-row sm:justify-start text-center sm:text-left">
+                Simplify
+                <strong className="mx-0 sm:mx-4 font-semibold text-primary">
+                  Vendor Payments
+                </strong>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:justify-end text-center sm:text-right">
+                with
+                <strong className="mx-0 sm:mx-4 font-semibold text-primary">
+                  Verified Data
+                </strong>
+              </div>
+            </h1>
+          </div>
 
           <CardsGrid>
             {cardData.map((card, index) => (
@@ -105,19 +125,23 @@ export default function Section2() {
               Why Accounts Receivable Teams choose Aplite
             </div>
           </h1>
-
-          <div className="grid grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-3">
+              <div
+                key={index}
+                className="flex items-start sm:items-center gap-3 text-base sm:text-lg md:text-xl"
+              >
                 <div className="flex-shrink-0">
                   <ReusableReactIcon
-                    sizeprop="md"
+                    sizeprop={iconSize}
                     squareBgColor="#003cff"
                     icon={CheckCircle}
                     iconBgColor="#93c5fd"
                   />
                 </div>
-                <p className="text-xl font-medium  leading-tight">{feature}</p>
+                <p className="font-medium leading-snug sm:leading-tight">
+                  {feature}
+                </p>
               </div>
             ))}
           </div>

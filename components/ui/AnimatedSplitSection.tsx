@@ -31,9 +31,8 @@ const StepSlide: React.FC<{
   const progressStart = index * stepDuration;
   const progressEnd = (index + 1) * stepDuration;
 
-  // Key change for overlapping animation:
-  // Overlap factor: 0.25 (25% overlap with the preceding and succeeding steps)
-  const overlapFactor = 0.25; 
+  // Key Change: Increased overlap factor to 0.50 (50% overlap) - Keeping this.
+  const overlapFactor = 0.50; 
   const overlap = overlapFactor * stepDuration;
 
   // New extended scroll range for the animation
@@ -44,12 +43,11 @@ const StepSlide: React.FC<{
   const animMid = (progressStart + progressEnd) / 2;
 
   // Y-TRANSFORM (Slide Up/Down)
-  // Animation runs from the extended start/end
   const y = useTransform(
     scrollYProgress,
     // [Start scrolling early, End scrolling late]
     [animStart, animEnd], 
-    ["100%", "-100%"] // Moves from bottom (100%) to top (-100%)
+    ["100%", "-100%"] 
   );
 
   // SCALE TRANSFORMS (Peak at the step's center)
@@ -76,35 +74,40 @@ const StepSlide: React.FC<{
   return (
     <motion.div
       style={{ opacity, y, scale }} 
-      className={`absolute inset-0 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 px-6 md:px-16 ${
+      // UPDATED: Reduced gap on mobile (gap-8) and set proper alignment for mobile layout.
+      // Used 'md:flex-row' to ensure horizontal split on larger screens.
+      className={`absolute inset-0 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16 px-6 md:px-16 ${
         isReversed ? "md:flex-row-reverse" : ""
       } transform-gpu origin-center`} 
     >
       {/* IMAGE SIDE */}
-      <div className="relative w-full md:w-1/2 h-[300px] md:h-[450px] flex justify-center items-center overflow-hidden">
+      {/* UPDATED: Reduced image height for mobile (h-[200px] instead of h-[300px]) */}
+      <div className="relative w-full md:w-1/2 h-[200px] md:h-[450px] flex justify-center items-center overflow-hidden">
         {step.images[0] && (
           <img
+            // Key Change: Use 'contain' on mobile to prevent image cropping, 'cover' on desktop.
             src={step.images[0]}
             alt={`step-${index}-img1`}
-            className="absolute w-full h-full rounded-2xl shadow-xl object-cover"
+            className="absolute w-full h-full rounded-2xl shadow-xl object-contain md:object-cover p-4 md:p-0"
           />
         )}
       </div>
 
       {/* TEXT SIDE */}
-      <div className="w-full md:w-1/2 flex flex-col gap-4 text-center md:text-left">
+      {/* UPDATED: Ensured text alignment is centered on mobile, left on desktop */}
+      <div className="w-full md:w-1/2 flex flex-col gap-3 text-center md:text-left">
         {Icon && (
-          <div className="flex justify-center md:justify-start mb-2">
+          <div className="flex justify-center md:justify-start mb-1">
             <ReusableReactIcon 
-                sizeprop="xl" 
+                sizeprop="lg" 
                 icon={Icon} 
             />
           </div>
         )}
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900">
           {step.title}
         </h2>
-        <p className="text-gray-600 text-lg max-w-lg mx-auto md:mx-0">
+        <p className="text-gray-600 text-base sm:text-lg max-w-lg mx-auto md:mx-0">
           {step.description}
         </p>
       </div>
@@ -164,8 +167,9 @@ const Dot: React.FC<{ index: number; dotProgress: MotionValue<number> }> = ({
   index,
   dotProgress,
 }) => {
-  const rangeStart = index - 0.2;
-  const rangeEnd = index + 0.8;
+  // Minor adjustment to rangeStart/End for smoother Dot activation/deactivation
+  const rangeStart = index - 0.3;
+  const rangeEnd = index + 0.9;
 
   const opacity = useTransform(dotProgress, [index - 0.4, index + 0.6], [0.3, 1]);
   const scale = useTransform(dotProgress, [index - 0.2, index + 0.2], [1, 1.3]);
@@ -185,6 +189,7 @@ const Dot: React.FC<{ index: number; dotProgress: MotionValue<number> }> = ({
 };
 
 export default AnimatedSplitSteps;
+
 
 // "use client";
 
