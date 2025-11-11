@@ -4,9 +4,9 @@ import { CircleArrowOutUpRight } from "lucide-react";
 export default function Section3() {
   return (
     <BlankCard>
-      <div className="p-10 space-y-6">
+      <div className="p-6 space-y-6">
         <div className="flex justify-center items-start">
-          <p className="text-lg font-medium text-[#1b2f6e] leading-tight">
+          <p className="text-2xl font-medium  leading-tight">
             Ready to transform your AP process?
           </p>
         </div>
