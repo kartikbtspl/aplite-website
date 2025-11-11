@@ -2,19 +2,17 @@
 
 import { Play, Pause } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export function ApliteAdvantage() {
   const [activeSolutionIndex, setActiveSolutionIndex] = useState(0);
   const [isSolutionPaused, setIsSolutionPaused] = useState(false);
-  const [showContent, setShowContent] = useState(false);
   const solutionIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const contentTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!isSolutionPaused) {
       solutionIntervalRef.current = setInterval(() => {
         setActiveSolutionIndex((prev) => (prev + 1) % solutions.length);
-        setShowContent(false);
       }, 3000);
     } else {
       if (solutionIntervalRef.current) clearInterval(solutionIntervalRef.current);
@@ -22,17 +20,8 @@ export function ApliteAdvantage() {
 
     return () => {
       if (solutionIntervalRef.current) clearInterval(solutionIntervalRef.current);
-      if (contentTimeoutRef.current) clearTimeout(contentTimeoutRef.current);
     };
   }, [isSolutionPaused]);
-
-  useEffect(() => {
-    setShowContent(false);
-    if (contentTimeoutRef.current) clearTimeout(contentTimeoutRef.current);
-    contentTimeoutRef.current = setTimeout(() => {
-      setShowContent(true);
-    }, 3000);
-  }, [activeSolutionIndex]);
 
   const toggleSolutionPause = () => {
     setIsSolutionPaused(!isSolutionPaused);
@@ -60,6 +49,13 @@ export function ApliteAdvantage() {
       title: "Built for the Agentic Future",
       content: "Structured, machine-readable payment data that AI agents can process instantly. While others scramble to adapt, Aplite provides the infrastructure autonomous payments need—ACH, Wire, and SWIFT details in the exact format agents require."
     },
+  ];
+
+  const advantageImages = [
+    "/img/e5.png",
+    "/img/e4.png",
+    "/img/t1.png",
+    "/img/t4.png",
   ];
 
   return (
@@ -118,20 +114,20 @@ export function ApliteAdvantage() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
-              <div className="rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center">
-                <div className="text-center">
-                  {showContent ? (
-                    <div className="animate-fadeIn">
-                      <h4 className="text-xl font-bold mb-4 text-gray-900">{solutions[activeSolutionIndex].title}</h4>
-                      <p className="text-sm text-gray-600">{solutions[activeSolutionIndex].content}</p>
-                    </div>
-                  ) : (
-                    <div className="text-center">
-                      <div className="text-2xl font-bold mb-2">{activeSolutionIndex + 1}</div>
-                      <div className="text-sm text-gray-600">Loading...</div>
-                    </div>
-                  )}
+            <div className="p-2 bg-gray-100 rounded-2xl">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={advantageImages[activeSolutionIndex] || "/img/AR.png"}
+                    alt={`Advantage ${activeSolutionIndex + 1}`}
+                    fill
+                    className={`rounded-lg object-cover transition-all duration-500 ${
+                      activeSolutionIndex === 0 ? '' :
+                      activeSolutionIndex === 1 ? '' :
+                      activeSolutionIndex === 2 ? '' :
+                      ''
+                    }`}
+                  />
                 </div>
               </div>
             </div>

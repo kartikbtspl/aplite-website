@@ -14,17 +14,17 @@ export function Stats() {
       <div className="">
         <CardsGrid>
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/79.png"
             title="79%"
             subtitle="of organizations faced payment fraud in 2024 - AFP 2024 Payments Fraud and Control Report"
           />
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/50B.png"
             title="$50B+"
             subtitle="lost to vendor impersonation and wire scams - FBI IC3 2024 Internet Crime Report"
           />
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/183k.png"
             title="$183k"
             subtitle="average loss per incident from payment fraud attacks"
           />

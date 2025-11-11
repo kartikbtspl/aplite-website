@@ -5,10 +5,10 @@ import CardComponent from "../ui/CardComponent";
 import CardFlowAnimation from "../ui/CardFlowAnimation";
 
 const cards = [
-  { imageSrc: "/img/AR.png", title: "Stops fraud at the source", subtitle: "No more fake invoices, compromised emails, or altered payment details. Every banking update is verified before it ever reaches your AP team, protecting you from the start." },
-  { imageSrc: "/img/AR.png", title: "Grows stronger with every business", subtitle: "Each company that joins Aplite strengthens the network, making every transaction more secure. Together, we’re building the global trust layer for business payments." },
-  { imageSrc: "/img/AR.png", title: "Cuts verification time by 99%", subtitle: "Instantly search any business and access verified banking information in seconds. Eliminate manual checks and speed up every payment with total confidence." },
-  { imageSrc: "/img/AR.png", title: "Keeps you in control", subtitle: "Get real-time alerts for every banking change, with full visibility and audit-ready timestamps. Stay informed and in charge before every payment you make." },
+  { imageSrc: "/Stops.png", title: "Stops fraud at the source", subtitle: "No more fake invoices, compromised emails, or altered payment details. Every banking update is verified before it ever reaches your AP team, protecting you from the start." },
+  { imageSrc: "/Grows.png", title: "Grows stronger with every business", subtitle: "Each company that joins Aplite strengthens the network, making every transaction more secure. Together, we’re building the global trust layer for business payments." },
+  { imageSrc: "/Cuts.png", title: "Cuts verification time by 99%", subtitle: "Instantly search any business and access verified banking information in seconds. Eliminate manual checks and speed up every payment with total confidence." },
+  { imageSrc: "/Keeps.png", title: "Keeps you in control", subtitle: "Get real-time alerts for every banking change, with full visibility and audit-ready timestamps. Stay informed and in charge before every payment you make." },
   // ...add more as needed
 ];
 

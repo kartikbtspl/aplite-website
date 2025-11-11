@@ -13,22 +13,22 @@ export function WhoWeServe() {
       <div className="">
         <CardFlowAnimation cards={[
           {
-            imageSrc: "/img/AR.png",
+            imageSrc: "/Accounts Payable Teams.png",
             title: "Accounts Payable Teams",
             subtitle: "Search, verify, and pay in seconds"
           },
           {
-            imageSrc: "/img/AR.png",
+            imageSrc: "/Accounts Receivable Teams.png",
             title: "Accounts Receivable Teams",
             subtitle: "Share your banking information securely through an immutable payment profile that customers can trust."
           },
           {
-            imageSrc: "/img/AR.png",
+            imageSrc: "/bank & fintch.png",
             title: "Banks & Fintechs",
             subtitle: "Integrate verified, structured payment data that reduces errors, speeds processing, and eliminates fraud risk."
           },
           {
-            imageSrc: "/img/AR.png",
+            imageSrc: "/The Agentic Future (2).png",
             title: "The Agentic Future",
             subtitle: "We're building the structured payment infrastructure that AI agents need to process transactions autonomously and accurately."
           }
