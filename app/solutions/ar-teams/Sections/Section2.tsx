@@ -1,17 +1,11 @@
-import {
-  CheckCircle,
-  Bell,
-  Search,
-  CircleArrowOutUpRight,
-  UserCircle,
-} from "lucide-react";
-import MultiSectionCard from "@/components/ui/card";
-import CardContainer from "../../../../components/ui/CardContainer";
+import { CheckCircle, Key, TrendingUp, UserCircle } from "lucide-react";
+
 import BlankCard from "@/components/ui/BlankCard";
 import CardsGrid from "@/components/ui/GridCard";
 import CardComponent from "@/components/ui/CardComponent";
-import Button from "@/components/ui/Buttons";
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
+import AnimatedSplitSteps from "@/components/ui/AnimatedSplitSection";
+
 export default function Section2() {
   const cardData = [
     {
@@ -45,6 +39,41 @@ export default function Section2() {
     "Build trust at scale",
   ];
 
+  const steps = [
+    {
+      id: 1,
+      icon: UserCircle,
+      title: "Create your verified profile",
+      description:
+        "Set up your business profile with verified banking information.",
+      images: ["/img/t1.png"],
+    },
+    {
+      id: 2,
+      icon: Key,
+      title: "Add Aplite PIN to invoices",
+      description:
+        "Include your unique PIN instead of editable banking details.",
+      images: ["/img/t2.png"],
+    },
+    {
+      id: 3,
+      icon: CheckCircle,
+      title: "Access verified details",
+      description:
+        "They enter your PIN on Aplite and see your verified payment information.",
+      images: ["/img/t3.png"],
+    },
+    {
+      id: 4,
+      icon: TrendingUp,
+      title: "Get paid faster",
+      description:
+        "No verification delays, just immediate confidence and payment.",
+      images: ["/img/t4.png"],
+    },
+  ];
+
   return (
     <>
       <BlankCard>
@@ -73,7 +102,7 @@ export default function Section2() {
 
           <h1 className="text-3xl flex justify-center pb-8 md:text-5xl font-lg leading-tight tracking-tight ">
             <div className="flex justify-start">
-             Why Accounts Receivable Teams choose Aplite
+              Why Accounts Receivable Teams choose Aplite
             </div>
           </h1>
 
@@ -95,104 +124,12 @@ export default function Section2() {
 
           <div className="py-6">
             <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight ">
-              <div className="flex justify-start">
-                How It Works
-              </div>
+              <div className="flex justify-start">How It Works</div>
             </h1>
           </div>
-
-          <div className="flex gap-8">
-            <div className="flex-1   justify-center">
-              <BlankCard> .</BlankCard>
-            </div>
-            <div className="flex-1">
-              <div>
-                {/* 1 */}
-                {/* <div className="flex items-start gap-3 md:gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="rounded-full flex items-center justify-center">
-                      <UserCircle
-                        size={35}
-                        className="md:size-[45px] stroke-1"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="text-base md:text-lg font-extrabold text-gray-900">
-                      Vendor adds Aplite PIN to invoice template
-                    </div>
-                    <div className="text-xs md:text-sm text-[#718096] mt-1">
-                      Instead of printing editable banking details on invoices.
-                    </div>
-                  </div>
-                </div> */}
-                {/* 2 */}
-                {/* <div className="flex items-start gap-3 md:gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="rounded-full flex items-center justify-center">
-                      <UserCircle
-                        size={35}
-                        className="md:size-[45px] stroke-1"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="text-base md:text-lg font-extrabold text-gray-900">
-                      Vendor adds Aplite PIN to invoice template
-                    </div>
-                    <div className="text-xs md:text-sm text-[#718096] mt-1">
-                      Instead of printing editable banking details on invoices.
-                    </div>
-                  </div>
-                </div> */}
-
-                {/* 3 */}
-                {/* <div className="flex items-start gap-3 md:gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="rounded-full flex items-center justify-center">
-                      <UserCircle
-                        size={35}
-                        className="md:size-[45px] stroke-1"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="text-base md:text-lg font-extrabold text-gray-900">
-                      Vendor adds Aplite PIN to invoice template
-                    </div>
-                    <div className="text-xs md:text-sm text-[#718096] mt-1">
-                      Instead of printing editable banking details on invoices.
-                    </div>
-                  </div>
-                </div> */}
-
-                {/* 4 */}
-                {/* <div className="flex items-start gap-3 md:gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="rounded-full flex items-center justify-center">
-                      <UserCircle
-                        size={35}
-                        className="md:size-[45px] stroke-1"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="text-base md:text-lg font-extrabold text-gray-900">
-                      Vendor adds Aplite PIN to invoice template
-                    </div>
-                    <div className="text-xs md:text-sm text-[#718096] mt-1">
-                      Instead of printing editable banking details on invoices.
-                    </div>
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
         </div>
+
+        <AnimatedSplitSteps steps={steps} />
       </BlankCard>
     </>
   );
