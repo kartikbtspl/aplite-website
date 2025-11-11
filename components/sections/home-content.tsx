@@ -10,16 +10,34 @@ import { WhoWeServe } from "./who-we-serve";
 
 export function HomeContent() {
   return (
-    <section className="bg-white m-2 sm:m-4 md:m-6 lg:m-8 xl:m-12 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 overflow-hidden">
-      <PaymentFraudNoMargin />
-      <Benefits />
-      <BeforeAfterAplite />
-      <FinancialTeamFeatures />
-      <Stats />
-      <BiggerProblem />
-      <WhoWeServe />
-      <ApliteAdvantage />
-      <TaglineSec />
+    <section className="bg-white m-2 sm:m-4 md:m-6 lg:m-8 xl:m-12 rounded-xl sm:rounded-2xl overflow-hidden">
+      <div className="p-4 sm:p-6 lg:p-8">
+        <PaymentFraudNoMargin />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <Benefits />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <BeforeAfterAplite />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <FinancialTeamFeatures />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <Stats />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <BiggerProblem />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <WhoWeServe />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <ApliteAdvantage />
+      </div>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <TaglineSec />
+      </div>
     </section>
   );
 }

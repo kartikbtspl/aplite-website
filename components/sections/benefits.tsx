@@ -79,7 +79,7 @@ export function Benefits() {
   return (
     <section className="bg-white mt-20">
       {/* <PaymentFraudNoMargin /> */}
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className=" sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             How It Works
@@ -93,7 +93,7 @@ export function Benefits() {
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
           <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh]">
             {/* Left sub-section - Animated based on active risk */}
-            <div className="pt-10 pl-10 bg-[#4914FF] rounded-2xl">
+            <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
               <div className={`rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center ${activeRiskIndex === 0 ? 'bg-blue-500 animate-bounce' :
                   activeRiskIndex === 1 ? 'bg-blue-500 ' :
                     activeRiskIndex === 2 ? 'bg-blue-500 ' :
@@ -191,7 +191,7 @@ export function Benefits() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="pt-10 pl-10 bg-[#4914FF] rounded-2xl">
+            <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
               <div className={`rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center ${
                 activeSolutionIndex === 0 ? 'bg-blue-500 ' :
                 activeSolutionIndex === 1 ? 'bg-blue-500 ' :

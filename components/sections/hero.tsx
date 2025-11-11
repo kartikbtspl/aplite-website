@@ -40,7 +40,7 @@ export function Hero() {
                   className="h-10 sm:h-12 md:h-14 w-full rounded-xl border bg-background pl-9 sm:pl-10 md:pl-12 pr-4 text-sm sm:text-base shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
-              <Button variant="primary" size="md" label="Get Started" className="w-auto px-6 sm:px-8">
+              <Button variant="primary" size="lg" label="Get Started" className="w-auto px-6 sm:px-8 h-10 sm:h-12 md:h-14">
               </Button>
             </div>
           </div>
