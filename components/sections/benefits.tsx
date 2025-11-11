@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { PaymentFraudNoMargin } from "./payment-fraud-no-margin";
 import { BeforeAfterAplite } from "./before-after-aplite";
 import { FinancialTeamFeatures } from "./financial-team-features";
+import Image from "next/image";
 
 export function Benefits() {
   const [activeRiskIndex, setActiveRiskIndex] = useState(0);
@@ -67,6 +68,14 @@ export function Benefits() {
     "Vendor data - unverified or wrong",
   ];
 
+  const riskImages = [
+    "/img/risk1.png",
+    "/img/risk2.png", 
+    "/img/risk3.png",
+    "/img/risk4.png",
+    "/img/risk5.png",
+  ];
+
   const solutions = [
     "Instant verification eliminates the risk of sending money to the wrong account",
     "Up-to-date data removes delays and failed payments",
@@ -74,6 +83,15 @@ export function Benefits() {
     "Vendor verification ensures banking details are legitimate and current",
     "All payment information is pre-verified and regularly updated for accuracy",
     "Aplite integrates seamlessly with your existing workflow and sending process",
+  ];
+
+  const solutionImages = [
+    "/img/solution1.png",
+    "/img/solution2.png",
+    "/img/solution3.png",
+    "/img/solution4.png",
+    "/img/solution5.png",
+    "/img/solution6.png",
   ];
 
   return (
@@ -94,15 +112,21 @@ export function Benefits() {
           <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh]">
             {/* Left sub-section - Animated based on active risk */}
             <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
-              <div className={`rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center ${activeRiskIndex === 0 ? 'bg-blue-500 animate-bounce' :
-                  activeRiskIndex === 1 ? 'bg-blue-500 ' :
-                    activeRiskIndex === 2 ? 'bg-blue-500 ' :
-                      activeRiskIndex === 3 ? 'bg-blue-500 ' :
-                        'bg-blue-500 '
-                }`}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-2">{activeRiskIndex + 1}</div>
-                  <div className="text-sm text-gray-600">Risk Animation</div>
+              <div className="rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={riskImages[activeRiskIndex] || "/img/AR.png"}
+                    alt={`Risk ${activeRiskIndex + 1}`}
+                    width={400}
+                    height={300}
+                    className={`w-full h-auto max-w-[300px] rounded-lg object-contain transition-all duration-500 ${
+                      activeRiskIndex === 0 ? 'animate-pulse scale-110' :
+                      activeRiskIndex === 1 ? 'animate-bounce scale-105' :
+                      activeRiskIndex === 2 ? 'animate-pulse scale-110' :
+                      activeRiskIndex === 3 ? 'animate-bounce scale-105' :
+                      'animate-pulse scale-110'
+                    }`}
+                  />
                 </div>
               </div>
             </div>
@@ -192,17 +216,22 @@ export function Benefits() {
 
             {/* Right sub-section - Animated based on active solution */}
             <div className="pt-6 pl-6 bg-[#4914FF] rounded-2xl">
-              <div className={`rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center ${
-                activeSolutionIndex === 0 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 1 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 2 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 3 ? 'bg-blue-500 ' :
-                activeSolutionIndex === 4 ? 'bg-blue-500 ' :
-                'bg-blue-500 '
-              }`}>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-2">{activeSolutionIndex + 1}</div>
-                  <div className="text-sm text-gray-600">Solution Animation</div>
+              <div className="rounded-2xl bg-white p-8 h-full transition-all duration-500 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={solutionImages[activeSolutionIndex] || "/img/AR.png"}
+                    alt={`Solution ${activeSolutionIndex + 1}`}
+                    width={400}
+                    height={300}
+                    className={`w-full h-auto max-w-[300px] rounded-lg object-contain transition-all duration-500 ${
+                      activeSolutionIndex === 0 ? 'animate-pulse scale-110' :
+                      activeSolutionIndex === 1 ? 'animate-bounce scale-105' :
+                      activeSolutionIndex === 2 ? 'animate-pulse scale-110' :
+                      activeSolutionIndex === 3 ? 'animate-bounce scale-105' :
+                      activeSolutionIndex === 4 ? 'animate-pulse scale-110' :
+                      'animate-bounce scale-105'
+                    }`}
+                  />
                 </div>
               </div>
             </div>
