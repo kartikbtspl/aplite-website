@@ -49,7 +49,7 @@ export default function Section2() {
     <>
       <BlankCard>
         <div className="p-10">
-          <h1 className="text-4xl md:text-7xl font-light tracking-tight text-[#072484]  flex flex-col">
+          <h1 className="text-4xl md:text-7xl font-light tracking-tight  flex flex-col">
             <div className="flex justify-start mb-4">
               Simplify
               <strong className="mx-4"> Vendor Payments</strong>
@@ -71,11 +71,9 @@ export default function Section2() {
             ))}
           </CardsGrid>
 
-          <h1 className="text-3xl flex justify-center pb-8 md:text-5xl font-lg leading-tight tracking-tight text-[#072484] ">
+          <h1 className="text-3xl flex justify-center pb-8 md:text-5xl font-lg leading-tight tracking-tight ">
             <div className="flex justify-start">
-              Why <strong className="mx-1">Accounts Receivable </strong> Teams
-              choose
-              <strong className="mx-4">Aplite</strong>
+             Why Accounts Receivable Teams choose Aplite
             </div>
           </h1>
 
@@ -84,23 +82,21 @@ export default function Section2() {
               <div key={index} className="flex items-center gap-3">
                 <div className="flex-shrink-0">
                   <ReusableReactIcon
-                    sizeprop="lg"
+                    sizeprop="md"
                     squareBgColor="#003cff"
                     icon={CheckCircle}
                     iconBgColor="#93c5fd"
                   />
                 </div>
-                <p className="text-lg font-medium text-[#1b2f6e] leading-tight">
-                  {feature}
-                </p>
+                <p className="text-xl font-medium  leading-tight">{feature}</p>
               </div>
             ))}
           </div>
 
           <div className="py-6">
-            <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight text-[#072484] ">
+            <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight ">
               <div className="flex justify-start">
-                How <strong className="mx-2"> It Works </strong>
+                How It Works
               </div>
             </h1>
           </div>
@@ -193,8 +189,6 @@ export default function Section2() {
                     </div>
                   </div>
                 </div> */}
-
-                
               </div>
             </div>
           </div>

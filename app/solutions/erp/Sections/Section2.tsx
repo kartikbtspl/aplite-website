@@ -8,13 +8,13 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/ERP System.png",
       title: "Integrate Aplite's API to autofill payment information",
       subtitle:
         "Users enter an Aplite PIN—verified banking details populate instantly. Cut manual entry by 99%, eliminate transcription errors, and reduce payment failures.",
     },
     {
-      imageSrc: "/img/AR.png",
+      imageSrc: "/img/ERP System.png",
       title: "Keep vendor data current automatically",
       subtitle:
         "Real-time updates from Aplite mean no outdated banking information in your ERP. Every payment uses verified, current details with audit-ready documentation.",
@@ -36,13 +36,13 @@ export default function Section2() {
   return (
     <BlankCard>
       <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-light tracking-tight text-[#072484] flex flex-col">
+        <h1 className="text-4xl md:text-7xl font-light tracking-tight flex flex-col">
           <div className="flex justify-start mb-4">
-            <strong className="mx-4">Autofill</strong> Verified Banking
+            Integrate <strong className="mx-4">Once only</strong> &
           </div>
 
           <div className="flex justify-end">
-            Information in <strong className="mx-4">Your ERP</strong>
+            Always Pay with <strong className="mx-4">Verified Data.</strong>
           </div>
         </h1>
       </div>
@@ -61,10 +61,9 @@ export default function Section2() {
       </div>
 
       <div className="p-10">
-        <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight text-[#072484]">
+        <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight">
           <div className="flex justify-start">
-            Why <strong className="mx-1">ERP Systems</strong> integrate
-            <strong className="mx-4">Aplite</strong>
+            Why ERP Systems integrate Aplite
           </div>
         </h1>
       </div>
@@ -75,15 +74,13 @@ export default function Section2() {
           <div key={index} className="flex items-center gap-3">
             <div className="flex-shrink-0">
               <ReusableReactIcon
-                sizeprop="lg"
+                sizeprop="md"
                 squareBgColor="#003cff"
                 icon={CheckCircle}
                 iconBgColor="#93c5fd"
               />
             </div>
-            <p className="text-lg font-medium text-[#1b2f6e] leading-tight">
-              {feature}
-            </p>
+            <p className="text-xl font-medium  leading-tight">{feature}</p>
           </div>
         ))}
       </div>

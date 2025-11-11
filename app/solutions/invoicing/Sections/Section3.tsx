@@ -24,8 +24,8 @@ export default function Section3() {
   return (
     <BlankCard>
       <div className="p-10 space-y-8">
-        <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-[#072484] text-center">
-          How It <strong>Works</strong>
+        <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-center">
+          How It Works
         </h1>
 
         <div className="space-y-4 max-w-4xl mx-auto">
@@ -37,7 +37,7 @@ export default function Section3() {
                 className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-200"
               >
                 <div className="flex-shrink-0">
-                  <Icon size={40} className="text-[#072484] stroke-1" />
+                  <Icon size={40} className="stroke-1" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">
@@ -51,12 +51,12 @@ export default function Section3() {
         </div>
 
         <div className="space-y-4 text-center pt-6">
-          <p className="text-lg text-[#072484] font-medium">
+          <p className="text-2xl font-medium">
             Ready to eliminate invoice fraud?
           </p>
           <Button
             variant="primary"
-            size="md"
+            size="sm"
             showIcon={true}
             onClick={() => alert("Talk To Our Team...")}
           >

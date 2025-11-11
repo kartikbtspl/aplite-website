@@ -12,7 +12,7 @@ const BlankCard: React.FC<BlankCardProps> = ({
   className = "" 
 }) => {
   return (
-    <div className={`bg-white mx-10 rounded-2xl shadow-sm ${className}`}>
+    <div className={`bg-white mx-10 rounded-2xl shadow-sm p-6 overflow-visible  ${className}`}>
       {children}
     </div>
   );

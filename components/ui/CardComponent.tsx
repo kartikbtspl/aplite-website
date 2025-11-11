@@ -53,7 +53,7 @@ export default function CardComponent({
       </div>
 
       {/* Bottom Section */}
-      <div className="p-6 text-[#1b2f6e]">
+      <div className="p-6 ">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="mt-2 text-sm">{subtitle}</p>
       </div>
