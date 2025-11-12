@@ -9,25 +9,25 @@ import { CircleArrowOutUpRight } from "lucide-react";
 export default function Section2() {
   const cardData = [
     {
-      imageSrc: "/img/api.png",
+      imageSrc: "/solutions/banks-fintech/api.png",
       title: "Integrate Aplite's powerful API",
       subtitle:
         "Reduce manual banking information entry and eliminate payment errors by 99.9%. Our API delivers verified banking details directly into your payment flows.",
     },
     {
-      imageSrc: "/img/instant-autofill.png",
+      imageSrc: "/solutions/banks-fintech/instant-autofill.png",
       title: "Instant autofill for payment forms",
       subtitle:
         "Users enter an Aplite PIN, choose their preferred payment method (ACH, Wire, or SWIFT), and forms autofill instantly with accurate details for the intended recipient.",
     },
     {
-      imageSrc: "/img/meet-iso.png",
+      imageSrc: "/solutions/banks-fintech/meet-iso.png",
       title: "Meet ISO 20022 compliance standards",
       subtitle:
         "Enrich payment data with verified business information, reduce payment fraud and returns, and ensure regulatory compliance all through one integration.",
     },
     {
-      imageSrc: "/img/turn-verification.png",
+      imageSrc: "/solutions/banks-fintech/turn-verification.png",
       title: "Turn verification into a competitive advantage",
       subtitle:
         "Offer your customers fraud-proof payments backed by verified banking information. Reduce chargebacks, improve success rates, and build trust at scale.",

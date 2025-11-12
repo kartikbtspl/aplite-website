@@ -7,19 +7,19 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/machine-readable-data-structure.png",
+      imageSrc: "/solutions/ai-agents/machine-readable.png",
       title: "Machine-readable data structure",
       subtitle:
         "No PDFs, no invoices, no parsing required. Aplite returns structured JSON that agents can process instantly.",
     },
     {
-      imageSrc: "/img/all-payment-types-supported.png",
+      imageSrc: "/solutions/ai-agents/all-payment-types.png",
       title: "All payment types supported",
       subtitle:
         "ACH, Wire, and SWIFT details formatted for instant agent processing. One API call returns everything needed for the payment type.",
     },
     {
-      imageSrc: "/img/built-for-autonomy.png",
+      imageSrc: "/solutions/ai-agents/built-for-autonomy.png",
       title: "Built for autonomy",
       subtitle:
         "Verified data means agents can execute payments without human oversight—trust is built into the infrastructure.",
@@ -40,16 +40,30 @@ export default function Section2() {
 
   return (
     <BlankCard>
-      <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-light tracking-tight flex flex-col">
-          <div className="flex justify-start mb-4">
-            <strong className="mx-4"> Verified Intelligence </strong>
+      <div className="p-10 md:p-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
+          {/* Left side - Heading with cascading indentation */}
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
+              <div className="mb-1">
+                More tools in
+              </div>
+              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
+                your toolkit than
+              </div>
+              <div className="pl-32 md:pl-40 lg:pl-48">
+                ever before.
+              </div>
+            </h1>
           </div>
-
+          
+          {/* Right side - Description aligned to the bottom right */}
           <div className="flex justify-end">
-            for Every <strong className="mx-4">Payment Flow</strong>
+            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-xs text-right">
+              Effortlessly manage every merchant in your portfolio, with an all-in-one sales hub that brings CRM features, digital application creation, and dynamic residual payouts into one place.
+            </p>
           </div>
-        </h1>
+        </div>
       </div>
 
       <div className="px-10">

@@ -48,7 +48,7 @@ export function Header() {
         }`}>
           <Link href="/" className="flex items-center">
             <Image 
-              src={isScrolled ? "/Aplite-Logo-dark.svg" : "/Aplite-logo.svg"}
+              src={isScrolled ? "/brand/Aplite-Logo-dark.svg" : "/brand/Aplite-logo.svg"}
               alt="Aplite Logo" 
               width={120} 
               height={32}
@@ -160,7 +160,7 @@ export function Header() {
                 >
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                     <Image 
-                      src="/img/header/payable.png" 
+                      src="/navigation/payable.png" 
                       alt="AP Teams" 
                       width={40} 
                       height={40}
@@ -180,7 +180,7 @@ export function Header() {
                 >
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                     <Image 
-                      src="/img/header/receiveable.png" 
+                      src="/navigation/receivable.png" 
                       alt="AR Teams" 
                       width={40} 
                       height={40}
@@ -200,7 +200,7 @@ export function Header() {
                 >
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                     <Image 
-                      src="/img/header/Bank-fintech.png" 
+                      src="/navigation/bank-fintech.png" 
                       alt="Banks & Fintech" 
                       width={40} 
                       height={40}
@@ -223,7 +223,7 @@ export function Header() {
                 >
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                     <Image 
-                      src="/img/header/ERP.png" 
+                      src="/navigation/erp.png" 
                       alt="ERP Systems" 
                       width={40} 
                       height={40}
@@ -243,7 +243,7 @@ export function Header() {
                 >
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                     <Image 
-                      src="/img/header/Invoice-2.png" 
+                      src="/navigation/invoice.png" 
                       alt="Invoicing Software" 
                       width={40} 
                       height={40}
@@ -263,7 +263,7 @@ export function Header() {
                 >
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                     <Image 
-                      src="/img/header/AI.png" 
+                      src="/navigation/ai.png" 
                       alt="AI Agents" 
                       width={40} 
                       height={40}
@@ -298,7 +298,7 @@ export function Header() {
               <div className="flex items-center justify-between border-b p-4">
                 <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
                   <Image 
-                    src="/Aplite-logo.svg" 
+                    src="/brand/Aplite-logo.svg" 
                     alt="Aplite Logo" 
                     width={120} 
                     height={32}

@@ -49,7 +49,7 @@ export function Hero() {
           {/* <div className="flex-1 flex justify-center h-[90vh] lg:justify-end -z-10">
             <div className="w-[150%] rounded-l-3xl overflow-hidden">
               <Image
-                src="/laptop-dashboard.png"
+                src="/general/laptop-dashboard.png"
                 alt="Laptop Dashboard"
                 width={1800}
                 height={1200}

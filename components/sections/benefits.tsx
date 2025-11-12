@@ -69,11 +69,11 @@ export function Benefits() {
   ];
 
   const riskImages = [
-    "/risk.png",
-    "/risk.png", 
-    "/risk.png",
-    "/risk.png",
-    "/risk.png",
+    "/home/risk.png",
+    "/home/risk.png", 
+    "/home/risk.png",
+    "/home/risk.png",
+    "/home/risk.png",
   ];
 
   const solutions = [
@@ -86,12 +86,12 @@ export function Benefits() {
   ];
 
   const solutionImages = [
-    "/solutions.png",
-    "/solutions.png",
-    "/solutions.png",
-    "/solutions.png",
-    "/solutions.png",
-    "/solutions.png",
+    "/home/solutions.png",
+    "/home/solutions.png",
+    "/home/solutions.png",
+    "/home/solutions.png",
+    "/home/solutions.png",
+    "/home/solutions.png",
   ];
 
   return (
@@ -115,7 +115,7 @@ export function Benefits() {
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
-                    src={riskImages[activeRiskIndex] || "/img/AR.png"}
+                    src={riskImages[activeRiskIndex] || "/home/risk.png"}
                     alt={`Risk ${activeRiskIndex + 1}`}
                     fill
                     className={`rounded-2xl object-cover transition-all duration-500 ${
@@ -218,7 +218,7 @@ export function Benefits() {
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
-                    src={solutionImages[activeSolutionIndex] || "/img/AR.png"}
+                    src={solutionImages[activeSolutionIndex] || "/home/solutions.png"}
                     alt={`Solution ${activeSolutionIndex + 1}`}
                     fill
                     className={`rounded-lg object-cover transition-all duration-500 ${

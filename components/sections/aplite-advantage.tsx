@@ -52,10 +52,10 @@ export function ApliteAdvantage() {
   ];
 
   const advantageImages = [
-    "/img/e5.png",
-    "/img/e4.png",
-    "/img/t1.png",
-    "/img/t4.png",
+    "/solutions/erp/workflow-5.png",
+    "/solutions/erp/workflow-4.png",
+    "/solutions/ar-teams/workflow-1.png",
+    "/solutions/ar-teams/workflow-4.png",
   ];
 
   return (
@@ -118,7 +118,7 @@ export function ApliteAdvantage() {
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
-                    src={advantageImages[activeSolutionIndex] || "/img/AR.png"}
+                    src={advantageImages[activeSolutionIndex] || "/solutions/erp/workflow-5.png"}
                     alt={`Advantage ${activeSolutionIndex + 1}`}
                     fill
                     className={`rounded-lg object-cover transition-all duration-500 ${

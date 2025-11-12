@@ -8,19 +8,19 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/secure-payment.png",
+      imageSrc: "/solutions/ap-teams/secure-payment.png",
       title: "Secure Payment",
       subtitle:
         "Eliminate the risk of email-based and invoice-based payment information exchanges. Your banking details live in a secure, verified profile.",
     },
     {
-      imageSrc: "/img/digital-payment-profile.png",
+      imageSrc: "/solutions/ap-teams/digital-payment-profile.png",
       title: "Digital Payment Profile",
       subtitle:
         "Your payment information lives in a tamper-proof profile that cannot be edited or altered like invoices and PDFs. Customers always have your correct, verified details.",
     },
     {
-      imageSrc: "/img/build-trust.png",
+      imageSrc: "/solutions/ap-teams/build-trust.png",
       title: "Build Trust",
       subtitle:
         "When customers pay using your Aplite profile, they know the banking details are legitimate, reducing payment delays and fraud concerns.",
