@@ -16,17 +16,17 @@ export function PaymentFraudSection() {
       <div className="px-10">
         <CardsGrid>
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/solutions/ar-teams/search.png"
             title="Search"
             subtitle="Look up any business instantly using our verified database - simple, fast, and reliable."
           />
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/solutions/ar-teams/process-payment.png"
             title="Review"
             subtitle="Check verified banking details with complete transparency and peace of mind."
           />
           <CardComponent
-            imageSrc="/img/AR.png"
+            imageSrc="/solutions/ar-teams/stay-protective.png"
             title="Pay"
             subtitle="Send money confidently, knowing every transaction reaches the right business."
           />

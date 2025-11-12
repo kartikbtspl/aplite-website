@@ -6,7 +6,7 @@ export default function Section2() {
         {/* Left: Image */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
           <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center">
-            <img src="/mission.png" alt="Mission product demo" className="rounded-xl sm:rounded-2xl w-full h-full object-cover" />
+            <img src="/company/mission.png" alt="Mission product demo" className="rounded-xl sm:rounded-2xl w-full h-full object-cover" />
           </div>
         </div>
         {/* Right: Mission Text */}
@@ -45,7 +45,7 @@ export default function Section2() {
         {/* Right: Image */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
           <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center">
-            <img src="/futuristic-business.png" alt="Futuristic Business demo" className="rounded-xl sm:rounded-2xl w-full h-full object-cover" />
+            <img src="/company/futuristic-business.png" alt="Futuristic Business demo" className="rounded-xl sm:rounded-2xl w-full h-full object-cover" />
           </div>
         </div>
       </div>

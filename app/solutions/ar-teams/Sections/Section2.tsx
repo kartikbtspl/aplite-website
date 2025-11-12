@@ -23,19 +23,19 @@ export default function Section2() {
   }, []);
   const cardData = [
     {
-      imageSrc: "/img/search.png",
+      imageSrc: "/solutions/ar-teams/search.png",
       title: "Search and retrieve verified business",
       subtitle:
         "Find any vendor's verified payment details in seconds—no more chasing contacts, validating screenshots, or waiting on call-backs.",
     },
     {
-      imageSrc: "/img/process-payment.png",
+      imageSrc: "/solutions/ar-teams/process-payment.png",
       title: "Process payments with confidence",
       subtitle:
         "Pay using verified banking information that's audit-ready and fraud-proof. Every profile is timestamped and immutable.",
     },
     {
-      imageSrc: "/img/stay-protective.png",
+      imageSrc: "/solutions/ar-teams/stay-protective.png",
       title: "Stay proactive with real-time alerts",
       subtitle:
         "Get notified instantly when vendor payment information changes.",
@@ -60,7 +60,7 @@ export default function Section2() {
       title: "Create your verified profile",
       description:
         "Set up your business profile with verified banking information.",
-      images: ["/img/t1.png"],
+      images: ["/solutions/ar-teams/workflow-1.png"],
     },
     {
       id: 2,
@@ -68,7 +68,7 @@ export default function Section2() {
       title: "Add Aplite PIN to invoices",
       description:
         "Include your unique PIN instead of editable banking details.",
-      images: ["/img/t2.png"],
+      images: ["/solutions/ar-teams/workflow-2.png"],
     },
     {
       id: 3,
@@ -76,7 +76,7 @@ export default function Section2() {
       title: "Access verified details",
       description:
         "They enter your PIN on Aplite and see your verified payment information.",
-      images: ["/img/t3.png"],
+      images: ["/solutions/ar-teams/workflow-3.png"],
     },
     {
       id: 4,
@@ -84,7 +84,7 @@ export default function Section2() {
       title: "Get paid faster",
       description:
         "No verification delays, just immediate confidence and payment.",
-      images: ["/img/t4.png"],
+      images: ["/solutions/ar-teams/workflow-4.png"],
     },
   ];
 

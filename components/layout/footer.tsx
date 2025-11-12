@@ -9,7 +9,7 @@ export function Footer() {
         <div className="mb-5 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <Link href="/" className="inline-flex items-center">
             <Image 
-              src="/Aplite-logo.svg" 
+              src="/brand/Aplite-logo.svg" 
               alt="Aplite Logo" 
               width={140} 
               height={40}
@@ -29,7 +29,7 @@ export function Footer() {
             <Link href="/solutions/ap-teams" className="group flex items-start gap-4">
               <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
                 <Image 
-                  src="/img/header/payable.png" 
+                  src="/navigation/payable.png" 
                   alt="AP Teams" 
                   width={48} 
                   height={48}
@@ -50,7 +50,7 @@ export function Footer() {
             <Link href="/solutions/ar-teams" className="group flex items-start gap-4">
               <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
                 <Image 
-                  src="/img/header/receiveable.png" 
+                  src="/navigation/receivable.png" 
                   alt="AR Teams" 
                   width={48} 
                   height={48}
@@ -71,7 +71,7 @@ export function Footer() {
             <Link href="/solutions/banks-fintech" className="group flex items-start gap-4">
               <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
                 <Image 
-                  src="/img/header/Bank-fintech.png" 
+                  src="/navigation/bank-fintech.png" 
                   alt="Banks & Fintech" 
                   width={48} 
                   height={48}
@@ -92,7 +92,7 @@ export function Footer() {
             <Link href="/solutions/erp" className="group flex items-start gap-4">
               <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
                 <Image 
-                  src="/img/header/ERP.png" 
+                  src="/navigation/erp.png" 
                   alt="ERP Systems" 
                   width={48} 
                   height={48}
@@ -113,7 +113,7 @@ export function Footer() {
             <Link href="/solutions/invoicing" className="group flex items-start gap-4">
               <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
                 <Image 
-                  src="/img/header/Invoice-2.png" 
+                  src="/navigation/invoice.png" 
                   alt="Invoicing Platforms" 
                   width={48} 
                   height={48}
@@ -134,7 +134,7 @@ export function Footer() {
             <Link href="/solutions/ai-agents" className="group flex items-start gap-4">
               <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center">
                 <Image 
-                  src="/img/header/AI.png" 
+                  src="/navigation/ai.png" 
                   alt="AI Agents" 
                   width={48} 
                   height={48}

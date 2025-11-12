@@ -15,13 +15,13 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/integrate-aplites.png",
+      imageSrc: "/solutions/erp/integrate-aplites.png",
       title: "Integrate Aplite's API to autofill payment information",
       subtitle:
         "Users enter an Aplite PIN—verified banking details populate instantly. Cut manual entry by 99%, eliminate transcription errors, and reduce payment failures.",
     },
     {
-      imageSrc: "/img/keep-vendor-data.png",
+      imageSrc: "/solutions/erp/keep-vendor-data.png",
       title: "Keep vendor data current automatically",
       subtitle:
         "Real-time updates from Aplite mean no outdated banking information in your ERP. Every payment uses verified, current details with audit-ready documentation.",
@@ -47,7 +47,7 @@ export default function Section2() {
       title: "User enters Aplite PIN",
       description:
         "The paying user or system inputs the unique Aplite PIN found on the invoice.",
-      images: ["/img/e1.png"],
+      images: ["/solutions/erp/workflow-1.png"],
     },
     {
       id: 2,
@@ -55,7 +55,7 @@ export default function Section2() {
       title: "API call to Aplite",
       description:
         "Your system initiates a secure API request to the Aplite service, sending the PIN for verification.",
-      images: ["/img/e2.png"],
+      images: ["/solutions/erp/workflow-2.png"],
     },
     {
       id: 3,
@@ -63,7 +63,7 @@ export default function Section2() {
       title: "Verified data returns",
       description:
         "Aplite verifies the PIN against the business's profile and returns the confirmed banking details securely.",
-      images: ["/img/e3.png"],
+      images: ["/solutions/erp/workflow-3.png"],
     },
     {
       id: 4,
@@ -71,7 +71,7 @@ export default function Section2() {
       title: "ERP autofill's payment form",
       description:
         "The returned, verified banking information automatically populates the payment fields within your ERP or accounting software.",
-      images: ["/img/e4.png"],
+      images: ["/solutions/erp/workflow-4.png"],
     },
     {
       id: 5,
@@ -79,21 +79,35 @@ export default function Section2() {
       title: "User confirms & pays",
       description:
         "With instant confidence in the payee's details, the user quickly confirms the payment and completes the transaction.",
-      images: ["/img/e5.png"],
+      images: ["/solutions/erp/workflow-5.png"],
     },
   ];
   return (
     <BlankCard>
-      <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-light tracking-tight flex flex-col">
-          <div className="flex justify-start mb-4">
-            Integrate <strong className="mx-4">Once only</strong> &
+      <div className="p-10 md:p-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
+          {/* Left side - Heading with cascading indentation */}
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
+              <div className="mb-1">
+                More tools in
+              </div>
+              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
+                your toolkit than
+              </div>
+              <div className="pl-32 md:pl-40 lg:pl-48">
+                ever before.
+              </div>
+            </h1>
           </div>
-
+          
+          {/* Right side - Description aligned to the bottom right */}
           <div className="flex justify-end">
-            Always Pay with <strong className="mx-4">Verified Data.</strong>
+            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-xs text-right">
+              Effortlessly manage every merchant in your portfolio, with an all-in-one sales hub that brings CRM features, digital application creation, and dynamic residual payouts into one place.
+            </p>
           </div>
-        </h1>
+        </div>
       </div>
 
       <div className="px-10 pb-32">

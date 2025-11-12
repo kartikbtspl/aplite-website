@@ -9,13 +9,13 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/embed-aplite.png",
+      imageSrc: "/solutions/invoicing/embed-aplite.png",
       title: "Embed Aplite PINs on invoices",
       subtitle:
         "Vendors add their Aplite PIN instead of account numbers. Customers pay using tamper-proof information pulled directly from Aplite—no altered PDFs, no fraudulent wire instructions.",
     },
     {
-      imageSrc: "/img/Faster-payments-zero-fraud-risk.png",
+      imageSrc: "/solutions/invoicing/faster-payments.png",
       title: "Faster payments, zero fraud risk",
       subtitle:
         "Customers pay immediately when they trust the banking details. No verification delays, no compromised attachments, just verified information and instant confidence.",
@@ -41,7 +41,7 @@ export default function Section2() {
       title: "Vendor adds Aplite PIN to invoice template",
       description:
         "The vendor replaces editable banking details on their invoices with their unique, non-editable Aplite PIN.",
-      images: ["/img/i1.png"],
+      images: ["/solutions/invoicing/feature-1.png"],
     },
     {
       id: 2,
@@ -49,7 +49,7 @@ export default function Section2() {
       title: "Customer enters PIN on Aplite",
       description:
         "The customer inputs the PIN on the Aplite platform (or via API) to initiate quick and easy verification of the payee.",
-      images: ["/img/i2.png"],
+      images: ["/solutions/invoicing/feature-2.png"],
     },
     {
       id: 3,
@@ -58,21 +58,35 @@ export default function Section2() {
         "Verified banking details display instantly - customer pays with confidence",
       description:
         "The customer instantly receives the secure, tamper-proof banking details, allowing them to pay with immediate trust and confidence.",
-      images: ["/img/i3.png"],
+      images: ["/solutions/invoicing/feature-3.png"],
     },
   ];
   return (
     <BlankCard>
-      <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-light tracking-tight flex flex-col">
-          <div className="flex justify-start mb-4">
-            Eliminate <strong className="mx-4">Invoice Fraud</strong>
+      <div className="p-10 md:p-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
+          {/* Left side - Heading with cascading indentation */}
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
+              <div className="mb-1">
+                More tools in
+              </div>
+              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
+                your toolkit than
+              </div>
+              <div className="pl-32 md:pl-40 lg:pl-48">
+                ever before.
+              </div>
+            </h1>
           </div>
-
+          
+          {/* Right side - Description aligned to the bottom right */}
           <div className="flex justify-end">
-            Build <strong className="mx-4"> Instant Trust</strong>
+            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-xs text-right">
+              Effortlessly manage every merchant in your portfolio, with an all-in-one sales hub that brings CRM features, digital application creation, and dynamic residual payouts into one place.
+            </p>
           </div>
-        </h1>
+        </div>
       </div>
 
       <div className="px-10 pb-32">

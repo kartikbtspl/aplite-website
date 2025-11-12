@@ -3,24 +3,35 @@ import CardComponent from "@/components/ui/CardComponent";
 import CardsGrid from "@/components/ui/GridCard";
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
 import { CheckCircle } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Section2() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const fadeInAnimation = {
+    initial: { opacity: 0, y: 30 },
+    animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
+    transition: { duration: 0.8 },
+  };
+
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/secure-payment.png",
+      imageSrc: "/solutions/ap-teams/secure-payment.png",
       title: "Secure Payment",
       subtitle:
         "Eliminate the risk of email-based and invoice-based payment information exchanges. Your banking details live in a secure, verified profile.",
     },
     {
-      imageSrc: "/img/digital-payment-profile.png",
+      imageSrc: "/solutions/ap-teams/digital-payment-profile.png",
       title: "Digital Payment Profile",
       subtitle:
         "Your payment information lives in a tamper-proof profile that cannot be edited or altered like invoices and PDFs. Customers always have your correct, verified details.",
     },
     {
-      imageSrc: "/img/build-trust.png",
+      imageSrc: "/solutions/ap-teams/build-trust.png",
       title: "Build Trust",
       subtitle:
         "When customers pay using your Aplite profile, they know the banking details are legitimate, reducing payment delays and fraud concerns.",
@@ -40,34 +51,47 @@ export default function Section2() {
   ];
 
   return (
-    <BlankCard>
-      <div className="p-10 md:p-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
-          {/* Left side - Heading with cascading indentation */}
+    <BlankCard ref={ref}>
+      <div className="pt-10 lg:pt-16 pl-0 lg:pl-10">
+        <motion.div
+          key="hero-content"
+          initial={fadeInAnimation.initial}
+          animate={fadeInAnimation.animate}
+          transition={fadeInAnimation.transition}
+          className="grid gap-6 mx-auto"
+        >
+          {/* Heading */}
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
-              <div className="mb-1">
-                <strong className="font-semibold">Secure</strong> Digital
+            <h1
+              className="
+          text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
+          tracking-tight leading-tight
+          text-center lg:text-left
+        "
+            >
+              <div className="mb-2 lg:mb-1 lg:pl-0">Highly Secure</div>
+
+              <div className="mb-2 lg:mb-1 lg:pl-20 xl:pl-64">
+                Digital Payments Built
               </div>
-              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
-                Payments Built on
-              </div>
-              <div className="text-right">
-                <strong className="font-semibold">Trust</strong>
+
+              <div className="mb-0 lg:mb-0 lg:text-right lg:pr-20 xl:pr-32">
+                On Financial Trust.
               </div>
             </h1>
           </div>
-          
-          {/* Right side - Description aligned to the bottom right */}
-          <div className="flex justify-end">
-            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-md">
-              Eliminate the risk of email-based and invoice-based payment information exchanges. Your banking details live in a secure, verified profile that builds trust with every transaction.
+
+          <div className="flex justify-center p-4 lg:justify-end lg:pl-20">
+            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed text-center lg:text-left max-w-2xl">
+              Eliminate the risk of email-based and invoice-based payment
+              information exchanges. Your banking details live in a secure,
+              verified profile that builds trust with every transaction.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="px-10">
+      <div className="px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
         <CardsGrid>
           {cardData.map((card, index) => (
             <CardComponent
@@ -80,18 +104,28 @@ export default function Section2() {
         </CardsGrid>
       </div>
 
-      <div className="p-10">
-        <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight ">
-          <div className="flex justify-start">
-            Why Accounts Payable Teams choose Aplite
-          </div>
+      <motion.div
+        key="hero-features"
+        initial={fadeInAnimation.initial}
+        animate={fadeInAnimation.animate}
+        transition={fadeInAnimation.transition}
+        className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-8"
+      >
+        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+          Why Accounts Payable Teams choose Aplite
         </h1>
-      </div>
+      </motion.div>
 
-      {/* 2-column grid for features */}
-      <div className="grid grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto py-6">
+      {/* Responsive grid for features */}
+      <motion.div
+        key="hero-grid"
+        initial={fadeInAnimation.initial}
+        animate={fadeInAnimation.animate}
+        transition={fadeInAnimation.transition}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-12 sm:gap-y-6 max-w-5xl mx-auto px-4 px-6 md:px-8 lg:px-12 lg:py-6"
+      >
         {featuresData.map((feature, index) => (
-          <div key={index} className="flex items-center gap-3">
+          <div key={index} className="flex items-center gap-3 sm:gap-4">
             <div className="flex-shrink-0">
               <ReusableReactIcon
                 sizeprop="md"
@@ -100,10 +134,12 @@ export default function Section2() {
                 iconBgColor="#93c5fd"
               />
             </div>
-            <p className="text-xl font-medium  leading-tight">{feature}</p>
+            <p className="text-lg sm:text-lg md:text-xl font-medium leading-tight">
+              {feature}
+            </p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </BlankCard>
   );
 }

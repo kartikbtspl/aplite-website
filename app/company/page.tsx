@@ -13,15 +13,15 @@ export default function CompanyPage() {
           buttonLabel=""
         />
       </div>
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 mx-4 sm:mx-6 lg:mx-8 space-y-10">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-8 m-2 sm:m-4 md:m-6 lg:m-8 xl:m-12 space-y-10">
         <Section2 />
         <Section3 />
-        <div className="w-full rounded-2xl mx-auto mb-4 mt-8 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900">
-          <p className="text-center text-white text-2xl font-medium py-8">
-            We don&apos;t move money.<br />
-            We direct where it goes.
-          </p>
-        </div>
+      </div>
+      <div className="flex flex-col mx-4 sm:mx-8 md:mx-12 my-12 items-center justify-center max-w-full rounded-2xl bg-white py-10 px-6 text-center">
+        <p className="text-center text-black text-2xl font-medium py-8">
+          We don&apos;t move money.<br />
+          We direct where it goes.
+        </p>
       </div>
     </>
   );
