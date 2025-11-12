@@ -1,4 +1,4 @@
-import {Circle} from 'lucide-react'
+import { Route, Globe, Clock, Timer } from 'lucide-react'
 
 export function BiggerProblem() {
 
@@ -20,11 +20,16 @@ export function BiggerProblem() {
           "Average time to complete domestic wire setup: 35 minutes",
           "Average time to complete international SWIFT wire setup: 55 minutes"
         ].map((text, index) => (
-          <div 
+          <div
             key={index}
             className="group flex items-center border border-[#ebebeb] bg-[#fcfcff] rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 mb-1 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-[1.02] hover:shadow-sm cursor-pointer"
           >
-            <span className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-[#ebebeb] flex-shrink-0 mr-3 sm:mr-4 transition-all duration-500 group-hover:bg-[#4914FF] group-hover:border-blue-300" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-[#ebebeb] flex-shrink-0 mr-3 sm:mr-4 transition-all duration-500 group-hover:bg-[#4914FF] group-hover:border-blue-300 flex items-center justify-center">
+              {index === 0 && <Route className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-500" />}
+              {index === 1 && <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-500" />}
+              {index === 2 && <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-500" />}
+              {index === 3 && <Timer className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-500" />}
+            </div>
             <span className="text-gray-700 font-medium text-sm sm:text-base md:text-lg leading-relaxed">
               {text}
             </span>

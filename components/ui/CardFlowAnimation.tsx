@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 type CardData = {
@@ -15,112 +15,97 @@ type CardFlowAnimationProps = {
 
 export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(1024);
-  const isEven = cards.length % 2 === 0;
+  const [isPaused, setIsPaused] = useState(false);
+  const [hasBeenHovered, setHasBeenHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    
-    if (typeof window !== 'undefined') {
-      setScreenWidth(window.innerWidth);
-      window.addEventListener('resize', handleResize);
+    // Set initial mobile state
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % cards.length);
+      }, 2000);
     }
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % cards.length);
-    }, 3000);
-
     return () => {
-      clearInterval(interval);
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
-      }
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [cards.length]);
+  }, [cards.length, isPaused]);
+
+
 
   return (
-    <div className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] flex items-center justify-center">
+    <div 
+      className="relative w-full h-[600px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-visible"
+    >
       {cards.map((card, index) => {
         const position = (index - activeIndex + cards.length) % cards.length;
         
         let transform = "";
         let zIndex = 0;
-        let opacity = 0.4;
+        let opacity = 0.3;
         let scale = 0.7;
-        let isVisible = true;
 
         if (position === 0) {
-          // Active card - front and center
-          transform = "translateX(0px)";
-          zIndex = 10;
+          // Front card - center
+          transform = "translateX(0px) translateY(0px)";
+          zIndex = 30;
           opacity = 1;
           scale = 1;
-        } else if (isEven && position === cards.length - 1) {
-          // For even cards, hide last card behind first card
-          transform = "translateX(0px)";
-          zIndex = 5;
-          opacity = 0;
-          scale = 1;
+        } else if (position === 1) {
+          // Next card - mobile: below, desktop: right
+          transform = isMobile ? "translateX(0px) translateY(160px)" : "translateX(280px) translateY(20px)";
+          zIndex = 20;
+          opacity = 0.7;
+          scale = 0.85;
+        } else if (position === cards.length - 1) {
+          // Previous card - mobile: above, desktop: left
+          transform = isMobile ? "translateX(0px) translateY(-160px)" : "translateX(-280px) translateY(20px)";
+          zIndex = 20;
+          opacity = 0.7;
+          scale = 0.85;
         } else {
-          // Calculate position for other cards
-          const visibleCards = isEven ? cards.length - 1 : cards.length;
-          const adjustedPosition = position > cards.length - 1 ? position : position;
-          const isRightSide = adjustedPosition <= Math.floor(visibleCards / 2);
-          
-          const isMobile = screenWidth < 768;
-          
-          if (isMobile) {
-            // Vertical movement for mobile
-            const verticalOffset = 100;
-            const verticalSpacing = 80;
-            
-            if (isRightSide) {
-              transform = `translateY(${verticalOffset + (adjustedPosition - 1) * verticalSpacing}px)`;
-              zIndex = 10 - adjustedPosition;
-              opacity = Math.max(0.3, 0.8 - adjustedPosition * 0.2);
-              scale = Math.max(0.6, 0.9 - adjustedPosition * 0.1);
-            } else {
-              const leftPosition = visibleCards - adjustedPosition;
-              transform = `translateY(-${verticalOffset + (leftPosition - 1) * verticalSpacing}px)`;
-              zIndex = 10 - leftPosition;
-              opacity = Math.max(0.3, 0.8 - leftPosition * 0.2);
-              scale = Math.max(0.6, 0.9 - leftPosition * 0.1);
-            }
-          } else {
-            // Horizontal movement for larger screens
-            const baseOffset = screenWidth < 1024 ? 180 : 200;
-            const spacing = screenWidth < 1024 ? 120 : 150;
-            
-            if (isRightSide) {
-              transform = `translateX(${baseOffset + (adjustedPosition - 1) * spacing}px)`;
-              zIndex = 10 - adjustedPosition;
-              opacity = Math.max(0.3, 0.8 - adjustedPosition * 0.2);
-              scale = Math.max(0.6, 0.9 - adjustedPosition * 0.1);
-            } else {
-              const leftPosition = visibleCards - adjustedPosition;
-              transform = `translateX(-${baseOffset + (leftPosition - 1) * spacing}px)`;
-              zIndex = 10 - leftPosition;
-              opacity = Math.max(0.3, 0.8 - leftPosition * 0.2);
-              scale = Math.max(0.6, 0.9 - leftPosition * 0.1);
-            }
-          }
+          // Hidden cards behind
+          transform = isMobile ? "translateX(0px) translateY(40px)" : "translateX(0px) translateY(40px)";
+          zIndex = 10 - position;
+          opacity = Math.max(0.1, 0.3 - position * 0.1);
+          scale = Math.max(0.6, 0.8 - position * 0.05);
         }
 
         return (
           <div
             key={index}
-            className="absolute transition-all duration-700 ease-in-out"
+            className="absolute transition-all duration-700 ease-spring cursor-pointer"
             style={{
               transform: `${transform} scale(${scale})`,
               zIndex,
               opacity,
-              width: screenWidth < 640 ? '280px' : screenWidth < 1024 ? '400px' : '500px',
-              height: screenWidth < 640 ? '320px' : screenWidth < 1024 ? '360px' : '450px'
+              width: isMobile ? 'min(360px, 95vw)' : 'min(450px, 90vw)',
+              height: isMobile ? 'min(420px, 65vh)' : 'min(480px, 75vh)'
+            }}
+            onMouseEnter={() => {
+              if (!hasBeenHovered) {
+                setActiveIndex(index);
+                setHasBeenHovered(true);
+              }
+              setIsPaused(true);
+            }}
+            onMouseLeave={() => {
+              setIsPaused(false);
+              setHasBeenHovered(false);
             }}
           >
-            <div className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <div className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
               <div className="relative w-full pt-6 px-6 rounded-2xl overflow-hidden">
                 {card.imageSrc ? (
                   <div className="relative w-full h-full flex justify-center items-center">
@@ -141,9 +126,9 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
                   />
                 )}
               </div>
-              <div className="p-6 text-[#1b2f6e]">
-                <h3 className="text-xl font-semibold">{card.title}</h3>
-                <p className="mt-2 text-sm">{card.subtitle}</p>
+              <div className="p-4 sm:p-6 text-[#1b2f6e]">
+                <h3 className="text-lg sm:text-xl font-semibold">{card.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm">{card.subtitle}</p>
               </div>
             </div>
           </div>
@@ -151,7 +136,7 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
       })}
       
       {/* Dots indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {cards.map((_, index) => (
           <div
             key={index}

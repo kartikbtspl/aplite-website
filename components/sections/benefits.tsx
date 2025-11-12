@@ -99,7 +99,7 @@ export function Benefits() {
       {/* <PaymentFraudNoMargin /> */}
       <div className=" sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
-          <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light tracking-tight text-[#24004c] text-center leading-tight">
             How It Works
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#475569] max-w-3xl mb-6 sm:mb-8 lg:mb-10 mx-auto">
@@ -109,11 +109,11 @@ export function Benefits() {
 
         {/* Risk Section */}
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
-          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh]">
+          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[70vh]">
             {/* Left sub-section - Animated based on active risk */}
-            <div className="p-2 bg-gray-100 rounded-2xl">
-              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
-                <div className="relative w-full h-full flex items-center justify-center">
+            <div className="p-2 bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
+                <div className="relative w-full h-full flex items-center justify-center min-h-[260px] sm:min-h-[360px]">
                   <Image
                     src={riskImages[activeRiskIndex] || "/home/risk.png"}
                     alt={`Risk ${activeRiskIndex + 1}`}
@@ -131,9 +131,9 @@ export function Benefits() {
             </div>
 
             {/* Right sub-section - Risks */}
-            <div className="flex flex-col p-3">
+            <div className="flex flex-col p-3 min-h-[300px] sm:min-h-[400px] justify-between">
               <h3 className="mb-6 sm:mb-8 lg:mb-10 text-2xl sm:text-3xl lg:text-4xl font-semibold">Real Risks Of Unverified Payments</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-6 flex-1 flex flex-col justify-evenly">
                 {risks.map((risk, index) => (
                   <div key={index}>
                     <hr  className={`transition-all duration-300 ${index === activeRiskIndex ? 'border-2 border-gray-900' : 'border-gray-300'
@@ -172,11 +172,11 @@ export function Benefits() {
 
         {/* Solutions Section */}
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
-          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh]">
+          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[70vh]">
             {/* Left sub-section - Solutions */}
-            <div className="flex flex-col p-3">
+            <div className="flex flex-col p-3 min-h-[300px] sm:min-h-[400px] justify-between">
               <h3 className="mb-6 sm:mb-8 lg:mb-10 text-2xl sm:text-3xl lg:text-4xl font-semibold">How Aplite Eliminates Them</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-6 flex-1 flex flex-col justify-evenly">
                 {solutions.map((solution, index) => (
                   <div key={index}>
                     <hr className={`transition-all duration-300 ${
@@ -214,9 +214,9 @@ export function Benefits() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="p-2 bg-gray-100 rounded-2xl">
-              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center">
-                <div className="relative w-full h-full flex items-center justify-center">
+            <div className="p-2 bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
+              <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
+                <div className="relative w-full h-full flex items-center justify-center min-h-[260px] sm:min-h-[360px]">
                   <Image
                     src={solutionImages[activeSolutionIndex] || "/home/solutions.png"}
                     alt={`Solution ${activeSolutionIndex + 1}`}

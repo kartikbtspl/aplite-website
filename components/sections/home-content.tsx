@@ -35,9 +35,9 @@ export function HomeContent() {
       <div className="p-4 sm:p-6 lg:p-8">
         <ApliteAdvantage />
       </div>
-      <div className="p-4 sm:p-6 lg:p-8">
+      {/* <div className="p-4 sm:p-6 lg:p-8">
         <TaglineSec />
-      </div>
+      </div> */}
     </section>
   );
 }
