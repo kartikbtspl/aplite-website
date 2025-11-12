@@ -15,7 +15,7 @@ export default function Section2() {
   // Card data array
   const cardData = [
     {
-      imageSrc: "/img/integrate-aplites.png",
+      imageSrc: "/api.png",
       title: "Integrate Aplite's API to autofill payment information",
       subtitle:
         "Users enter an Aplite PIN—verified banking details populate instantly. Cut manual entry by 99%, eliminate transcription errors, and reduce payment failures.",
