@@ -109,7 +109,7 @@ export function Benefits() {
 
         {/* Risk Section */}
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
-          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh]">
+          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[70vh]">
             {/* Left sub-section - Animated based on active risk */}
             <div className="p-2 bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
@@ -172,7 +172,7 @@ export function Benefits() {
 
         {/* Solutions Section */}
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
-          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh]">
+          <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[70vh]">
             {/* Left sub-section - Solutions */}
             <div className="flex flex-col p-3 min-h-[300px] sm:min-h-[400px] justify-between">
               <h3 className="mb-6 sm:mb-8 lg:mb-10 text-2xl sm:text-3xl lg:text-4xl font-semibold">How Aplite Eliminates Them</h3>

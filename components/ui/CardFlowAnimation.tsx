@@ -17,7 +17,18 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [hasBeenHovered, setHasBeenHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    // Set initial mobile state
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (!isPaused) {
@@ -36,11 +47,6 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
   return (
     <div 
       className="relative w-full h-[600px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-visible"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => {
-        setIsPaused(false);
-        setHasBeenHovered(false);
-      }}
     >
       {cards.map((card, index) => {
         const position = (index - activeIndex + cards.length) % cards.length;
@@ -49,7 +55,6 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
         let zIndex = 0;
         let opacity = 0.3;
         let scale = 0.7;
-        let isVisible = true;
 
         if (position === 0) {
           // Front card - center
@@ -59,19 +64,19 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
           scale = 1;
         } else if (position === 1) {
           // Next card - mobile: below, desktop: right
-          transform = window.innerWidth < 640 ? "translateX(0px) translateY(120px)" : "translateX(200px) translateY(15px)";
+          transform = isMobile ? "translateX(0px) translateY(160px)" : "translateX(280px) translateY(20px)";
           zIndex = 20;
           opacity = 0.7;
           scale = 0.85;
         } else if (position === cards.length - 1) {
           // Previous card - mobile: above, desktop: left
-          transform = window.innerWidth < 640 ? "translateX(0px) translateY(-120px)" : "translateX(-200px) translateY(15px)";
+          transform = isMobile ? "translateX(0px) translateY(-160px)" : "translateX(-280px) translateY(20px)";
           zIndex = 20;
           opacity = 0.7;
           scale = 0.85;
         } else {
           // Hidden cards behind
-          transform = window.innerWidth < 640 ? "translateX(0px) translateY(40px)" : "translateX(0px) translateY(40px)";
+          transform = isMobile ? "translateX(0px) translateY(40px)" : "translateX(0px) translateY(40px)";
           zIndex = 10 - position;
           opacity = Math.max(0.1, 0.3 - position * 0.1);
           scale = Math.max(0.6, 0.8 - position * 0.05);
@@ -85,8 +90,8 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
               transform: `${transform} scale(${scale})`,
               zIndex,
               opacity,
-              width: window.innerWidth < 640 ? 'min(320px, 90vw)' : 'min(350px, 85vw)',
-              height: window.innerWidth < 640 ? 'min(380px, 60vh)' : 'min(420px, 70vh)'
+              width: isMobile ? 'min(360px, 95vw)' : 'min(450px, 90vw)',
+              height: isMobile ? 'min(420px, 65vh)' : 'min(480px, 75vh)'
             }}
             onMouseEnter={() => {
               if (!hasBeenHovered) {
@@ -94,6 +99,10 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
                 setHasBeenHovered(true);
               }
               setIsPaused(true);
+            }}
+            onMouseLeave={() => {
+              setIsPaused(false);
+              setHasBeenHovered(false);
             }}
           >
             <div className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
