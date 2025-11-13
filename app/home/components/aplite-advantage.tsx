@@ -62,10 +62,10 @@ export function ApliteAdvantage() {
     <section className="bg-white py-20">
       <div className="px-4 sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
-          <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
+          <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             Aplite Advantage
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#475569] max-w-3xl mb-6 sm:mb-8 lg:mb-10 mx-auto">
+          <p className="text-center text-gray-600 mb-5 sm:mb-7 text-sm sm:text-base px-4 sm:px-0">
             Discover how Aplite transforms your payment process.
           </p>
         </div>

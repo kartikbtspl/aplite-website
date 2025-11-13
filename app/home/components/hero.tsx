@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, ArrowRight } from "lucide-react";
+import { Search } from "lucide-react";
 import Button from "@/components/ui/Buttons"
 import { SEARCH_EXAMPLES } from "@/lib/constants";
 
@@ -44,38 +44,7 @@ export function Hero() {
               </Button>
             </div>
           </div>
-
-          {/* Laptop Image - Right Side */}
-          {/* <div className="flex-1 flex justify-center h-[90vh] lg:justify-end -z-10">
-            <div className="w-[150%] rounded-l-3xl overflow-hidden">
-              <Image
-                src="/general/laptop-dashboard.png"
-                alt="Laptop Dashboard"
-                width={1800}
-                height={1200}
-                priority
-                className="w-full h-full object-cover scale-110"
-              />
-            </div>
-          </div> */}
       </div>
-
-
-
-      {/* Tailwind animation config - add to tailwind.config.js
-        extend: {
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-12px)' },
-            },
-          },
-          animation: {
-            float: 'float 3s ease-in-out infinite',
-          },
-        }
-      */}
-
     </section>
   );
 }

@@ -1,10 +1,7 @@
 "use client";
 
-import { CheckCircle2, XCircle, Play, Pause } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { PaymentFraudNoMargin } from "./payment-fraud-no-margin";
-import { BeforeAfterAplite } from "./before-after-aplite";
-import { FinancialTeamFeatures } from "./financial-team-features";
 import Image from "next/image";
 
 export function Benefits() {
@@ -69,11 +66,11 @@ export function Benefits() {
   ];
 
   const riskImages = [
-    "/home/risk.png",
-    "/home/risk.png", 
-    "/home/risk.png",
-    "/home/risk.png",
-    "/home/risk.png",
+    "/home/how-it-works/risk.png",
+    "/home/how-it-works/risk.png", 
+    "/home/how-it-works/risk.png",
+    "/home/how-it-works/risk.png",
+    "/home/how-it-works/risk.png",
   ];
 
   const solutions = [
@@ -86,12 +83,12 @@ export function Benefits() {
   ];
 
   const solutionImages = [
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
+    "/home/how-it-works/solutions.png",
+    "/home/how-it-works/solutions.png",
+    "/home/how-it-works/solutions.png",
+    "/home/how-it-works/solutions.png",
+    "/home/how-it-works/solutions.png",
+    "/home/how-it-works/solutions.png",
   ];
 
   return (
@@ -99,7 +96,7 @@ export function Benefits() {
       {/* <PaymentFraudNoMargin /> */}
       <div className=" sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light tracking-tight text-[#24004c] text-center leading-tight">
+          <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             How It Works
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#475569] max-w-3xl mb-6 sm:mb-8 lg:mb-10 mx-auto">
