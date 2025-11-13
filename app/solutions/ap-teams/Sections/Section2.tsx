@@ -1,21 +1,27 @@
+
 import BlankCard from "@/components/ui/BlankCard";
 import CardComponent from "@/components/ui/CardComponent";
 import CardsGrid from "@/components/ui/GridCard";
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
 import { CheckCircle } from "lucide-react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, fadeInUp } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export default function Section2() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [iconSize, setIconSize] = useState<"sm" | "md" | "lg">("md");
 
-  const fadeInAnimation = {
-    initial: { opacity: 0, y: 30 },
-    animate: isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
-    transition: { duration: 0.8 },
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setIconSize("sm");
+      else if (window.innerWidth < 1024) setIconSize("md");
+      else setIconSize("lg");
+    };
 
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   // Card data array
   const cardData = [
     {
@@ -51,17 +57,11 @@ export default function Section2() {
   ];
 
   return (
-    <BlankCard ref={ref}>
+    <BlankCard>
       <div className="pt-10 lg:pt-16 pl-0 lg:pl-10">
-        <motion.div
-          key="hero-content"
-          initial={fadeInAnimation.initial}
-          animate={fadeInAnimation.animate}
-          transition={fadeInAnimation.transition}
-          className="grid gap-6 mx-auto"
-        >
+        <div>
           {/* Heading */}
-          <div>
+          <motion.div {...fadeInLeft()}>
             <h1
               className="
           text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
@@ -79,16 +79,19 @@ export default function Section2() {
                 On Financial Trust.
               </div>
             </h1>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center p-4 lg:justify-end lg:pl-20">
+          <motion.div
+            {...fadeInRight()}
+            className="flex justify-center p-4 lg:justify-end lg:pl-20"
+          >
             <p className="text-lg sm:text-xl text-gray-400 leading-relaxed text-center lg:text-left max-w-2xl">
               Eliminate the risk of email-based and invoice-based payment
               information exchanges. Your banking details live in a secure,
               verified profile that builds trust with every transaction.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       <div className="px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
@@ -104,37 +107,31 @@ export default function Section2() {
         </CardsGrid>
       </div>
 
-      <motion.div
-        key="hero-features"
-        initial={fadeInAnimation.initial}
-        animate={fadeInAnimation.animate}
-        transition={fadeInAnimation.transition}
-        className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-8"
-      >
-        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+      <motion.div {...fadeInRight()}>
+        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
           Why Accounts Payable Teams choose Aplite
         </h1>
       </motion.div>
 
       {/* Responsive grid for features */}
       <motion.div
-        key="hero-grid"
-        initial={fadeInAnimation.initial}
-        animate={fadeInAnimation.animate}
-        transition={fadeInAnimation.transition}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-12 sm:gap-y-6 max-w-5xl mx-auto px-4 px-6 md:px-8 lg:px-12 lg:py-6"
+        {...fadeInUp()}
+        className="grid grid-cols-1 py-4 sm:grid-cols-2 gap-x-6 gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {featuresData.map((feature, index) => (
-          <div key={index} className="flex items-center gap-3 sm:gap-4">
+          <div
+            key={index}
+            className="flex items-start sm:items-center gap-3 text-base sm:text-lg md:text-xl"
+          >
             <div className="flex-shrink-0">
               <ReusableReactIcon
-                sizeprop="md"
+                sizeprop={iconSize}
                 squareBgColor="#003cff"
                 icon={CheckCircle}
                 iconBgColor="#93c5fd"
               />
             </div>
-            <p className="text-lg sm:text-lg md:text-xl font-medium leading-tight">
+            <p className="font-medium leading-snug sm:leading-tight">
               {feature}
             </p>
           </div>
