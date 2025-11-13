@@ -8,7 +8,7 @@ export function WhoWeServe() {
           Who We Serve
         </h2>
       </div>
-      <div className="">
+      <div className="w-full">
         <CardFlowAnimation cards={[
           {
             imageSrc: "/home/who-we-serve/hero-ap.png",

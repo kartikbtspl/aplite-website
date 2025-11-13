@@ -9,9 +9,9 @@ type FeatureItem = {
 };
 
 const beforeFeatures: FeatureItem[] = [
-  { icon: Mail, title: "Scattered Communication Channels", description: "Businesses manage banking info via emails, invoices, and phone calls, with no central system.", sizeprop: "md" },
-  { icon: AlertTriangle, title: "No Way to Verify Details", description: "Any typo or compromised email can lead to severe financial losses—average $183K per incident.", sizeprop: "md" },
-  { icon: ShieldAlert, title: "Email Is the #1 Fraud Vector", description: "Banking changes arrive through email, making every update a massive risk for fraud.", sizeprop: "md" },
+  { icon: Mail, title: "Scattered Communication Channels", description: "Businesses manage banking info via emails, invoices, and phone calls, with no central system."},
+  { icon: AlertTriangle, title: "No Way to Verify Details", description: "Any typo or compromised email can lead to severe financial losses—average $183K per incident."},
+  { icon: ShieldAlert, title: "Email Is the #1 Fraud Vector", description: "Banking changes arrive through email, making every update a massive risk for fraud." },
   { icon: Clock, title: "Wasted Verification Effort", description: "Finance teams spend hours cross-checking info across sources, still exposed to risk." },
   { icon: Database, title: "No Central Repository", description: "Lack of a unified, verifiable source causes confusion, delays, and increased exposure." },
 ];
@@ -35,7 +35,7 @@ const FeatureSection = ({ title, features }: { title: string; features: FeatureI
         <div key={index} className="flex items-start gap-4 sm:gap-6 lg:gap-8">
           <div>
             <ReusableReactIcon
-              sizeprop={feature.sizeprop || "sm"}
+              sizeprop={"md"}
               squareBgColor="#003cff"
               icon={feature.icon}
               iconBgColor="#93c5fd"
@@ -58,7 +58,7 @@ export function BeforeAfterAplite() {
         <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
           How Businesses Handle <br /> Banking Information - And How Aplite Redefines It
         </h2>
-        <p className="text-center text-gray-600 mb-5 sm:mb-7 text-sm sm:text-base px-4 sm:px-0">
+        <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
           The traditional approach exposes businesses to fraud and errors.<br />
           Here's how Aplite transforms the process.
         </p>

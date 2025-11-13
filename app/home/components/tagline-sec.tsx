@@ -1,4 +1,4 @@
-import { Search, ArrowRight } from "lucide-react";
+import { Search } from "lucide-react";
 import Button from "../../../components/ui/Buttons";
 
 export default function TaglineSec() {
