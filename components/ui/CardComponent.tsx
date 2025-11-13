@@ -1,4 +1,6 @@
 "use client";
+import { fadeInUp } from "@/lib/utils";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -16,7 +18,10 @@ export default function CardComponent({
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:scale-105 hover:shadow-2xl relative group">
+    <motion.div
+      {...fadeInUp()}
+      className="w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:scale-105 hover:shadow-2xl relative group"
+    >
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl"
         style={{
@@ -56,6 +61,6 @@ export default function CardComponent({
         <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
         <p className="text-sm text-gray-600 leading-relaxed">{subtitle}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
