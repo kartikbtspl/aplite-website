@@ -9,7 +9,7 @@ export default function TaglineSec() {
       </h1>
 
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center bg-white rounded-2xl px-4 w-[280px] sm:w-[400px] shadow-lg h-10 sm:h-12 md:h-14 border border-gray-300">
+        <div className="flex items-center bg-white rounded-2xl px-4 w-[280px] sm:w-[400px] h-10 sm:h-12 md:h-14 border border-gray-300">
           <Search className="text-gray-400 mr-2" size={20} />
           <input
             type="text"

@@ -3,6 +3,7 @@
 import { Play, Pause } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function Benefits() {
   const [activeRiskIndex, setActiveRiskIndex] = useState(0);
@@ -155,13 +156,13 @@ export function Benefits() {
 
               {/* Pause/Play Button */}
               <div className="mt-6 flex justify-center">
-                <button
+                <Button
                   onClick={togglePause}
-                  className="flex items-center gap-2 px-4 py-2 bg-white-900 text-black shadow-lg rounded-lg hover:bg-[#4914FF] hover:text-white transition-colors"
+                  className="flex border-none items-center gap-2 px-4 py-2 bg-white-900 text-black shadow-lg rounded-lg hover:bg-[#4914FF] hover:text-white transition-colors"
                 >
                   {isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
                   {isPaused ? 'Play' : 'Pause'}
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -199,14 +200,14 @@ export function Benefits() {
 
               {/* Pause/Play Button */}
               <div className="mt-6 flex justify-center">
-                <button
+                <Button
                   onClick={toggleSolutionPause}
-                  className="flex items-center gap-2 px-4 py-2 bg-white-900 text-black shadow-lg rounded-lg hover:bg-[#4914FF]
+                  className="flex border-none items-center gap-2 px-4 py-2 bg-white-900 text-black shadow-lg rounded-lg hover:bg-[#4914FF]
                   hover:text-white transition-colors"
                 >
                   {isSolutionPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
                   {isSolutionPaused ? 'Play' : 'Pause'}
-                </button>
+                </Button>
               </div>
             </div>
 

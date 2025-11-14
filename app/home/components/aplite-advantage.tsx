@@ -3,6 +3,7 @@
 import { Play, Pause } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function ApliteAdvantage() {
   const [activeSolutionIndex, setActiveSolutionIndex] = useState(0);
@@ -78,7 +79,7 @@ export function ApliteAdvantage() {
               <h3 className="mb-6 sm:mb-8 lg:mb-10 text-2xl sm:text-3xl lg:text-4xl font-semibold">Aplite Solutions</h3>
               <ul className="space-y-6 flex-1 flex flex-col justify-evenly">
                 {solutions.map((solution, index) => (
-                  <div key={index}>
+                  <div key={index}className="h-[120px]">
                     <hr className={`transition-all duration-300 ${index === activeSolutionIndex ? 'border-2 border-gray-900' : 'border-gray-300'
                       }`} />
                     <li
@@ -103,18 +104,18 @@ export function ApliteAdvantage() {
 
               {/* Pause/Play Button */}
               <div className="mt-6 flex justify-center">
-                <button
+                <Button
                   onClick={toggleSolutionPause}
-                  className="flex items-center gap-2 px-4 py-2 bg-white text-black shadow-lg rounded-lg hover:bg-[#4914FF] hover:text-white transition-colors"
+                  className="flex border-none items-center gap-2 px-4 py-2 bg-white text-black shadow-lg rounded-lg hover:bg-[#4914FF] hover:text-white transition-colors"
                 >
                   {isSolutionPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
                   {isSolutionPaused ? 'Play' : 'Pause'}
-                </button>
+                </Button>
               </div>
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="bg-white rounded-2xl min-h-[300px] sm:min-h-[400px]">
+            <div className="bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
                 <div className="relative w-full h-full flex items-center justify-center min-h-[260px] sm:min-h-[360px]">
                   <Image
