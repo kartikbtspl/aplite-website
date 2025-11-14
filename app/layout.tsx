@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MovingCircles } from "@/components/ui/MovingCircles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,9 @@ export default function RootLayout({
 
         {/* Background glow layers */}
         <div className="glow-layer"></div>
+
+        {/* Moving circles */}
+        <MovingCircles color="rgba(0, 0, 0, 0.15)" count={8} />
 
         {/* Your actual content */}
         <Header />

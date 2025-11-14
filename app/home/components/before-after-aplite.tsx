@@ -1,5 +1,9 @@
+"use client";
+
 import { Mail, AlertTriangle, ShieldAlert, Clock, Database, IdCard, Lock, BellRing, MailCheck, FileCheck, Handshake, LucideIcon } from 'lucide-react';
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
+import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/utils";
 
 type FeatureItem = {
   icon: LucideIcon;
@@ -55,17 +59,23 @@ export function BeforeAfterAplite() {
   return (
     <section className="bg-white px-4 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16 lg:pb-0">
       <div className="max-w-full mx-auto px-2 sm:px-4">
-        <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
-          How Businesses Handle <br /> Banking Information - And How Aplite Redefines It
-        </h2>
-        <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
-          The traditional approach exposes businesses to fraud and errors.<br />
-          Here's how Aplite transforms the process.
-        </p>
+        <motion.div {...fadeInUp()}>
+          <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
+            How Businesses Handle <br /> Banking Information - And How Aplite Redefines It
+          </h2>
+          <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
+            The traditional approach exposes businesses to fraud and errors.<br />
+            Here's how Aplite transforms the process.
+          </p>
+        </motion.div>
         <section className="flex flex-col gap-8 py-12 mt-10">
-          <FeatureSection title="Before Aplite" features={beforeFeatures} />
+          <motion.div {...fadeInLeft()}>
+            <FeatureSection title="Before Aplite" features={beforeFeatures} />
+          </motion.div>
           <hr />
-          <FeatureSection title="After Aplite" features={afterFeatures} />
+          <motion.div {...fadeInRight()}>
+            <FeatureSection title="After Aplite" features={afterFeatures} />
+          </motion.div>
         </section>
       </div>
     </section>

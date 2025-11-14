@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight } from "@/lib/utils";
 
 export default function Section2() {
   return (
     <section className="flex flex-col mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8">
       {/*Upper Section */}
-      <div className="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 items-center mb-8 sm:mb-10 lg:mb-12">
+      <motion.div {...fadeInLeft()} className="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 items-center mb-8 sm:mb-10 lg:mb-12">
         {/* Left: Image */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
           <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center relative">
@@ -26,9 +30,9 @@ export default function Section2() {
             Through innovation, automation, and data intelligence, we aim to redefine how organizations handle payments — making them safer, faster, and future-ready.
           </p>
         </div>
-      </div>
+      </motion.div>
       {/*Lower Section */}
-      <div className="flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-10 items-center">
+      <motion.div {...fadeInRight()} className="flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-10 items-center">
         {/* Left: Mission Text */}
         <div className="w-full md:w-1/2">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#141b3c] mb-3 sm:mb-4">
@@ -50,7 +54,7 @@ export default function Section2() {
             <Image src="/company/futuristic-business.png" alt="Futuristic Business demo" fill className="rounded-xl sm:rounded-2xl object-cover" />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

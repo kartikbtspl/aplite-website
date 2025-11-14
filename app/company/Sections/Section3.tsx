@@ -1,15 +1,19 @@
+"use client";
+
 import CardComponent from "@/components/ui/CardComponent";
 import CardsGrid from "@/components/ui/GridCard";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/utils";
 
 export default function Section3() {
   return (
     <section className="flex flex-col gap-8 ">
-      <div>
+      <motion.div {...fadeInUp()}>
         <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-[#072484] text-center">
           AI agents lack payment <strong>infrastructure</strong>
         </h1>
-      </div>
-      <div className="mb-40">
+      </motion.div>
+      <motion.div {...fadeInUp(0.2)} className="mb-40">
         <CardsGrid>
         <CardComponent
           imageSrc="/company/hero-ap.png"
@@ -32,8 +36,7 @@ export default function Section3() {
           subtitle="We're building the structured payment infrastructure that AI agents need to process transactions autonomously and accurately."
         />
       </CardsGrid>
-      </div>
-      
+      </motion.div>
     </section>
   );
 }

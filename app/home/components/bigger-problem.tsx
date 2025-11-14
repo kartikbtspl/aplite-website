@@ -1,19 +1,25 @@
+"use client";
+
 import { Route, Globe, Clock, Timer } from 'lucide-react'
+import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft } from "@/lib/utils";
 
 export function BiggerProblem() {
 
   return (
     <section className="bg-white py-8 sm:py-12 px-4 sm:px-8 md:px-12">
       {/* Title */}
-      <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center mb-6 sm:mb-8 md:mb-10">
-        The Problem Is Bigger Than Fraud
-      </h2>
-      {/* Subtitle */}
-      <p className="w-full mb-8 text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
-        The current system is broken in ways most people don&apos;t realize:
-      </p>
+      <motion.div {...fadeInUp()}>
+        <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center mb-6 sm:mb-8 md:mb-10">
+          The Problem Is Bigger Than Fraud
+        </h2>
+        {/* Subtitle */}
+        <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
+          The current system is broken in ways most people don&apos;t realize:
+        </p>
+      </motion.div>
       {/* Data Rows */}
-      <div className="w-full max-w-6xl mx-auto flex flex-col gap-2 sm:gap-3">
+      <motion.div {...fadeInLeft()} className="w-full max-w-6xl mx-auto flex flex-col gap-2 sm:gap-3">
         {[
           "65% of US finance teams navigate the complexity of different routing numbers for ACH and wire payments",
           "43% of businesses struggle to send international wires due to insufficient banking information from counterparties",
@@ -35,16 +41,16 @@ export function BiggerProblem() {
             </span>
           </div>
         ))}
-      </div>
+      </motion.div>
       {/* Aplite Box */}
-      <div className="mt-6 sm:mt-8 mx-auto w-full max-w-6xl">
+      <motion.div {...fadeInUp(0.2)} className="mt-6 sm:mt-8 mx-auto w-full max-w-6xl">
         <div className="bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 py-6 sm:py-8 md:py-10 rounded-xl sm:rounded-2xl px-4 sm:px-6 text-white text-center shadow-lg">
           <div className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-3">Aplite Changes This.</div>
           <div className="text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto">
             With structured, verified banking data, payments now take seconds. Finance teams don't need routing number expertise. Aplite provides exact details for each payment type, formatted correctly, verified completely.
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

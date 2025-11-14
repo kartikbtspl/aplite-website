@@ -1,14 +1,18 @@
+"use client";
+
 import CardFlowAnimation from "@/components/ui/CardFlowAnimation";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/utils";
 
 export function WhoWeServe() {
   return (
     <div className=" bg-white">
-      <div className="p-10">
+      <motion.div {...fadeInUp()} className="p-10">
         <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
           Who We Serve
         </h2>
-      </div>
-      <div className="w-full">
+      </motion.div>
+      <motion.div {...fadeInUp(0.2)} className="w-full">
         <CardFlowAnimation cards={[
           {
             imageSrc: "/home/who-we-serve/hero-ap.png",
@@ -31,7 +35,7 @@ export function WhoWeServe() {
             subtitle: "We're building the structured payment infrastructure that AI agents need to process transactions autonomously and accurately."
           }
         ]} />
-      </div>
+      </motion.div>
     </div>
   );
 }

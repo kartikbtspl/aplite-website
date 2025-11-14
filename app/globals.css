@@ -34,11 +34,11 @@
     background: 
       radial-gradient(
         circle at 30% 30%,
-        #120d61 0%,
+        #2e20f0 0%,
         #4914FF 40%,
-        #0e3c9f 65%,
-        #332e92 85%,
-        #130e5f 100%
+        #0753f9 65%,
+        #2e24f4 85%,
+        #392dec 100%
       );
     background-size: 120% 120%;
     animation: subtle-move 10s ease-in-out infinite;
