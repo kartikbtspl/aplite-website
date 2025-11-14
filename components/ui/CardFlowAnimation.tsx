@@ -21,8 +21,8 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Set initial mobile state
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    // Set initial mobile/tablet state - vertical layout for medium and below
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
 
     // Add resize listener
@@ -46,7 +46,7 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
 
   return (
     <div 
-      className="relative w-full h-[600px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-visible"
+      className="relative w-full min-h-[450px] sm:min-h-[500px] md:min-h-[550px] lg:min-h-[600px] flex items-center justify-center overflow-visible py-4 sm:py-6 md:py-8"
     >
       {cards.map((card, index) => {
         const position = (index - activeIndex + cards.length) % cards.length;
@@ -64,13 +64,13 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
           scale = 1;
         } else if (position === 1) {
           // Next card - mobile: below, desktop: right
-          transform = isMobile ? "translateX(0px) translateY(200px)" : "translateX(360px) translateY(30px)";
+          transform = isMobile ? "translateX(0px) translateY(140px)" : "translateX(360px) translateY(30px)";
           zIndex = 20;
           opacity = 0.5;
           scale = 0.85;
         } else if (position === cards.length - 1) {
           // Previous card - mobile: above, desktop: left
-          transform = isMobile ? "translateX(0px) translateY(-200px)" : "translateX(-360px) translateY(30px)";
+          transform = isMobile ? "translateX(0px) translateY(-140px)" : "translateX(-360px) translateY(30px)";
           zIndex = 20;
           opacity = 0.5;
           scale = 0.85;
@@ -85,13 +85,11 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
         return (
           <div
             key={index}
-            className="absolute transition-all duration-700 ease-spring cursor-pointer"
+            className="absolute transition-all duration-700 ease-spring cursor-pointer w-[85vw] max-w-[320px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[450px]"
             style={{
               transform: `${transform} scale(${scale})`,
               zIndex,
-              opacity,
-              width: isMobile ? 'min(360px, 95vw)' : 'min(450px, 90vw)',
-              height: isMobile ? 'min(420px, 65vh)' : 'min(480px, 75vh)'
+              opacity
             }}
             onMouseEnter={() => {
               if (!hasBeenHovered) {
@@ -106,15 +104,15 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
             }}
           >
             <div className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">
-              <div className="relative w-full pt-6 px-6 rounded-2xl overflow-hidden">
+              <div className="relative w-full pt-3 sm:pt-4 md:pt-6 px-3 sm:px-4 md:px-6 rounded-2xl overflow-hidden">
                 {card.imageSrc ? (
-                  <div className="relative w-full h-full flex justify-center items-center">
+                  <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 flex justify-center items-center">
                     <Image
                       src={card.imageSrc}
                       alt={card.title || "Card image"}
                       width={700}
                       height={400}
-                      className="w-full h-auto max-w-[600px] rounded-lg object-contain"
+                      className="w-full h-full rounded-lg object-contain"
                     />
                   </div>
                 ) : (
@@ -126,9 +124,9 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
                   />
                 )}
               </div>
-              <div className="p-4 sm:p-6 text-[#1b2f6e]">
-                <h3 className="text-lg sm:text-xl font-semibold">{card.title}</h3>
-                <p className="mt-2 text-xs sm:text-sm">{card.subtitle}</p>
+              <div className="p-3 sm:p-4 md:p-6 text-[#1b2f6e]">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold line-clamp-2">{card.title}</h3>
+                <p className="mt-1 sm:mt-2 text-xs sm:text-sm line-clamp-3">{card.subtitle}</p>
               </div>
             </div>
           </div>

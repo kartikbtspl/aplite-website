@@ -26,7 +26,7 @@ export function Hero() {
           {/* Content Section */}
           <div className="flex flex-col text-center items-center">
             <div className="flex flex-col gap-4 sm:gap-6 items-center mx-auto">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-light leading-tight tracking-tight mb-4 sm:mb-6 text-white">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-center text-white">
                 Pay the right business, every time.
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mb-6 sm:mb-8 lg:mb-10">
