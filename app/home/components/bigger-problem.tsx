@@ -9,7 +9,7 @@ export function BiggerProblem() {
         The Problem Is Bigger Than Fraud
       </h2>
       {/* Subtitle */}
-      <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
+      <p className="w-full mb-8 text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
         The current system is broken in ways most people don&apos;t realize:
       </p>
       {/* Data Rows */}
