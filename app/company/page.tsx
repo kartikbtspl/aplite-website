@@ -4,6 +4,9 @@ import HeroSec from "@/components/sections/HeroSec";
 import Section2 from "./Sections/Section2";
 import Section3 from "./Sections/Section3";
 import { motion } from "framer-motion";
+import BlankCard from "@/components/ui/BlankCard";
+import { fadeInUp } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export default function CompanyPage() {
   const fadeInAnimation = {
@@ -37,14 +40,23 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <section>
-        <div className="flex flex-col mx-4 sm:mx-8 md:mx-10 my-12 items-center justify-center max-w-full rounded-2xl bg-white py-10 px-6 text-center">
-          <p className="text-center text-black text-2xl font-medium py-8">
-            We don&apos;t move money.<br />
-            We direct where it goes.
+      <BlankCard>
+      <motion.div {...fadeInUp()}>
+        <div className="space-y-4 text-center p-6">
+          <p className="text-2xl font-medium">
+            We don't move money. We direct where it goes.
           </p>
+          <Button
+            variant="primary"
+            size="sm"
+            showIcon={true}
+            onClick={() => alert("Contact Us...")}
+          >
+            Contact Us
+          </Button>
         </div>
-      </section>
+      </motion.div>
+    </BlankCard>
     </div>
   );
 }
