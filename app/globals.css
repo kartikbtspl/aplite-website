@@ -34,11 +34,11 @@
     background: 
       radial-gradient(
         circle at 30% 30%,
-        #120d61 0%,
+        #2e20f0 0%,
         #4914FF 40%,
-        #0e3c9f 65%,
-        #332e92 85%,
-        #130e5f 100%
+        #0753f9 65%,
+        #2e24f4 85%,
+        #392dec 100%
       );
     background-size: 120% 120%;
     animation: subtle-move 10s ease-in-out infinite;
@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/img/image (1).png') center/80% no-repeat;
+    background: url('/background-symbol.png') center/80% no-repeat;
     opacity: 0.2; /* Adjust opacity here (0.3 = 30%) */
     z-index: -1;
     pointer-events: none;
@@ -69,3 +69,16 @@
 /* span {
   @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
 } */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html,
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

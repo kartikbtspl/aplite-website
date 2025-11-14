@@ -1,13 +1,14 @@
 import BlankCard from "@/components/ui/BlankCard";
 import { Button } from "@/components/ui/button";
-
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/utils";
 
 export default function Section3() {
 
   return (
     <BlankCard>
-      <div>
-        <div className="space-y-4 text-center pt-6">
+      <motion.div {...fadeInUp()}>
+        <div className="space-y-4 text-center p-6">
           <p className="text-2xl font-medium">
             Ready to integrate verified banking data?
           </p>
@@ -20,7 +21,7 @@ export default function Section3() {
             Contact Us
           </Button>
         </div>
-      </div>
+      </motion.div>
     </BlankCard>
   );
 }

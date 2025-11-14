@@ -1,16 +1,17 @@
 import { ApliteAdvantage } from "./aplite-advantage";
-import { BeforeAfterAplite } from "./before-after-aplite";
+import { BeforeAfterAplite } from "@/app/home/components/before-after-aplite";
 import { Benefits } from "./benefits";
 import { BiggerProblem } from "./bigger-problem";
-import { FinancialTeamFeatures } from "./financial-team-features";
-import { PaymentFraudNoMargin } from "./payment-fraud-no-margin";
-import { Stats } from "./stats";
-import TaglineSec from "./tagline-sec";
-import { WhoWeServe } from "./who-we-serve";
+import { FinancialTeamFeatures } from "@/app/home/components/financial-team-features";
+import { PaymentFraudNoMargin } from "@/app/home/components/payment-fraud-no-margin";
+import { Stats } from "@/app/home/components/stats";
+import { WhoWeServe } from "@/app/home/components/who-we-serve";
+import BlankCard from "@/components/ui/BlankCard";
 
 export function HomeContent() {
   return (
-    <section className="bg-white m-2 sm:m-4 md:m-6 lg:m-8 xl:m-12 rounded-xl sm:rounded-2xl overflow-hidden">
+    // <section className="bg-white m-8 sm:m-8 md:m-6 lg:m-8 xl:m-10 rounded-xl sm:rounded-2xl overflow-hidden">
+    <BlankCard>
       <div className="p-4 sm:p-6 lg:p-8">
         <PaymentFraudNoMargin />
       </div>
@@ -38,6 +39,6 @@ export function HomeContent() {
       {/* <div className="p-4 sm:p-6 lg:p-8">
         <TaglineSec />
       </div> */}
-    </section>
+    </BlankCard>
   );
 }

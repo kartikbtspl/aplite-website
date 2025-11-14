@@ -1,20 +1,34 @@
 "use client";
 
+import { motion } from "framer-motion";
 import HeroSec from "@/components/sections/HeroSec";
 import Section2 from "./Sections/Section2";
 import Section3 from "./Sections/Section3";
 
 export default function ERPPage() {
+  const fadeInAnimation = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 },
+  };
+
   return (
     <div className="space-y-10">
       <section>
-        <HeroSec
-          subtitle="aplite"
-          title="Built for ERP System"
-          description="Autofill verified banking information. Cut manual entry by 99%."
-          buttonLabel="Talk To Sales Team"
-          onButtonClick={() => alert("Talk To Sales Team...")}
-        />
+        <motion.div
+          key="hero-sec1"
+          initial={fadeInAnimation.initial}
+          animate={fadeInAnimation.animate}
+          transition={fadeInAnimation.transition}
+        >
+          <HeroSec
+            subtitle="aplite"
+            title="Built for ERP System"
+            description="Autofill verified banking information. Cut manual entry by 99%."
+            buttonLabel="Talk To Sales Team"
+            onButtonClick={() => alert("Talk To Sales Team...")}
+          />
+        </motion.div>
       </section>
 
       <section>

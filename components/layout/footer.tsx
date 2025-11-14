@@ -1,12 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, fadeInUp } from "@/lib/utils";
+// import { footer } from "framer-motion/client";
 
 export function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#150A33] via-[#1a0b2e] to-[#2A0E66] text-white m-8 rounded-3xl">
       <div className="mx-auto max-w-7xl px-4 py-12">
         {/* Top Section - Logo and Tagline */}
-        <div className="mb-5 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+        <motion.div 
+          {...fadeInUp(0)}
+          className="mb-5 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between"
+        >
           <Link href="/" className="inline-flex items-center">
             <Image 
               src="/brand/Aplite-logo.svg" 
@@ -19,10 +27,10 @@ export function Footer() {
           <p className="text-lg text-white md:text-xl">
             Verify Confidently, <span><i className="text-white">Transact Securely.</i></span>
           </p>
-        </div>
+        </motion.div>
 
         {/* Solutions Section */}
-        <div className="mb-5">
+        <motion.div {...fadeInLeft(0.2)} className="mb-5">
           <h3 className="mb-2.5 text-lg font-semibold text-white">Solutions</h3>
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             {/* AP Teams */}
@@ -151,10 +159,13 @@ export function Footer() {
               </div>
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Section - Links Grid with Subscribe */}
-        <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-5 md:flex-row">
+        <motion.div 
+          {...fadeInRight(0.4)}
+          className="flex flex-col justify-between gap-6 border-t border-white/10 pt-5 md:flex-row"
+        >
           {/* Left Group - Company, Product, Help */}
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-12 md:gap-24">
             {/* Company Section */}
@@ -216,10 +227,13 @@ export function Footer() {
               Sign up for our newsletter to stay up to speed on the latest features and releases.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Footer Bottom */}
-        <div className="mt-5 border-t border-white/10 pt-3.5">
+        <motion.div 
+          {...fadeInUp(0.6)}
+          className="mt-5 border-t border-white/10 pt-3.5"
+        >
           <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
             {/* Copyright */}
             <div className="text-xs text-white/50">
@@ -273,7 +287,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

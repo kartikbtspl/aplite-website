@@ -1,39 +1,41 @@
-import { ShieldCheck, Clock3, BarChart2, CheckCircle2 } from "lucide-react";
-import { FileLock } from "lucide-react";// example Lucide icons
-import CardFlowAnimation from "../ui/CardFlowAnimation";
+"use client";
+
+import CardFlowAnimation from "@/components/ui/CardFlowAnimation";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/utils";
 
 export function WhoWeServe() {
   return (
     <div className=" bg-white">
-      <div className="p-10">
+      <motion.div {...fadeInUp()} className="p-10">
         <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
           Who We Serve
         </h2>
-      </div>
-      <div className="">
+      </motion.div>
+      <motion.div {...fadeInUp(0.2)} className="w-full">
         <CardFlowAnimation cards={[
           {
-            imageSrc: "/solutions/ap-teams/hero.png",
+            imageSrc: "/home/who-we-serve/hero-ap.png",
             title: "Accounts Payable Teams",
             subtitle: "Search, verify, and pay in seconds"
           },
           {
-            imageSrc: "/solutions/ar-teams/hero.png",
+            imageSrc: "/home/who-we-serve/hero-ar.png",
             title: "Accounts Receivable Teams",
             subtitle: "Share your banking information securely through an immutable payment profile that customers can trust."
           },
           {
-            imageSrc: "/solutions/banks-fintech/hero.png",
+            imageSrc: "/home/who-we-serve/hero-banks.png",
             title: "Banks & Fintechs",
             subtitle: "Integrate verified, structured payment data that reduces errors, speeds processing, and eliminates fraud risk."
           },
           {
-            imageSrc: "/solutions/ai-agents/hero.png",
+            imageSrc: "/home/who-we-serve/hero-ai.png",
             title: "The Agentic Future",
             subtitle: "We're building the structured payment infrastructure that AI agents need to process transactions autonomously and accurately."
           }
         ]} />
-      </div>
+      </motion.div>
     </div>
   );
 }

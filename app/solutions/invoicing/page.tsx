@@ -1,20 +1,34 @@
 "use client";
 
+import { motion } from "framer-motion";
 import HeroSec from "@/components/sections/HeroSec";
 import Section2 from "./Sections/Section2";
 import Section3 from "./Sections/Section3";
 
 export default function InvoicingPage() {
+  const fadeInAnimation = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 },
+  };
+
   return (
     <div className="space-y-10">
       <section>
-        <HeroSec
-          subtitle="aplite"
-          title="Built for Invoicing Platform"
-          description="Embed Aplite PINs on invoices. Not editable banking details."
-          buttonLabel="Contact Us"
-          onButtonClick={() => alert("Contact Us...")}
-        />
+        <motion.div
+          key="hero-sec1"
+          initial={fadeInAnimation.initial}
+          animate={fadeInAnimation.animate}
+          transition={fadeInAnimation.transition}
+        >
+          <HeroSec
+            subtitle="aplite"
+            title="Built for Invoicing Platform"
+            description="Embed Aplite PINs on invoices. Not editable banking details."
+            buttonLabel="Contact Us"
+            onButtonClick={() => alert("Contact Us...")}
+          />
+        </motion.div>
       </section>
 
       <section>

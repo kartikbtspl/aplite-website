@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Button from "../ui/Buttons";
 
 interface HeroSecProps {
@@ -24,9 +25,23 @@ const HeroSec: React.FC<HeroSecProps> = ({
       <div className="max-w-5xl">
         {/* Logo / Tagline */}
         {subtitle && (
-          <p className="text-lg md:text-2xl font-semibold mb-4 text-white/80">
-            {subtitle}
-          </p>
+          subtitle.toLowerCase() === "aplite" ? (
+            <div className="mb-4">
+              <Image 
+                src="/brand/Aplite-logo.svg"
+                alt="Aplite Logo" 
+                width={120} 
+                height={32}
+                className="h-8 w-auto"
+                priority
+                unoptimized
+              />
+            </div>
+          ) : (
+            <p className="text-lg md:text-2xl font-semibold mb-4 text-white/80">
+              {subtitle}
+            </p>
+          )
         )}
 
         {/* Main Title */}
