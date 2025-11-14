@@ -64,15 +64,15 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
           scale = 1;
         } else if (position === 1) {
           // Next card - mobile: below, desktop: right
-          transform = isMobile ? "translateX(0px) translateY(160px)" : "translateX(280px) translateY(20px)";
+          transform = isMobile ? "translateX(0px) translateY(200px)" : "translateX(360px) translateY(30px)";
           zIndex = 20;
-          opacity = 0.7;
+          opacity = 0.5;
           scale = 0.85;
         } else if (position === cards.length - 1) {
           // Previous card - mobile: above, desktop: left
-          transform = isMobile ? "translateX(0px) translateY(-160px)" : "translateX(-280px) translateY(20px)";
+          transform = isMobile ? "translateX(0px) translateY(-200px)" : "translateX(-360px) translateY(30px)";
           zIndex = 20;
-          opacity = 0.7;
+          opacity = 0.5;
           scale = 0.85;
         } else {
           // Hidden cards behind

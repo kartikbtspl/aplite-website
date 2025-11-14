@@ -52,20 +52,20 @@ export function ApliteAdvantage() {
   ];
 
   const advantageImages = [
-    "/solutions/erp/workflow-5.png",
-    "/solutions/erp/workflow-4.png",
-    "/solutions/ar-teams/workflow-1.png",
-    "/solutions/ar-teams/workflow-4.png",
+    "/home/aplite-advantage/single-source.png",
+    "/home/aplite-advantage/immutable-payment.png",
+    "/home/aplite-advantage/real-time.png",
+    "/home/aplite-advantage/built-future.png",
   ];
 
   return (
     <section className="bg-white py-20">
       <div className="px-4 sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
-          <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
+          <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             Aplite Advantage
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#475569] max-w-3xl mb-6 sm:mb-8 lg:mb-10 mx-auto">
+          <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
             Discover how Aplite transforms your payment process.
           </p>
         </div>
@@ -114,7 +114,7 @@ export function ApliteAdvantage() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="p-2 bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
+            <div className="bg-white rounded-2xl min-h-[300px] sm:min-h-[400px]">
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
                 <div className="relative w-full h-full flex items-center justify-center min-h-[260px] sm:min-h-[360px]">
                   <Image

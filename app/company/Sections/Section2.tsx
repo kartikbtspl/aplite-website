@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Section2() {
   return (
     <section className="flex flex-col mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8">
@@ -5,8 +7,8 @@ export default function Section2() {
       <div className="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 items-center mb-8 sm:mb-10 lg:mb-12">
         {/* Left: Image */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center">
-            <img src="/company/mission.png" alt="Mission product demo" className="rounded-xl sm:rounded-2xl w-full h-full object-cover" />
+          <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center relative">
+            <Image src="/company/mission.png" alt="Mission product demo" fill className="rounded-xl sm:rounded-2xl object-cover" />
           </div>
         </div>
         {/* Right: Mission Text */}
@@ -44,8 +46,8 @@ export default function Section2() {
         </div>
         {/* Right: Image */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center">
-            <img src="/company/futuristic-business.png" alt="Futuristic Business demo" className="rounded-xl sm:rounded-2xl w-full h-full object-cover" />
+          <div className="rounded-xl sm:rounded-2xl w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] flex items-center justify-center relative">
+            <Image src="/company/futuristic-business.png" alt="Futuristic Business demo" fill className="rounded-xl sm:rounded-2xl object-cover" />
           </div>
         </div>
       </div>

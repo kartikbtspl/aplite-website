@@ -1,10 +1,7 @@
 "use client";
 
-import { CheckCircle2, XCircle, Play, Pause } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { PaymentFraudNoMargin } from "./payment-fraud-no-margin";
-import { BeforeAfterAplite } from "./before-after-aplite";
-import { FinancialTeamFeatures } from "./financial-team-features";
 import Image from "next/image";
 
 export function Benefits() {
@@ -69,11 +66,11 @@ export function Benefits() {
   ];
 
   const riskImages = [
-    "/home/risk.png",
-    "/home/risk.png", 
-    "/home/risk.png",
-    "/home/risk.png",
-    "/home/risk.png",
+    "/home/benefits/risks.png",
+    "/home/benefits/risks.png", 
+    "/home/benefits/risks.png",
+    "/home/benefits/risks.png",
+    "/home/benefits/risks.png",
   ];
 
   const solutions = [
@@ -86,12 +83,12 @@ export function Benefits() {
   ];
 
   const solutionImages = [
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
-    "/home/solutions.png",
+    "/home/benefits/solutions.png",
+    "/home/benefits/solutions.png",
+    "/home/benefits/solutions.png",
+    "/home/benefits/solutions.png",
+    "/home/benefits/solutions.png",
+    "/home/benefits/solutions.png",
   ];
 
   return (
@@ -99,10 +96,10 @@ export function Benefits() {
       {/* <PaymentFraudNoMargin /> */}
       <div className=" sm:px-6">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light tracking-tight text-[#24004c] text-center leading-tight">
+          <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             How It Works
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#475569] max-w-3xl mb-6 sm:mb-8 lg:mb-10 mx-auto">
+          <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
             The real risks of unverified payments and how Aplite eliminates them.
           </p>
         </div>
@@ -111,7 +108,7 @@ export function Benefits() {
         <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
           <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[70vh]">
             {/* Left sub-section - Animated based on active risk */}
-            <div className="p-2 bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
+            <div className=" bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
                 <div className="relative w-full h-full flex items-center justify-center min-h-[260px] sm:min-h-[360px]">
                   <Image
@@ -214,14 +211,14 @@ export function Benefits() {
             </div>
 
             {/* Right sub-section - Animated based on active solution */}
-            <div className="p-2 bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
+            <div className=" bg-gray-100 rounded-2xl min-h-[300px] sm:min-h-[400px]">
               <div className="rounded-2xl bg-white h-full transition-all duration-500 flex items-center justify-center min-h-[280px] sm:min-h-[380px]">
                 <div className="relative w-full h-full flex items-center justify-center min-h-[260px] sm:min-h-[360px]">
                   <Image
                     src={solutionImages[activeSolutionIndex] || "/home/solutions.png"}
                     alt={`Solution ${activeSolutionIndex + 1}`}
                     fill
-                    className={`rounded-lg object-cover transition-all duration-500 ${
+                    className={`rounded-lg object-contain transition-all duration-500 ${
                       activeSolutionIndex === 0 ? '' :
                       activeSolutionIndex === 1 ? '' :
                       activeSolutionIndex === 2 ? '' :

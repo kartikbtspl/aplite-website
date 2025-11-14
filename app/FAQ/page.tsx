@@ -79,7 +79,7 @@ export default function FAQPage() {
           buttonLabel=""
         />
       </div>
-      <div className="bg-white m-2 sm:m-4 md:m-6 lg:m-8 xl:m-12 rounded-xl sm:rounded-2xl p-12 sm:p-6 lg:p-12 overflow-hidden">
+      <div className="bg-white m-2 sm:m-4 md:m-6 lg:m-8 xl:m-10 rounded-xl sm:rounded-2xl p-12 sm:p-6 lg:p-12 overflow-hidden">
         <div className="w-full mx-auto py-8">
           <ul className="space-y-4">
             {faqs.map((faq, idx) => (

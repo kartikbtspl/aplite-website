@@ -31,7 +31,7 @@ export default function Section2() {
         "Eliminate the risk of email-based and invoice-based payment information exchanges. Your banking details live in a secure, verified profile.",
     },
     {
-      imageSrc: "/solutions/ap-teams/digital-payment-profile.png",
+      imageSrc: "/solutions/ap-teams/digital-payment.png",
       title: "Digital Payment Profile",
       subtitle:
         "Your payment information lives in a tamper-proof profile that cannot be edited or altered like invoices and PDFs. Customers always have your correct, verified details.",

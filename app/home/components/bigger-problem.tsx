@@ -5,11 +5,11 @@ export function BiggerProblem() {
   return (
     <section className="bg-white py-8 sm:py-12 px-4 sm:px-8 md:px-12">
       {/* Title */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-[#24004c] text-center mb-6 sm:mb-8 md:mb-10">
+      <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center mb-6 sm:mb-8 md:mb-10">
         The Problem Is Bigger Than Fraud
       </h2>
       {/* Subtitle */}
-      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-gray-600 mb-6 sm:mb-8 px-4 sm:px-0 max-w-4xl mx-auto">
+      <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
         The current system is broken in ways most people don&apos;t realize:
       </p>
       {/* Data Rows */}
