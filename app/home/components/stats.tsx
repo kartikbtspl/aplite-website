@@ -2,16 +2,18 @@
 
 import CardComponent from "@/components/ui/CardComponent";
 import CardsGrid from "@/components/ui/GridCard";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/utils";
 
 export function Stats() {
   return (
     <div className="">
-      <div className="p-10">
+      <motion.div {...fadeInUp()} className="p-10">
         <h2 className="text-4xl md:text-7xl font-light tracking-tight text-[#24004c] text-center">
           The True Cost of Payment Fraud
         </h2>
-      </div>
-      <div className="">
+      </motion.div>
+      <motion.div {...fadeInUp(0.2)} className="">
         <CardsGrid>
           <CardComponent
             imageSrc="/home/stats/79-percentage.png"
@@ -29,7 +31,7 @@ export function Stats() {
             subtitle="average loss per incident from payment fraud attacks"
           />
         </CardsGrid>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -3,6 +3,8 @@
 import { Play, Pause } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft } from "@/lib/utils";
 
 export function ApliteAdvantage() {
   const [activeSolutionIndex, setActiveSolutionIndex] = useState(0);
@@ -61,17 +63,17 @@ export function ApliteAdvantage() {
   return (
     <section className="bg-white py-20">
       <div className="px-4 sm:px-6">
-        <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
+        <motion.div {...fadeInUp()} className="mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="text-4xl mb-8 md:text-7xl font-light tracking-tight text-[#24004c] text-center">
             Aplite Advantage
           </h2>
           <p className="w-full text-lg sm:text-xl text-gray-400 leading-relaxed text-center">
             Discover how Aplite transforms your payment process.
           </p>
-        </div>
+        </motion.div>
 
         {/* Solutions Section */}
-        <div className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
+        <motion.div {...fadeInLeft()} className="mb-8 sm:mb-12 lg:mb-16 overflow-hidden">
           <div className="grid gap-6 sm:gap-8 lg:gap-20 lg:grid-cols-2 min-h-[50vh] sm:min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh]">
             {/* Left sub-section - Solutions */}
             <div className="flex flex-col p-3 min-h-[300px] sm:min-h-[400px] justify-between">
@@ -132,7 +134,7 @@ export function ApliteAdvantage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
