@@ -15,7 +15,7 @@ export const fadeInUp = (delay = 0, duration = 0.8, yOffset = 30) => ({
 });
 
 // Fade in from left
-export const fadeInLeft = (delay = 0, duration = 0.8, xOffset = -50) => ({
+export const fadeInLeft = (delay = 0, duration = 0.8, xOffset = -30) => ({
   initial: { opacity: 0, x: xOffset },
   whileInView: { opacity: 1, x: 0 },
   transition: { duration, delay },
@@ -23,7 +23,7 @@ export const fadeInLeft = (delay = 0, duration = 0.8, xOffset = -50) => ({
 });
 
 // Fade in from right
-export const fadeInRight = (delay = 0, duration = 0.8, xOffset = 50) => ({
+export const fadeInRight = (delay = 0, duration = 0.8, xOffset = 30) => ({
   initial: { opacity: 0, x: xOffset },
   whileInView: { opacity: 1, x: 0 },
   transition: { duration, delay },

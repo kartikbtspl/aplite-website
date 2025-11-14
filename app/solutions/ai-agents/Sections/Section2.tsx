@@ -1,9 +1,27 @@
 import BlankCard from "@/components/ui/BlankCard";
 import CardComponent from "@/components/ui/CardComponent";
 import CardsGrid from "@/components/ui/GridCard";
-import { Button } from "@/components/ui/button";
+import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
+import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, fadeInUp } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export default function Section2() {
+  const [iconSize, setIconSize] = useState<"sm" | "md" | "lg">("md");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setIconSize("sm");
+      else if (window.innerWidth < 1024) setIconSize("md");
+      else setIconSize("lg");
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Card data array
   const cardData = [
     {
@@ -40,33 +58,43 @@ export default function Section2() {
 
   return (
     <BlankCard>
-      <div className="p-10 md:p-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
-          {/* Left side - Heading with cascading indentation */}
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
-              <div className="mb-1">
-                More tools in
+      <div className="pt-10 lg:pt-16 px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
+        <div>
+          {/* Heading */}
+          <motion.div {...fadeInLeft()}>
+            <h1
+              className="
+          text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
+          tracking-tight leading-tight
+          text-center lg:text-left
+        "
+            >
+              <div className="mb-2 lg:mb-1">Structured Payment</div>
+
+              <div className="mb-2 lg:mb-1 lg:pl-20 xl:pl-64">
+                Infrastructure Built
               </div>
-              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
-                your toolkit than
-              </div>
-              <div className="pl-32 md:pl-40 lg:pl-48">
-                ever before.
+
+              <div className="mb-0 lg:mb-0 lg:text-right">
+                For AI Agents.
               </div>
             </h1>
-          </div>
-          
-          {/* Right side - Description aligned to the bottom right */}
-          <div className="flex justify-end">
-            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-xs text-right">
-              Effortlessly manage every merchant in your portfolio, with an all-in-one sales hub that brings CRM features, digital application creation, and dynamic residual payouts into one place.
+          </motion.div>
+
+          <motion.div
+            {...fadeInRight()}
+            className="flex justify-center p-4 lg:justify-end"
+          >
+            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed text-center lg:text-right max-w-2xl">
+              As the world transitions into an agentic future, AI agents need
+              structured payment infrastructure. Aplite provides machine-readable
+              data that agents can process instantly without human oversight.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      <div className="px-10">
+      <div className="px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
         <CardsGrid>
           {cardData.map((card, index) => (
             <CardComponent
@@ -79,32 +107,36 @@ export default function Section2() {
         </CardsGrid>
       </div>
 
-      <div className="p-10 space-y-8">
-        <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-center">
-          AI agents lack payment infrastructure
+      <motion.div {...fadeInRight()}>
+        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+          Why AI Agents choose Aplite
         </h1>
+      </motion.div>
 
-        <p className="text-center text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          As the world transitions into an agentic future where AI agents handle
-          a majority of global transaction volume, they need a new way to
-          interact with payment systems. Right now, agents lack the fundamental
-          infrastructure to financially engage with the real world.
-        </p>
-
-        <div className="space-y-4 text-center">
-          <p className="text-2xl font-medium">
-            Ready to build autonomous payment systems?
-          </p>
-          <Button
-            variant="primary"
-            size="sm"
-            showIcon={true}
-            onClick={() => alert("Contact Us...")}
+      {/* Responsive grid for features */}
+      <motion.div
+        {...fadeInUp()}
+        className="grid grid-cols-1 py-4 sm:grid-cols-2 gap-x-6 gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        {featuresData.map((feature, index) => (
+          <div
+            key={index}
+            className="flex items-start sm:items-center gap-3 text-base sm:text-lg md:text-xl"
           >
-            Contact Us
-          </Button>
-        </div>
-      </div>
+            <div className="flex-shrink-0">
+              <ReusableReactIcon
+                sizeprop={iconSize}
+                squareBgColor="#003cff"
+                icon={CheckCircle}
+                iconBgColor="#93c5fd"
+              />
+            </div>
+            <p className="font-medium leading-snug sm:leading-tight">
+              {feature}
+            </p>
+          </div>
+        ))}
+      </motion.div>
     </BlankCard>
   );
 }

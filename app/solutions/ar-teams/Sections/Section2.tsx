@@ -6,6 +6,8 @@ import CardComponent from "@/components/ui/CardComponent";
 import ReusableReactIcon from "@/components/ui/ReusableReactIcon";
 import AnimatedSplitSteps from "@/components/ui/AnimatedSplitSection";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, fadeInUp } from "@/lib/utils";
 
 export default function Section2() {
   const [iconSize, setIconSize] = useState<"sm" | "md" | "lg">("md");
@@ -91,24 +93,43 @@ export default function Section2() {
   return (
     <>
       <BlankCard>
-        <div className="p-10">
-          <div className="px-4 sm:px-6 md:px-10">
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-light tracking-tight flex flex-col gap-3 sm:gap-4 leading-tight">
-              <div className="flex flex-col sm:flex-row sm:justify-start text-center sm:text-left">
-                Simplify
-                <strong className="mx-0 sm:mx-4 font-semibold text-primary">
-                  Vendor Payments
-                </strong>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:justify-end text-center sm:text-right">
-                with
-                <strong className="mx-0 sm:mx-4 font-semibold text-primary">
-                  Verified Data
-                </strong>
-              </div>
-            </h1>
-          </div>
+        <div className="pt-10 lg:pt-16 px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
+          <div>
+            {/* Heading */}
+            <motion.div {...fadeInLeft()}>
+              <h1
+                className="
+          text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
+          tracking-tight leading-tight
+          text-center lg:text-left
+        "
+              >
+                <div className="mb-2 lg:mb-1">Share Banking Details</div>
 
+                <div className="mb-2 lg:mb-1 lg:pl-20 xl:pl-64">
+                  Securely Through
+                </div>
+
+                <div className="mb-0 lg:mb-0 lg:text-right">
+                  Verified Profiles.
+                </div>
+              </h1>
+            </motion.div>
+
+            <motion.div
+              {...fadeInRight()}
+              className="flex justify-center p-4 lg:justify-end"
+            >
+              <p className="text-lg sm:text-xl text-gray-400 leading-relaxed text-center lg:text-right max-w-2xl">
+                Stop sending banking details via email. Share your payment
+                information through an immutable, verified profile that customers
+                can trust, reducing verification delays and payment errors.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
           <CardsGrid>
             {cardData.map((card, index) => (
               <CardComponent
@@ -119,39 +140,44 @@ export default function Section2() {
               />
             ))}
           </CardsGrid>
-
-          <h1 className="text-3xl flex justify-center pb-8 md:text-5xl font-lg leading-tight tracking-tight ">
-            <div className="flex justify-start">
-              Why Accounts Receivable Teams choose Aplite
-            </div>
-          </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-start sm:items-center gap-3 text-base sm:text-lg md:text-xl"
-              >
-                <div className="flex-shrink-0">
-                  <ReusableReactIcon
-                    sizeprop={iconSize}
-                    squareBgColor="#003cff"
-                    icon={CheckCircle}
-                    iconBgColor="#93c5fd"
-                  />
-                </div>
-                <p className="font-medium leading-snug sm:leading-tight">
-                  {feature}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="py-6">
-            <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight ">
-              <div className="flex justify-start">How It Works</div>
-            </h1>
-          </div>
         </div>
+
+        <motion.div {...fadeInRight()}>
+          <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+            Why Accounts Receivable Teams choose Aplite
+          </h1>
+        </motion.div>
+
+        {/* Responsive grid for features */}
+        <motion.div
+          {...fadeInUp()}
+          className="grid grid-cols-1 py-4 sm:grid-cols-2 gap-x-6 gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex items-start sm:items-center gap-3 text-base sm:text-lg md:text-xl"
+            >
+              <div className="flex-shrink-0">
+                <ReusableReactIcon
+                  sizeprop={iconSize}
+                  squareBgColor="#003cff"
+                  icon={CheckCircle}
+                  iconBgColor="#93c5fd"
+                />
+              </div>
+              <p className="font-medium leading-snug sm:leading-tight">
+                {feature}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div {...fadeInUp()} className="py-6 px-4">
+          <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+            How It Works
+          </h1>
+        </motion.div>
 
         <AnimatedSplitSteps steps={steps} />
       </BlankCard>

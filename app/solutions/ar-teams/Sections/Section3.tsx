@@ -7,12 +7,14 @@ import {
   TrendingUp,
   UserCircle,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/utils";
 
 export default function Section3() {
   return (
     <>
       <BlankCard>
-        <div className="p-6 space-y-6">
+        <motion.div {...fadeInUp()} className="p-6 space-y-6">
           <div className="flex justify-center items-start">
             <p className="text-2xl font-medium  leading-tight">
               Ready to transform your AR process?
@@ -34,7 +36,7 @@ export default function Section3() {
               size="sm"
             />
           </div>
-        </div>
+        </motion.div>
       </BlankCard>
     </>
   );

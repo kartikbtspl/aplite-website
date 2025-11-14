@@ -10,8 +10,25 @@ import {
   Server,
   ShieldCheck,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, fadeInUp } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export default function Section2() {
+  const [iconSize, setIconSize] = useState<"sm" | "md" | "lg">("md");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setIconSize("sm");
+      else if (window.innerWidth < 1024) setIconSize("md");
+      else setIconSize("lg");
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Card data array
   const cardData = [
     {
@@ -25,6 +42,12 @@ export default function Section2() {
       title: "Keep vendor data current automatically",
       subtitle:
         "Real-time updates from Aplite mean no outdated banking information in your ERP. Every payment uses verified, current details with audit-ready documentation.",
+    },
+    {
+      imageSrc: "/solutions/erp/integrate-aplites.png",
+      title: "Seamless integration",
+      subtitle:
+        "Simple API integration that works with your existing ERP workflows. No complex setup, just verified payment data when you need it.",
     },
   ];
 
@@ -82,35 +105,46 @@ export default function Section2() {
       images: ["/solutions/erp/workflow-5.png"],
     },
   ];
+
   return (
     <BlankCard>
-      <div className="p-10 md:p-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end max-w-7xl mx-auto">
-          {/* Left side - Heading with cascading indentation */}
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-tight text-[#2A0E66]">
-              <div className="mb-1">
-                More tools in
+      <div className="pt-10 lg:pt-16 px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
+        <div>
+          {/* Heading */}
+          <motion.div {...fadeInLeft()}>
+            <h1
+              className="
+          text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
+          tracking-tight leading-tight
+          text-center lg:text-left
+        "
+            >
+              <div className="mb-2 lg:mb-1">Autofill Verified</div>
+
+              <div className="mb-2 lg:mb-1 lg:pl-20 xl:pl-64">
+                Banking Information
               </div>
-              <div className="pl-16 md:pl-20 lg:pl-24 mb-1">
-                your toolkit than
-              </div>
-              <div className="pl-32 md:pl-40 lg:pl-48">
-                ever before.
+
+              <div className="mb-0 lg:mb-0 lg:text-right">
+                In Your ERP.
               </div>
             </h1>
-          </div>
-          
-          {/* Right side - Description aligned to the bottom right */}
-          <div className="flex justify-end">
-            <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-xs text-right">
-              Effortlessly manage every merchant in your portfolio, with an all-in-one sales hub that brings CRM features, digital application creation, and dynamic residual payouts into one place.
+          </motion.div>
+
+          <motion.div
+            {...fadeInRight()}
+            className="flex justify-center p-4 lg:justify-end"
+          >
+            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed text-center lg:text-right max-w-2xl">
+              Cut manual entry by 99% and eliminate transcription errors. Aplite's
+              API delivers verified banking details directly into your ERP,
+              keeping vendor data current automatically.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      <div className="px-10 pb-32">
+      <div className="px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24">
         <CardsGrid>
           {cardData.map((card, index) => (
             <CardComponent
@@ -123,36 +157,43 @@ export default function Section2() {
         </CardsGrid>
       </div>
 
-      <div className="p-10">
-        <h1 className="text-3xl flex justify-center mt-8 space-y-6 md:text-5xl font-lg leading-tight tracking-tight">
-          <div className="flex justify-start">
-            Why ERP Systems integrate Aplite
-          </div>
+      <motion.div {...fadeInRight()}>
+        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+          Why ERP Systems integrate Aplite
         </h1>
-      </div>
+      </motion.div>
 
-      {/* 2-column grid for features */}
-      <div className="grid grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto py-6">
+      {/* Responsive grid for features */}
+      <motion.div
+        {...fadeInUp()}
+        className="grid grid-cols-1 py-4 sm:grid-cols-2 gap-x-6 gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         {featuresData.map((feature, index) => (
-          <div key={index} className="flex items-center gap-3">
+          <div
+            key={index}
+            className="flex items-start sm:items-center gap-3 text-base sm:text-lg md:text-xl"
+          >
             <div className="flex-shrink-0">
               <ReusableReactIcon
-                sizeprop="md"
+                sizeprop={iconSize}
                 squareBgColor="#003cff"
                 icon={CheckCircle}
                 iconBgColor="#93c5fd"
               />
             </div>
-            <p className="text-xl font-medium  leading-tight">{feature}</p>
+            <p className="font-medium leading-snug sm:leading-tight">
+              {feature}
+            </p>
           </div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="py-6">
-        <h1 className="text-3xl md:text-5xl font-normal leading-tight tracking-tight text-center">
-          How It works
+      <motion.div {...fadeInUp()} className="py-6 px-4">
+        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 leading-tight tracking-tight mt-4 sm:mt-6 md:mt-8">
+          How It Works
         </h1>
-      </div>
+      </motion.div>
+
       <AnimatedSplitSteps steps={steps} />
     </BlankCard>
   );
