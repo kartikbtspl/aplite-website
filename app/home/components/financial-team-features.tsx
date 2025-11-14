@@ -20,7 +20,7 @@ export function FinancialTeamFeatures() {
           Built For The whole Financial Team
         </h2>
       </motion.div>
-      <motion.div {...fadeInUp(0.2)} className="w-full p-5">
+      <motion.div {...fadeInUp(0.2)} className="p-5">
         <CardFlowAnimation cards={cards} />
       </motion.div>
     </div>
