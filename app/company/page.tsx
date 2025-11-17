@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import HeroSec from "@/components/sections/HeroSec";
 import Section2 from "./Sections/Section2";
 import Section3 from "./Sections/Section3";
@@ -14,6 +15,14 @@ export default function CompanyPage() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.8 },
   };
+
+  // Apply orange gradient for company page
+  React.useEffect(() => {
+    document.body.classList.add('company-gradient');
+    return () => {
+      document.body.classList.remove('company-gradient');
+    };
+  }, []);
 
   return (
     <div className="space-y-10">

@@ -1,6 +1,16 @@
+"use client";
 
+import React from "react";
 
 export default function PricingPage() {
+  // Apply red gradient for pricing page
+  React.useEffect(() => {
+    document.body.classList.add('pricing-gradient');
+    return () => {
+      document.body.classList.remove('pricing-gradient');
+    };
+  }, []);
+
   return (
     <>
       <div className="space-y-6">
