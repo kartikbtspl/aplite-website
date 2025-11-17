@@ -47,6 +47,10 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
   return (
     <div 
       className="relative w-full min-h-[450px] sm:min-h-[500px] md:min-h-[550px] lg:min-h-[600px] flex items-center justify-center overflow-visible py-4 sm:py-6 md:py-8"
+      onMouseLeave={() => {
+        setIsPaused(false);
+        setHasBeenHovered(false);
+      }}
     >
       {cards.map((card, index) => {
         const position = (index - activeIndex + cards.length) % cards.length;
@@ -92,15 +96,11 @@ export default function CardFlowAnimation({ cards }: CardFlowAnimationProps) {
               opacity
             }}
             onMouseEnter={() => {
-              if (!hasBeenHovered) {
+              if (!hasBeenHovered && index !== activeIndex) {
                 setActiveIndex(index);
                 setHasBeenHovered(true);
               }
               setIsPaused(true);
-            }}
-            onMouseLeave={() => {
-              setIsPaused(false);
-              setHasBeenHovered(false);
             }}
           >
             <div className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl">

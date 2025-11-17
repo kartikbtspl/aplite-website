@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import HeroSec from "@/components/sections/HeroSec";
 import Section2 from "./Sections/Section2";
+import Section3 from "./Sections/Section3";
 
 export default function AIAgentsPage() {
   const fadeInAnimation = {
@@ -32,6 +33,9 @@ export default function AIAgentsPage() {
 
       <section>
         <Section2 />
+      </section>
+      <section>
+        <Section3 />
       </section>
     </div>
   );

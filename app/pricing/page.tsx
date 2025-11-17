@@ -1,8 +1,9 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/utils";
 import { Check } from "lucide-react";
+import HeroSec from "@/components/sections/HeroSec";
 
 const pricingTiers = [
   {
@@ -39,20 +40,36 @@ const features = [
 ];
 
 export default function PricingPage() {
+  // Apply red gradient for pricing page
+  React.useEffect(() => {
+    document.body.classList.add('pricing-gradient');
+    return () => {
+      document.body.classList.remove('pricing-gradient');
+    };
+  }, []);
+
+  const fadeInAnimation = {
+    initial: { opacity: 0, y: 30 },
+    animate:{ opacity: 1, y: 0 } ,
+    transition: { duration: 0.8 },
+  };
+
   return (
     <div className="min-h-screen px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto">
+      <div className="p-2 mx-auto">
         {/* Header */}
         <motion.div
-          {...fadeInUp()}
-          className="text-center mb-12 sm:mb-16"
+          key="hero-sec1"
+          initial={fadeInAnimation.initial}
+          animate={fadeInAnimation.animate}
+          transition={fadeInAnimation.transition}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
-            Founding Customer Pricing
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-            Flat monthly fee — unlimited vendors during pilot
-          </p>
+          <HeroSec
+            subtitle="aplite"
+            title="Founding Customer Pricing"
+            description="Flat monthly fee — unlimited vendors during pilot"
+            buttonLabel=""
+          />
         </motion.div>
 
         {/* Value Summary */}

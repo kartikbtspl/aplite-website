@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Section2 from "./Sections/Section2";
 import HeroSec from "@/components/sections/HeroSec";
+import Section3 from "./Sections/Section3";
 
 export default function BanksFintechPage() {
   const fadeInAnimation = {
@@ -34,6 +35,11 @@ export default function BanksFintechPage() {
       {/* Section 2 */}
       <section>
         <Section2 />
+      </section>
+
+      {/*Section 3*/}
+      <section>
+        <Section3 />
       </section>
     </main>
   );

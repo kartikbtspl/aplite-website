@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Hero } from "./components/hero";
 import { HomeContent } from "./components/home-content";
 import TaglineSec from "./components/tagline-sec";
@@ -11,6 +12,14 @@ export default function HomePage() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.8 },
   };
+
+  // Apply purple gradient for home page
+  React.useEffect(() => {
+    document.body.classList.add('home-gradient');
+    return () => {
+      document.body.classList.remove('home-gradient');
+    };
+  }, []);
 
   return (
     <div className="space-y-10">
