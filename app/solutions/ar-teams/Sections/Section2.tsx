@@ -31,7 +31,7 @@ export default function Section2() {
         "Find any vendor's verified payment details in seconds—no more chasing contacts, validating screenshots, or waiting on call-backs.",
     },
     {
-      imageSrc: "/solutions/ar-teams/process-payment-new.png",
+      imageSrc: "/solutions/ar-teams/process-payment.png",
       title: "Process payments with confidence",
       subtitle:
         "Pay using verified banking information that's audit-ready and fraud-proof. Every profile is timestamped and immutable.",
