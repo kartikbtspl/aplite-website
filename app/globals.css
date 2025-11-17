@@ -65,6 +65,21 @@
       background-position: 100% 100%;
     }
   }
+
+  /* Purple gradient for home page */
+  body.home-gradient {
+    background: 
+      radial-gradient(
+        circle at 30% 30%,
+        #6b21a8 0%,
+        #7c3aed 40%,
+        #8b5cf6 65%,
+        #a78bfa 85%,
+        #c4b5fd 100%
+      );
+    background-size: 120% 120%;
+    animation: subtle-move 10s ease-in-out infinite;
+  }
 }
 /* span {
   @apply bg-gradient-to-r from-[#111A4A] via-[#283EB0] to-[#B2C1FF] text-transparent bg-clip-text;
